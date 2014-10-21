@@ -1,15 +1,19 @@
 /*
- * This is a manifest file that'll be compiled into application.css, which will include all the files
- * listed below.
- *
- * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
- * or vendor/assets/stylesheets of plugins, if any, can be referenced here using a relative path.
- *
- * You're free to add application-wide styles to this file and they'll appear at the bottom of the
- * compiled file so the styles you add here take precedence over styles defined in any styles
- * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
- * file per style scope.
- *
+ *= require bootstrap_and_overrides
+ *= require font-awesome
+
+ *= require my_theme/global/plugins/fancybox/source/jquery.fancybox.css
+ *= require my_theme/global/plugins/carousel-owl-carousel/owl-carousel/owl.carousel.css
+ *= require my_theme/global/plugins/slider-revolution-slider/rs-plugin/css/settings.css
+
+ *= require my_theme/frontend/layout/css/themes/red
+ *= require my_theme/global/css/components
+ *= require my_theme/frontend/layout/css/style
+ *= require my_theme/frontend/layout/css/style-responsive
+ *= require my_theme/frontend/layout/css/custom.css
+ *= require my_theme/frontend/pages/css/style-revolution-slider.css
+
+ * require my_theme
  *= require_tree .
  *= require_self
  */

@@ -1,0 +1,29 @@
+<!-- <nav class="navbar navbar-default" role="navigation">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="#"><%#=Refinery::Core::site_name %></a>
+    </div>
+
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <%#= Refinery::Pages::MenuPresenter.new(refinery_menu_pages, self).to_html %>
+    </div>
+  </div>
+</nav> -->
+ 
+<%= render 'layouts/public/header/pre_header' %>
+
+<div class="header">
+  <div class="container">
+    <a class="site-logo" href="shop-index.html">
+      <%= image_tag "OPC_Logo_120.gif" %>
+    </a>
+    <%= render 'layouts/public/header/navbar' %>
+    <%#= render 'megamenus/navbar' %>
+  </div>
+</div>

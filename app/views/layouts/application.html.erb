@@ -1,14 +1,13 @@
-<!DOCTYPE html>
-<html>
-<head>
-  <title>Opc</title>
-  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
-  <%= csrf_meta_tags %>
-</head>
-<body>
+<%= render 'layouts/public/head' %>
+<%= render 'layouts/public/header' %>
+<%= render 'layouts/public/main_slideshow.html' if current_page?(root_url) %>
+<div class="container">
+  <div id="main_container">
+    <div id="siteContent">
+      <%= flash_creator flash %>      
+      <%= yield %>  
+    </div>
+  </div>
+</div>
 
-<%= yield %>
-
-</body>
-</html>
+<%= render 'layouts/public/footer' %>
