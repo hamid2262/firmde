@@ -1,6 +1,6 @@
 //= require jquery
 //= require jquery_ujs
-//= require turbolinks
+// require turbolinks
 //= require my_theme/global/plugins/jquery-migrate.min.js
 //= require bootstrap-sprockets
 

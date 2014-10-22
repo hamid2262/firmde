@@ -1,0 +1,7 @@
+/*
+ *= require bootstrap_and_overrides
+ *= require font-awesome
+
+ *= require_tree ./admin
+ *= require_self
+ */

@@ -1,13 +1,7 @@
 <%= render 'layouts/public/head' %>
 <%= render 'layouts/public/header' %>
-<%= render 'layouts/public/main_slideshow.html' if current_page?(root_url) %>
-<div class="container">
-  <div id="main_container">
-    <div id="siteContent">
-      <%= flash_creator flash %>      
-      <%= yield %>  
-    </div>
-  </div>
-</div>
+<%= render 'layouts/public/main_slideshow.html' if slide_show_visible? %>
+
+<%= render "layouts/public/#{layout_selector}" %>
 
 <%= render 'layouts/public/footer' %>

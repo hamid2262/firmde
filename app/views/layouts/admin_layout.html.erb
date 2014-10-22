@@ -1,0 +1,11 @@
+<%= render 'layouts/admin/head' %>
+<div class="container">
+  <div id="main_container">
+    <div id="siteContent">
+      <%= flash_creator flash %>
+      <%= yield %>
+    </div>
+  </div>
+</div>
+
+<%#= render 'layouts/admin/footer' %>

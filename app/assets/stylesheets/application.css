@@ -12,6 +12,7 @@
  *= require my_theme/frontend/layout/css/style-responsive
  *= require my_theme/frontend/layout/css/custom.css
  *= require my_theme/frontend/pages/css/style-revolution-slider.css
+ *= require my_theme/frontend/pages/css/style-shop.css
 
  * require my_theme
  *= require_tree .

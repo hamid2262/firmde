@@ -16,4 +16,16 @@ module ApplicationHelper
     message.html_safe
   end
 
+  def slide_show_visible?
+    params[:controller]=="home" and params[:action]== "index" ? true : false
+  end
+
+  def layout_selector
+    case "#{params[:controller]}##{params[:action]}"
+    when "pages#show"
+      "pages_layout"
+    else
+      "homepage_layout"
+    end
+  end
 end
