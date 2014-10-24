@@ -2,4 +2,28 @@
   #top_image{
     background-repeat: inherit;
   }
+  
+  #my_sidebar{
+    .sidebar-menu{
+      // margin-left: -20px;
+      padding-left: 15px;
+      list-style: none;
+      ul{
+        margin-left: -25px;
+        list-style: none;
+      }
+      li{
+        a {
+          text-transform: capitalize;
+          color: #3e4d5c;
+        }
+      } 
+      li.active a {
+        color: #E02222;
+        i{
+          color: #888;
+        }
+      }
+    } 
+  }
 }

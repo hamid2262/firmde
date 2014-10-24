@@ -16,12 +16,13 @@ ActiveRecord::Schema.define(version: 20141022073951) do
   create_table "pages", force: true do |t|
     t.string   "title"
     t.text     "body"
+    t.integer  "parent_id"
+    t.integer  "order"
+    t.string   "slug"
     t.string   "photo_file_name"
     t.string   "photo_content_type"
     t.integer  "photo_file_size"
     t.datetime "photo_updated_at"
-    t.integer  "parent_id"
-    t.string   "slug"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
