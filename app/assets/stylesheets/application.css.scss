@@ -15,6 +15,12 @@
  *= require my_theme/frontend/pages/css/style-shop.css
 
  * require my_theme
- *= require_tree .
+ *= require header
+ *= require footer
+ *= require home
+ *= require navbar
+ *= require pages
  *= require_self
  */
+
+

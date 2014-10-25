@@ -4,7 +4,7 @@
   }  do |f| %>
   <%=  f.error_notification %>
   <%= f.input :title, placeholder: 'Title' %>
-  <%= f.input :body, placeholder: 'Body' %>
+  <%= f.input :body, placeholder: 'Body', input_html:{class: 'summernote'} %>
   <%= f.input :photo, as: :file %>
   <%= f.input :parent_id %>
   <%= f.input :slug %>

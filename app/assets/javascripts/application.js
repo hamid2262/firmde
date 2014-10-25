@@ -1,6 +1,6 @@
 //= require jquery
+//= require jquery.turbolinks
 //= require jquery_ujs
-// require turbolinks
 //= require my_theme/global/plugins/jquery-migrate.min.js
 //= require bootstrap-sprockets
 
@@ -15,6 +15,7 @@
 //= require my_theme/frontend/layout/scripts/layout.js
 
 //= require_tree .
+//= require turbolinks
 
 $(function() {
   // Layout.init();    
@@ -32,10 +33,3 @@ $(function() {
     //Layout.initNavScrolling(); 
 
 });
-
-// require my_theme/global/plugins/jquery-slimscroll/jquery.slimscroll.min.js
-// require my_theme/global/plugins/zoom/jquery.zoom.min.js
-// require my_theme/global/plugins/bootstrap-touchspin/bootstrap.touchspin.js
-// require my_theme/global/plugins/slider-layer-slider/js/greensock.js
-// require my_theme/global/plugins/slider-layer-slider/js/layerslider.transitions.js
-// require my_theme/global/plugins/slider-layer-slider/js/layerslider.kreaturamedia.jquery.js

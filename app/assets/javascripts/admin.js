@@ -1,9 +1,15 @@
 //= require jquery
+//= require jquery.turbolinks
 //= require jquery_ujs
-// require turbolinks
 //= require bootstrap-sprockets
-
-// require_tree .
+//= require codemirror
+//= require codemirror/modes/ruby
+//= require codemirror/modes/shell
+//= require codemirror/modes/htmlmixed
+//= require codemirror/modes/css
+//= require summernote
+//= require pages
+//= require turbolinks
 
 $(function() {
 
