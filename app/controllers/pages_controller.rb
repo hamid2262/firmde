@@ -2,7 +2,6 @@ class PagesController < ApplicationController
   layout "admin_layout", except: [:show]
   before_action :set_page, only: [:show, :edit, :update, :destroy]
 
-
   # GET /pages
   # GET /pages.json
   def index
@@ -12,6 +11,7 @@ class PagesController < ApplicationController
   # GET /pages/1
   # GET /pages/1.json
   def show
+    redirect_to root_path if @page == Page.root
   end
 
   # GET /pages/new
@@ -26,7 +26,8 @@ class PagesController < ApplicationController
   # POST /pages
   # POST /pages.json
   def create
-    @page = Page.new(page_params)
+    parent = Page.find page_params[:parent_id]
+    @page  = parent.children.build(page_params)
     respond_to do |format|
       if @page.save
         format.html { redirect_to @page, notice: 'Page was successfully created.' }
@@ -70,6 +71,6 @@ class PagesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def page_params
-      params.require(:page).permit(:title, :body, :photo, :parent_id, :slug)
+      params.require(:page).permit(:title, :body, :photo, :parent_id, :order, :slug)
     end
 end

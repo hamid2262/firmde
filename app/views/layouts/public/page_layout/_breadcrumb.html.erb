@@ -1,5 +1,8 @@
-      <ul class="breadcrumb">
-          <li><a href="index.html">Home</a></li>
-          <li><a href="">Lösungen</a></li>
-          <li class="active">OPC® One Point Cash® System</li>
-      </ul>
+<% pages = @page.self_and_ancestors.reverse %>
+<ul class="breadcrumb">
+  <% pages.each do |page| %>
+    <li class=<%= "active" if pages.last == page %>>
+      <%= link_to page.title, page_path("#{page.id}-#{page.title}") %>
+     </li>
+  <% end %>
+</ul>

@@ -1,11 +1,10 @@
-<li class="list-group-item clearfix <%= "active" if @page.ancestors.include?(child) %>">
+<li class="list-group-item clearfix <%= "active" if @page.self_and_ancestors.include?(child) %>">
   <%= link_to  child do %>
     <i class="fa fa-angle-right"></i>
     <%= "#{child.title}-#{child.id}" %>
   <% end %>
 </li>
-
-<% if @page.ancestors.include?(child) %>
+<% if @page.self_and_ancestors.include?(child) %>
   <ul>
     <% child.children.each do |child_2| %>
       <%= render 'layouts/public/page_layout/left_sidebar/print_children', child: child_2 %>

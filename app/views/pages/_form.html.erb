@@ -6,8 +6,10 @@
   <%= f.input :title, placeholder: 'Title' %>
   <%= f.input :body, placeholder: 'Body', input_html:{class: 'summernote'} %>
   <%= f.input :photo, as: :file %>
-  <%= f.input :parent_id %>
+  <%= f.input :parent_id, collection: Page.page_tree %>
+  <%= f.input :order, collection: -50..50 %>
   <%= f.input :slug %>
   <%= f.button :submit %>
 <% end %>
+
 
