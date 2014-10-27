@@ -1,9 +1,12 @@
 
 @import "bootstrap_and_overrides";
 @import "font-awesome";
+
+// Begin Summernote
 @import "summernote";
 @import "codemirror";
 @import "codemirror/themes/solarized";
+// End Summernote
 
 
  // *= require_tree ./admin

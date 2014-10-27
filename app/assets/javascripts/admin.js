@@ -8,6 +8,8 @@
 //= require codemirror/modes/htmlmixed
 //= require codemirror/modes/css
 //= require summernote
+//= require my_summernote
+
 //= require pages
 //= require turbolinks
 

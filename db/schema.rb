@@ -11,7 +11,18 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141022073951) do
+ActiveRecord::Schema.define(version: 20141027124910) do
+
+  create_table "blocks", force: true do |t|
+    t.string   "title"
+    t.text     "body"
+    t.string   "css_id"
+    t.string   "css_classes"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "blocks", ["title"], name: "index_blocks_on_title"
 
   create_table "pages", force: true do |t|
     t.string   "title"
