@@ -19,6 +19,12 @@ height: 29px;
     h2 {
     font-size: 18px;
     }
+    [class^="icon-"]:before, [class*=" icon-"]:before, [class^="icon-"]:after, [class*=" icon-"]:after {
+      font-family: Fontsaddict;
+      font-size: 41px;
+      font-style: normal;
+      margin-left: 20px;
+    }
   }
 
   .owl-controls {
@@ -26,3 +32,5 @@ height: 29px;
     left: 53.8% !important;
   }
 }
+
+
