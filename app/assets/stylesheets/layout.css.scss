@@ -1,0 +1,10 @@
+.overlay {
+  display: none;
+  z-index: 98;
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: -1900px;
+  width: 100%;
+  background: rgba(0,0,0,0.5);
+}

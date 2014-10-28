@@ -16,11 +16,12 @@
 
  * require my_theme
  *= require Fontsaddict
- *= require header
+ *= require header 
  *= require footer
  *= require home
  *= require navbar
  *= require breadcrumb
+ *= require layout
  *= require pages
  *= require blocks
  *= require_self

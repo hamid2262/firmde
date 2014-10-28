@@ -7,7 +7,7 @@
 </li>
 <% if @page.self_and_ancestors.include?(child) %>
   <ul>
-    <% child.children.each do |child_2| %>
+    <% child.children.order(:order).each do |child_2| %>
       <%= render 'layouts/public/page_layout/left_sidebar/print_children', child: child_2 %>
     <% end %>
   </ul>
