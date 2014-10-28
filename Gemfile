@@ -28,7 +28,8 @@ gem 'acts_as_tree', '~> 2.1.0'
 gem 'unicorn'
 
 # Use Capistrano for deployment
-gem 'capistrano-rails', group: :development
+# gem 'capistrano-rails', group: :development
+
 
 # Use debugger
 # gem 'debugger', group: [:development, :test]
@@ -47,6 +48,7 @@ group :development do
   gem 'letter_opener'
   # gem 'bullet'
   gem 'spring'
+  gem 'capistrano', "~> 2.15.5"
 end
 
 gem 'rails_12factor', group: :production
