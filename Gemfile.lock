@@ -78,6 +78,9 @@ GEM
       http_parser.rb (~> 0.6.0)
     erubis (2.7.0)
     eventmachine (1.0.3)
+    exception_notification (4.0.1)
+      actionmailer (>= 3.0.4)
+      activesupport (>= 3.0.4)
     execjs (2.2.2)
     ffi (1.9.6)
     font-awesome-rails (4.2.0.0)
@@ -163,11 +166,6 @@ GEM
       bundler (>= 1.3.0, < 2.0)
       railties (= 4.1.5)
       sprockets-rails (~> 2.0)
-    rails_12factor (0.0.2)
-      rails_serve_static_assets
-      rails_stdout_logging
-    rails_serve_static_assets (0.0.2)
-    rails_stdout_logging (0.0.3)
     railties (4.1.5)
       actionpack (= 4.1.5)
       activesupport (= 4.1.5)
@@ -238,6 +236,7 @@ DEPENDENCIES
   capistrano (~> 2.15.5)
   codemirror-rails
   coffee-rails (~> 4.0.0)
+  exception_notification
   font-awesome-rails (~> 4.2.0.0)
   guard-livereload
   jbuilder (~> 2.0)
@@ -248,7 +247,6 @@ DEPENDENCIES
   paperclip (~> 4.2)
   pg
   rails (= 4.1.5)
-  rails_12factor
   sass-rails (~> 4.0.3)
   sdoc (~> 0.4.0)
   simple_form (~> 3.1.0.rc1)!

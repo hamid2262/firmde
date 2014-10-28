@@ -13,6 +13,7 @@ gem 'sdoc', '~> 0.4.0',          group: :doc
 gem 'summernote-rails'
 gem 'codemirror-rails'
 gem 'jquery-turbolinks'
+gem 'exception_notification'
 
 gem 'bootstrap-sass'
 gem 'font-awesome-rails', '~> 4.2.0.0'
@@ -39,15 +40,13 @@ group :development, :test do
   gem 'guard-livereload'
 end
 
+gem 'letter_opener'
 group :development do
   # gem 'rack-mini-profiler'
   gem 'better_errors'
   gem 'binding_of_caller'
   gem 'meta_request'
-  gem 'letter_opener'
   # gem 'bullet'
   gem 'spring'
   gem 'capistrano', "~> 2.15.5"
 end
-
-gem 'rails_12factor', group: :production
