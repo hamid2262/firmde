@@ -11,8 +11,12 @@
           <div class="col-md-6 col-sm-6">
             <ul class="list-inline pull-right">
               <li>
-                <%= link_to t(".Anmelden"), "#", class: "menu", data: {toggle: "modal", target: "#log-in-modal"} %>
-                <%= render 'shared/sign_in_modal' %>
+                <% if user_signed_in? %>
+                  <%= link_to "Logout", destroy_user_session_path, method: :delete, class: "menu" %>
+                <% else %>
+                  <%= link_to t(".Anmelden"), "#", class: "menu", data: {toggle: "modal", target: "#log-in-modal"} %>
+                  <%= render 'shared/sign_in_modal' %>                                    
+                <% end %>
               </li>
               <li><a href="#" class="menu">Sitemap</a></li>
               <li><a href="#" class="menu">Nutzungsbedingungen</a></li>

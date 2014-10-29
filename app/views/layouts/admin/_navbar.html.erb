@@ -13,23 +13,22 @@
 
     <a href="javascript:;" class="menu-toggler responsive-toggler" data-toggle="collapse" data-target=".navbar-collapse">
     </a>
-    <!-- END RESPONSIVE MENU TOGGLER -->
-    <!-- BEGIN TOP NAVIGATION MENU -->
     <div class="top-menu">
       <ul class="nav navbar-nav pull-right">
-        <!-- END USER LOGIN DROPDOWN -->
-        <!-- BEGIN QUICK SIDEBAR TOGGLER -->
         <li class="dropdown dropdown-quick-sidebar-toggler">
-          <a href="javascript:;" class="dropdown-toggle">
-          <i class="fa fa-sign-out"></i>
-          </a>
+          <%= link_to root_path, class: "dropdown-toggle", title: "View Front End" do %>
+            <i class="fa fa-eye"></i>
+          <% end %>
         </li>
-        <!-- END QUICK SIDEBAR TOGGLER -->
+
+        <li class="dropdown dropdown-quick-sidebar-toggler">
+          <%= link_to destroy_user_session_path, method: :delete, class: "dropdown-toggle", title: "Logout" do %>
+            <i class="fa fa-sign-out"></i>
+          <% end %>
+        </li>
       </ul>
     </div>
-    <!-- END TOP NAVIGATION MENU -->
   </div>
-  <!-- END HEADER INNER -->
 </div>
 
 <div class="clearfix"></div>

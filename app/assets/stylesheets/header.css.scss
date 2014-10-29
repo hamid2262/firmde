@@ -5,3 +5,14 @@
     height: 66px;
   }
 }
+
+.backend_link_bar{
+  background: rgb(0, 55, 92);
+   a {
+    color: #FFFFFF;
+    font-weight: bold;
+    &:hover {
+      color: #ddd;
+    }
+  }
+}

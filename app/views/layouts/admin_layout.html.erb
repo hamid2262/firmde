@@ -4,8 +4,12 @@
 <div class="page-container">
   <%= render 'layouts/admin/sidebar' %>
 
-  <%= flash_creator flash %>
-  <%= yield %>
+  <div class="page-content-wrapper">
+    <div class="page-content">
+      <%= flash_creator flash %>
+      <%= yield %>
+    </div>
+  </div>    
 </div>
 
 <%= render 'layouts/admin/footer' %>

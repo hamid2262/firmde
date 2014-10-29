@@ -6,17 +6,16 @@
         <div class="panel-heading">Bitte geben Username und Password</div>
         <div class="panel-body">
           <%#= render 'sessions/form' %>
-          <%#= simple_form_for(Benutzer.new, url: sessions_sign_in_action_path , 
+          <%= simple_form_for(User.new, url: "/users/sign_in" , 
               defaults: { 
                 input_html: { class: 'form-control' }, 
                 wrapper_html: { class: 'form-group' }
               } 
           ) do |f| %>
-            <%#= f.input :NAME, label: "Benutzer Name", placeholder: "Username" %>
-            <%#= f.input :PASSWD, label: "Kennwort", as: :password, placeholder: "Password" %>
-            <%#= f.button :submit, "Login", class: "btn btn-primary btn-block" %>
-          <%# end %>
-
+            <%= f.input :email, label: "Benutzer Name", placeholder: "Username" %>
+            <%= f.input :password, label: "Kennwort", as: :password, placeholder: "Password" %>
+            <%= f.button :submit, "Login", class: "btn btn-primary btn-block" %>
+          <% end %>
         </div>
       </div>
     </div>

@@ -1,16 +1,17 @@
 module ApplicationHelper
   def flash_creator flash
-    message= "";
+    message= ""
+    klass = ""
     flash.each do |name, msg|   
       case name
         when :notice    
-          message += "<div class=\"alert alert-success\">#{msg}</div>"  
+          message += flash_creator_tag_maker "success", msg
         when :warning    
-          message += "<div class=\"alert alert-warning\">#{msg}</div>"  
+          message += flash_creator_tag_maker "warning", msg
         when :error, :alert
-          message += "<div class=\"alert alert-danger\">#{msg}</div>"
+          message += flash_creator_tag_maker "danger", msg
         else
-          message += "<div class=\"alert alert-info\">#{msg}</div>"     
+          message += flash_creator_tag_maker "info", msg
       end
     end 
     message.html_safe
@@ -28,4 +29,10 @@ module ApplicationHelper
       "homepage_layout"
     end
   end
+
+  private
+    def flash_creator_tag_maker klass, message
+      "<div class=\"alert alert-#{klass}\"><button type=\"button\" class=\"pull-right\" data-dismiss=\"alert\"><span aria-hidden=\"true\">&times;</span><span class=\"sr-only\">Close</span></button>#{message}</div>"  
+    end
+
 end

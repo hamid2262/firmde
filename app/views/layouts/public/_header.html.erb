@@ -15,7 +15,9 @@
     </div>
   </div>
 </nav> -->
- 
+<% if user_signed_in? %>
+  <%= render 'layouts/public/header/backend_link_bar' %>
+<% end %>
 <%= render 'layouts/public/header/pre_header' %>
 
 <div class="header">
