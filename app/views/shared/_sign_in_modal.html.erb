@@ -1,0 +1,24 @@
+<div id="log-in-modal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-sm">
+    <div class="modal-content">
+
+      <div class="panel panel-primary">
+        <div class="panel-heading">Bitte geben Username und Password</div>
+        <div class="panel-body">
+          <%#= render 'sessions/form' %>
+          <%#= simple_form_for(Benutzer.new, url: sessions_sign_in_action_path , 
+              defaults: { 
+                input_html: { class: 'form-control' }, 
+                wrapper_html: { class: 'form-group' }
+              } 
+          ) do |f| %>
+            <%#= f.input :NAME, label: "Benutzer Name", placeholder: "Username" %>
+            <%#= f.input :PASSWD, label: "Kennwort", as: :password, placeholder: "Password" %>
+            <%#= f.button :submit, "Login", class: "btn btn-primary btn-block" %>
+          <%# end %>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
