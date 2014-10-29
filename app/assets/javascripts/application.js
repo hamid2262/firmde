@@ -14,7 +14,8 @@
 //= require my_theme/frontend/pages/scripts/layerslider-init.js
 //= require my_theme/frontend/layout/scripts/layout.js
 
-//= require_tree .
+// require_tree .
+
 //= require turbolinks
 
 $(function() {

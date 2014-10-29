@@ -1,8 +1,9 @@
 Rails.application.routes.draw do
-  get 'home/index'
-
   resources :blocks
   resources :pages
+  
+  get "admin", to:'backends#index', as: "admin"
+  get 'home/index'
 
   root 'home#index'
 end

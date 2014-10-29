@@ -35,11 +35,11 @@ Rails.application.configure do
   # Raises error for missing translations
   # config.action_view.raise_on_missing_translations = true
 
-  config.middleware.use ExceptionNotification::Rack,
-    :email => {
-      # :email_prefix => "[Whatever] ",
-      :sender_address => %{"اتویابی notifier" <noreply@hamsafaryab.com>},
-      :exception_recipients => %w{hamsafaryab@gmail.com}
-    }
-  config.action_mailer.delivery_method = :letter_opener    
+  # config.middleware.use ExceptionNotification::Rack,
+  #   :email => {
+  #     # :email_prefix => "[Whatever] ",
+  #     :sender_address => %{"اتویابی notifier" <noreply@hamsafaryab.com>},
+  #     :exception_recipients => %w{hamsafaryab@gmail.com}
+  #   }
+  # config.action_mailer.delivery_method = :letter_opener    
 end
