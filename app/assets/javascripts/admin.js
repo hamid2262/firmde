@@ -1,6 +1,6 @@
 //= require jquery
 //= require my_theme/global/plugins/jquery-migrate.min.js
-//= require jquery.turbolinks
+// require jquery.turbolinks
 //= require jquery_ujs
 //= require bootstrap-sprockets
 //= require codemirror
@@ -15,7 +15,7 @@
 //= require my_theme/global/scripts/metronic.js
 //= require my_theme/admin/layout/scripts/layout.js
 //= require pages
-//= require turbolinks
+// require turbolinks
 
 $(function() {
    Metronic.init(); // init metronic core componets

@@ -59,6 +59,20 @@
             </li>
           </ul>
         </li>
+        <li>
+          <a href="javascript:;">
+          <i class="fa fa-twitch"></i>
+          <span class="title">Blocks</span>
+          <span class="arrow "></span>
+          </a>
+          <ul class="sub-menu">
+            <% Block.all.each do |block| %>
+              <li>
+                <%= link_to block.title, block %>
+              </li>              
+            <% end %>
+          </ul>
+        </li>
 
         <li>
           <a href="javascript:;">

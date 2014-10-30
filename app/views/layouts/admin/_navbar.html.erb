@@ -3,9 +3,9 @@
   <div class="page-header-inner">
     <!-- BEGIN LOGO -->
     <div class="page-logo">
-      <a href="index.html">
+      <%= link_to admin_path do %>
         <%= image_tag "OPC_Logo_small.png", class: "logo-default" %>
-      </a>
+      <% end %>
       <div class="menu-toggler sidebar-toggler hide">
         <!-- DOC: Remove the above "hide" to enable the sidebar toggler button on header -->
       </div>
