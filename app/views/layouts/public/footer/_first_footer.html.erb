@@ -3,7 +3,8 @@
     <div class="row">
       <!-- BEGIN BOTTOM ABOUT BLOCK -->
       <div class="col-md-4 col-sm-6 pre-footer-col">
-      <%= render 'blocks/show', block: @footer_left %>
+      <% title = "footer-left-ueber-uns" %>
+      <%= render 'blocks/show', block: Block.find_by(title: title), title: title %>
 
 <!-- 
         <div class="photo-stream">
@@ -32,15 +33,8 @@
 
       <!-- BEGIN BOTTOM CONTACTS -->
       <div class="col-md-4 col-sm-6 pre-footer-col">
-        <h2>Kontakt</h2>
-        <address class="margin-bottom-40">
-          35, Lorem Lis Street, Park Ave<br>
-          California, US<br>
-          Phone: 300 323 3456<br>
-          Fax: 300 323 1456<br>
-          Email: <a href="mailto:info@metronic.com">info@metronic.com</a><br>
-          Skype: <a href="skype:metronic">metronic</a>
-        </address>
+        <% title = "footer-kontakt" %>
+        <%= render 'blocks/show', block: Block.find_by(title: title), title: title %>
       </div>
       <!-- END BOTTOM CONTACTS -->
 

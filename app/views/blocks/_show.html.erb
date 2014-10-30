@@ -1,4 +1,12 @@
-<div id="<%= block.css_id %>" class="<%= block.css_classes %>">
-  <%= raw block.body %>
-  <%= link_to 'Edit', edit_block_path(block) %>
-</div>
+<% if block %>
+  <span id="<%= block.css_id %>" class="<%= block.css_classes %>">
+    <%= raw block.body %>
+    <% if can? :edit, block %>
+      <%= link_to 'Edit', edit_block_path(block) %>    
+    <% end %>
+  </span>
+<% else %>
+  <% if can? :create, block %>
+    <%= link_to "create block", new_block_path(title: title) %>
+  <% end %>
+<% end %>

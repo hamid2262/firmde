@@ -3,8 +3,8 @@ SimpleForm.setup do |config|
   config.wrappers :bootstrap, tag: 'div', class: 'control-group', error_class: 'has-error' do |b|
     b.use :html5
     b.use :placeholder
-    b.use :label
-    b.wrapper tag: 'div', class: 'controls' do |ba|
+    b.use :label, class: 'control-label'
+    b.wrapper tag: 'div', class: 'form-group' do |ba|
       ba.use :input
       ba.use :error, wrap_with: { tag: 'span', class: 'help-inline' }
       ba.use :hint,  wrap_with: { tag: 'p', class: 'help-block' }

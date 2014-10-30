@@ -68,7 +68,9 @@
           <ul class="sub-menu">
             <% Block.all.each do |block| %>
               <li>
-                <%= link_to block.title, block %>
+                <%= link_to block do %>
+                  <%= raw  block.title %>
+                <% end %>
               </li>              
             <% end %>
           </ul>

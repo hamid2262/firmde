@@ -1,12 +1,31 @@
-<%= simple_form_for @block, wrapper: :inline_3_9_bootstrap, html: {class: 'form-horizontal' }, 
+<%= simple_form_for @block, wrapper: :bootstrap, html: {class: '' }, 
   defaults: {
     input_html: { class: 'form-control' }
   }  do |f| %>
   <%= f.error_notification %>
 
-  <%= f.input :title %>
-  <%= f.input :body, input_html:{class: 'summernote'} %>
+<% if params[:action] == "new" %>
+  <% if params[:title].nil? %>
+    <%= f.input :title %>
+  <% else %>
+    <%= hidden_field_tag :title, params[:title] %>
+  <% end %>
+<% end %>
+
+  <%= f.input :body, label: false, input_html:{class: 'summernote'} %>
   <%= f.input :css_classes %>
   <%= f.input :css_id %>
-  <%= f.button :submit %>
+
+  <div class="row">
+    <div class="col-xs-2">
+      <%= link_to  blocks_path, class: "btn btn-default btn-block" do %>
+        <i class=" fa fa-arrow-left"></i>
+        Back
+      <% end %>
+    </div>
+    <div class="col-xs-2">
+      <%= f.button :submit, class: "btn btn-success btn-block"  %>
+    </div>
+  </div>
+  
 <% end %>

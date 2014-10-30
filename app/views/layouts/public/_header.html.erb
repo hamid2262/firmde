@@ -15,7 +15,7 @@
     </div>
   </div>
 </nav> -->
-<% if user_signed_in? %>
+<% if current_user && current_user.has_access? %>
   <%= render 'layouts/public/header/backend_link_bar' %>
 <% end %>
 <%= render 'layouts/public/header/pre_header' %>

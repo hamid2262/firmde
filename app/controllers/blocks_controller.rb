@@ -1,6 +1,7 @@
 class BlocksController < ApplicationController
   layout "admin_layout"
   before_action :set_block, only: [:show, :edit, :update, :destroy]
+  authorize_resource
 
   # GET /blocks
   # GET /blocks.json
@@ -16,6 +17,9 @@ class BlocksController < ApplicationController
   # GET /blocks/new
   def new
     @block = Block.new
+    if params[:title].present?
+      @block.title = params[:title]
+    end
   end
 
   # GET /blocks/1/edit
@@ -26,7 +30,7 @@ class BlocksController < ApplicationController
   # POST /blocks.json
   def create
     @block = Block.new(block_params)
-
+    @block.title = params[:title] if params[:title].present?
     respond_to do |format|
       if @block.save
         format.html { redirect_to @block, notice: 'Block was successfully created.' }

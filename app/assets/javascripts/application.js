@@ -1,5 +1,4 @@
 //= require jquery
-//= require jquery.turbolinks
 //= require jquery_ujs
 //= require my_theme/global/plugins/jquery-migrate.min.js
 //= require bootstrap-sprockets
@@ -15,8 +14,6 @@
 //= require my_theme/frontend/layout/scripts/layout.js
 
 //= require public_layout
-
-//= require turbolinks
 
 $(function() {
   // Layout.init();    
