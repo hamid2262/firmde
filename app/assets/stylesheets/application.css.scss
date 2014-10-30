@@ -2,19 +2,19 @@
  *= require bootstrap_and_overrides
  *= require font-awesome
 
- * require my_theme/global/plugins/fancybox/source/jquery.fancybox.css
- * require my_theme/global/plugins/carousel-owl-carousel/owl-carousel/owl.carousel.css
- * require my_theme/global/plugins/slider-revolution-slider/rs-plugin/css/settings.css
+ *= require my_theme/global/plugins/fancybox/source/jquery.fancybox.css
+ *= require my_theme/global/plugins/carousel-owl-carousel/owl-carousel/owl.carousel.css
+ *= require my_theme/global/plugins/slider-revolution-slider/rs-plugin/css/settings.css
 
- * require my_theme/frontend/layout/css/themes/red
- * require my_theme/global/css/components
- * require my_theme/frontend/layout/css/style
- * require my_theme/frontend/layout/css/style-responsive
- * require my_theme/frontend/layout/css/custom.css
- * require my_theme/frontend/pages/css/style-revolution-slider.css
- * require my_theme/frontend/pages/css/style-shop.css
+ *= require my_theme/frontend/layout/css/themes/red
+ *= require my_theme/global/css/components
+ *= require my_theme/frontend/layout/css/style
+ *= require my_theme/frontend/layout/css/style-responsive
+ *= require my_theme/frontend/layout/css/custom.css
+ *= require my_theme/frontend/pages/css/style-revolution-slider.css
+ *= require my_theme/frontend/pages/css/style-shop.css
 
- *= require my_theme
+ * require my_theme
  *= require Fontsaddict
  *= require header 
  *= require footer
