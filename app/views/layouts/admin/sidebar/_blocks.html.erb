@@ -1,0 +1,17 @@
+<li class="<%= "active open" if con_act?(params[:controller],["blocks"] , params[:action], ["show", "edit", "index"]) %>">
+  <a href="javascript:;">
+  <i class="fa fa-twitch"></i>
+  <span class="title">Blocks</span>
+  <span class="<%= "selected" if con_act?(params[:controller],["blocks"] , params[:action], ["show", "edit", "index"]) %>"></span>
+  <span class="arrow <%= "open" if con_act?(params[:controller],["blocks"] , params[:action], ["show", "edit", "index"]) %>"></span>
+  </a>
+  <ul class="sub-menu">
+    <% Block.all.each do |block| %>
+      <li class=<%= "active" if block == @block %>>
+        <%= link_to block do %>
+          <%= raw  block.title %>
+        <% end %>
+      </li>              
+    <% end %>
+  </ul>
+</li>

@@ -3,6 +3,7 @@
 // require jquery.turbolinks
 //= require jquery_ujs
 //= require bootstrap-sprockets
+//= require my_theme/global/plugins/bootstrap-hover-dropdown/bootstrap-hover-dropdown
 //= require codemirror
 //= require codemirror/modes/ruby
 //= require codemirror/modes/shell

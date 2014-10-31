@@ -30,6 +30,14 @@ module ApplicationHelper
     end
   end
 
+  def con_act?(kont, arr1, act, arr2)
+    (arr1.include?(kont) && arr2.include?(act)) ? true : false
+  end
+
+  def act?(act, arr)
+    (arr.include?(act)) ? true : false
+  end
+
   private
     def flash_creator_tag_maker klass, message
       "<div class=\"alert alert-#{klass}\"><button type=\"button\" class=\"pull-right\" data-dismiss=\"alert\"><span aria-hidden=\"true\">&times;</span><span class=\"sr-only\">Close</span></button>#{message}</div>"  

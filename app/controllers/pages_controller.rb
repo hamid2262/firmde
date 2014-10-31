@@ -1,6 +1,7 @@
 class PagesController < ApplicationController
   layout "admin_layout", except: [:show]
   before_action :set_page, only: [:show, :edit, :update, :destroy]
+  authorize_resource
 
   # GET /pages
   # GET /pages.json

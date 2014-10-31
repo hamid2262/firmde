@@ -11,7 +11,8 @@ class Ability
       ####  Guest users
       can [:new, :create], User
     end
-      
+    
+    can [:show], Page
     can :role, :index, user.has_access?
   end
 end

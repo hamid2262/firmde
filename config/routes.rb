@@ -3,7 +3,10 @@ Rails.application.routes.draw do
   resources :blocks
   resources :pages
   
-  get "admin", to:'backends#index', as: "admin"
+  get "admin", to:'backends#dashboard', as: "admin"
+  get "admin/loesungen", to:'backends#loesungen', as: "admin_loesungen"
+  
+
   get 'home/index'
 
   root 'home#index'

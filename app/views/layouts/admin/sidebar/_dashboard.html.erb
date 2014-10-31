@@ -1,0 +1,25 @@
+<li class="start <%= "active open" if con_act?(params[:controller],["backends"] , params[:action], ["dashboard"]) %>">
+  <a href="javascript:;">
+  <i class="fa fa-home"></i>
+  <span class="title">Dashboard</span>
+  <span class="<%= "selected" if con_act?(params[:controller],["backends"] , params[:action], ["dashboard"]) %>"></span>
+  <span class="arrow <%= "open" if con_act?(params[:controller],["backends"] , params[:action], ["dashboard"]) %>"></span>
+  </a>
+  <ul class="sub-menu">
+    <li class="active">
+      <a href="#">
+      <i class="icon-bar-chart"></i>
+      Site name & Logo </a>
+    </li>
+    <li>
+      <a href="#">
+      <i class="icon-bulb"></i>
+      Slide Shows</a>
+    </li>
+    <li>
+      <a href="#">
+      <i class="icon-graph"></i>
+      Qoute</a>
+    </li>
+  </ul>
+</li>

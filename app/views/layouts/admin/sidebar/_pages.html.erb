@@ -1,0 +1,29 @@
+
+<li class="<%= "active open" if con_act?(params[:controller],["backends"] , params[:action], ["loesungen"]) %>">
+  <a href="javascript:;">
+  <i class="fa fa-archive"></i>
+  <span class="title">Pages</span>
+  <span class="<%= "selected" if con_act?(params[:controller],["backends"] , params[:action], ["loesungen"]) %>"></span>
+  <span class="arrow <%= "open" if con_act?(params[:controller],["backends"] , params[:action], ["loesungen"]) %>"></span>
+  </a>
+  <ul class="sub-menu">
+    <li class="<%= "active" if con_act?(params[:controller],["backends"] , params[:action], ["loesungen"]) %>">
+      <%= link_to "Loesungen", admin_loesungen_path %>
+    </li>
+    <li>
+      <a href="quick_sidebar_over_content.html">
+      Kartentechnologien</a>
+    </li>
+    <li>
+      <a href="quick_sidebar_over_content_transparent.html">
+      Services</a>
+    </li>
+    <li>
+      <a href="quick_sidebar_on_boxed_layout.html">
+      Kontakt</a>
+    </li>
+    <li>
+      <%= link_to "New Page", new_page_path %>
+    </li>
+  </ul>
+</li>

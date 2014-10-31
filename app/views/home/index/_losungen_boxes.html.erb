@@ -8,34 +8,40 @@
           <div class="col-xs-6 col-md-3">
             <div class="service-box-v1">
               <div><i class="fa fa-glass color-grey"></i></div>
-              <%= link_to page_path(1) do %>
+              <%= link_to (Page.find_by title: "Disco, Club & Events") do %>
                 <h2>Disco & Club</h2>
+                <h2>Events</h2>
               <% end %>
-              <a href=""><h2>Events</h2> </a>
             </div>
           </div>
 
           <div class="col-xs-6 col-md-3">
             <div class="service-box-v1">
               <div><i class="fa fa-slideshare color-grey"></i></div>
-              <a href=""><h2>Schulverpflegung</h2> </a>
-              <a href=""><h2>Kitas</h2> </a>
+              <%= link_to (Page.find_by title: "Schulverpflegung & Kitas") do %>
+                <h2>Schulverpflegung</h2>
+                <h2>Kitas</h2>
+              <% end %>
             </div>
           </div>
 
           <div class="col-xs-6 col-md-3">
             <div class="service-box-v1">
               <div><i class="fa fa-university color-grey"></i></div>
-              <a href=""><h2>Betriebsrestauration</h2> </a>
-              <a href=""><h2>Mensa</h2> </a>
+              <%= link_to (Page.find_by title: "Betriebsrestauration & Mensa") do %>
+                <h2>Betriebsrestauration</h2>
+                <h2>Mensa</h2>
+              <% end %>
             </div>
           </div>
 
           <div class="col-xs-6 col-md-3">
             <div class="service-box-v1">
               <div><i class="fa fa-medkit color-grey"></i></div>
-              <a href=""><h2>Kliniken</h2> </a>
-              <a href=""><h2>Reha</h2> </a>
+              <%= link_to (Page.find_by title: "Kliniken & Reha") do %>
+                <h2>Kliniken</h2>
+                <h2>Reha</h2>
+              <% end %>
             </div>
           </div>
 
@@ -44,30 +50,38 @@
           <div class="col-xs-6 col-md-3">
             <div class="service-box-v1">
               <div><i class="fa fa-cutlery color-grey"></i></div>
-              <a href=""><h2>Gastronomie</h2> </a>
-              <a href=""><h2>Restaurant</h2> </a>
+              <%= link_to (Page.find_by title: "Gastronomie & Restaurant") do %>
+                <h2>Gastronomie</h2>
+                <h2>Restaurant</h2>
+              <% end %>
             </div>
           </div>
           <div class="col-xs-6 col-md-3">
             <div class="service-box-v1">
               <div><i class="fa fa-bus color-grey"></i></div>
-              <a href=""><h2>Tourismus</h2> </a>
-              <a href=""><h2>Hotellerie</h2> </a>
+              <%= link_to (Page.find_by title: "Tourismus & Hotellerie") do %>
+                <h2>Tourismus</h2>
+                <h2>Hotellerie</h2>
+              <% end %>
             </div>
           </div>
           <div class="col-xs-6 col-md-3">
             <div class="service-box-v1">
 
               <div><i class="icon-bowling"></i></div>
-              <a href=""><h2>Freizeitcenter</h2> </a>
-              <a href=""><h2>Bowlingcenter</h2> </a>
+              <%= link_to (Page.find_by title: "Freizeitcenter & Bowlingcenter") do %>
+                <h2>Freizeitcenter</h2>
+                <h2>Bowlingcenter</h2>
+              <% end %>
             </div>
           </div>
           <div class="col-xs-6 col-md-3">
             <div class="service-box-v1">
               <div><i class="fa fa-futbol-o color-grey"></i></div>
-              <a href=""><h2>Stadien</h2> </a>
-              <a href=""><h2>Arenen</h2> </a>
+              <%= link_to (Page.find_by title: "Stadien & Arenen") do %>
+                <h2>Stadien</h2>
+                <h2>Arenen</h2>
+              <% end %>
             </div>
           </div>
 

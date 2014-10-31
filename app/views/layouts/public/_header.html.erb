@@ -22,9 +22,9 @@
 
 <div class="header">
   <div class="container">
-    <a class="site-logo" href="shop-index.html">
+    <%= link_to root_path, class: "site-logo" do %>
       <%= image_tag "OPC_Logo_120.gif" %>
-    </a>
+    <% end %>
     <%= render 'layouts/public/header/navbar' %>
     <%#= render 'megamenus/navbar' %>
   </div>

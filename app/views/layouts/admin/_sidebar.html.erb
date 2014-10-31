@@ -8,74 +8,10 @@
           </div>
           <!-- END SIDEBAR TOGGLER BUTTON -->
         </li>
-        <li class="start active open">
-          <a href="javascript:;">
-          <i class="fa fa-home"></i>
-          <span class="title">Dashboard</span>
-          <span class="selected"></span>
-          <span class="arrow open"></span>
-          </a>
-          <ul class="sub-menu">
-            <li class="active">
-              <a href="index.html">
-              <i class="icon-bar-chart"></i>
-              Site name & Logo </a>
-            </li>
-            <li>
-              <a href="index_2.html">
-              <i class="icon-bulb"></i>
-              Slide Shows</a>
-            </li>
-            <li>
-              <a href="index_3.html">
-              <i class="icon-graph"></i>
-              Qoute</a>
-            </li>
-          </ul>
-        </li>
 
-        <li>
-          <a href="javascript:;">
-          <i class="fa fa-archive"></i>
-          <span class="title">Pages</span>
-          <span class="arrow "></span>
-          </a>
-          <ul class="sub-menu">
-            <li>
-              <a href="quick_sidebar_push_content.html">
-              Loesungen</a>
-            </li>
-            <li>
-              <a href="quick_sidebar_over_content.html">
-              Kartentechnologien</a>
-            </li>
-            <li>
-              <a href="quick_sidebar_over_content_transparent.html">
-              Services</a>
-            </li>
-            <li>
-              <a href="quick_sidebar_on_boxed_layout.html">
-              Kontakt</a>
-            </li>
-          </ul>
-        </li>
-        <li>
-          <a href="javascript:;">
-          <i class="fa fa-twitch"></i>
-          <span class="title">Blocks</span>
-          <span class="arrow "></span>
-          </a>
-          <ul class="sub-menu">
-            <% Block.all.each do |block| %>
-              <li>
-                <%= link_to block do %>
-                  <%= raw  block.title %>
-                <% end %>
-              </li>              
-            <% end %>
-          </ul>
-        </li>
-
+        <%= render 'layouts/admin/sidebar/dashboard' %>
+        <%= render 'layouts/admin/sidebar/pages' %>
+        <%= render 'layouts/admin/sidebar/blocks' %>
         <li>
           <a href="javascript:;">
           <i class="fa fa-newspaper-o"></i>

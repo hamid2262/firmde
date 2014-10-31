@@ -33,3 +33,15 @@ Block.create(title: 'home-page-topbar-email',
       <i class="fa fa-envelope-o"></i>
       info@opc.de
     </a>')
+
+
+losungen = Page.create(title: "Lösungen", parent_id: 1)
+
+Page.create(title: "Disco, Club & Events", parent_id: losungen.id)
+Page.create(title: "Schulverpflegung & Kitas", parent_id: losungen.id)
+Page.create(title: "Betriebsrestauration & Mensa", parent_id: losungen.id)
+Page.create(title: "Kliniken & Reha", parent_id: losungen.id)
+Page.create(title: "Gastronomie & Restaurant", parent_id: losungen.id)
+Page.create(title: "Tourismus & Hotellerie", parent_id: losungen.id)
+Page.create(title: "Freizeitcenter & Bowlingcenter", parent_id: losungen.id)
+Page.create(title: "Stadien & Arenen", parent_id: losungen.id)

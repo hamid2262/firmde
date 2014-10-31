@@ -1,10 +1,8 @@
 <!-- BEGIN BLOCKQUOTE BLOCK -->   
 <div class="row quote-v1 margin-bottom-30">
   <div class="col-md-9">
-    <span>
-      <% title = "home-page-qoute" %>
-      <%= render 'blocks/show', block: Block.find_by(title: title), title: title %>    
-    </span>
+    <% title = "home-page-qoute" %>
+    <%= render 'blocks/show', block: Block.find_by(title: title), title: title %>    
   </div>
   <div class="col-md-3 text-right">
     <a class="btn-transparent" href=""><i class="fa fa-rocket margin-right-10"></i>Über OPC</a>
