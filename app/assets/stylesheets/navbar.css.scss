@@ -13,11 +13,24 @@
       }
     }
   }
-  #kartentechnologien{
-    .product-item{
-      a{
-        font-size: 14px;        
-      }      
-    }
+  #Loesungen{
+    .header-navigation-content{
+      .menu-list{
+        h4 {
+          font: bold 14px 'Open Sans', Arial, sans-serif !important;
+        }
+        li a:hover{
+          background: #e6400c;
+          color: #fff;
+        }      
+      }
+      .brand{
+        display: inline-block;
+        width: 12.225%;
+        a{
+          padding: 1px !important;
+        }
+      }
+    } 
   }
 }
