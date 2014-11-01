@@ -4,7 +4,7 @@ class KundensController < ApplicationController
   authorize_resource
 
   def index
-    @kundens = Kunden.all
+    @kundens = Kunden.order(:name)
   end
 
   def show

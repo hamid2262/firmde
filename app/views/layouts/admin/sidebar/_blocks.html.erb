@@ -6,12 +6,8 @@
   <span class="arrow <%= "open" if con_act?(params[:controller],["blocks"] , params[:action], ["show", "edit", "index"]) %>"></span>
   </a>
   <ul class="sub-menu">
-    <% Block.all.each do |block| %>
-      <li class=<%= "active" if block == @block %>>
-        <%= link_to block do %>
-          <%= raw  block.title %>
-        <% end %>
-      </li>              
-    <% end %>
+    <li class=<%= "active" if con_act?(params[:controller],["blocks"] , params[:action], ["index"])  %> >
+      <%= link_to "Manage Blocks", blocks_path %>
+    </li>  
   </ul>
 </li>

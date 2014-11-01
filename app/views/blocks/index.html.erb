@@ -1,6 +1,6 @@
 <h1>Listing blocks</h1>
 
-<table>
+<table  class="table table-striped">
   <thead>
     <tr>
       <th>Title</th>
@@ -15,12 +15,12 @@
     <% @blocks.each do |block| %>
       <tr>
         <td><%= block.title %></td>
-        <td><%= block.body %></td>
+        <td><%= raw block.body %></td>
         <td><%= block.css_classes %></td>
         <td><%= block.css_id %></td>
-        <td><%= link_to 'Show', block %></td>
-        <td><%= link_to 'Edit', edit_block_path(block) %></td>
-        <td><%= link_to 'Destroy', block, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Show', block,class: "btn btn-info"  %></td>
+        <td><%= link_to 'Edit', edit_block_path(block),class: "btn btn-success" %></td>
+        <td><%= link_to 'Destroy', block, method: :delete,class: "btn btn-danger", data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>

@@ -3,6 +3,7 @@ class CreateKundens < ActiveRecord::Migration
     create_table :kundens do |t|
       t.string :name
       t.string :url
+      t.integer :position
       t.attachment :photo
       t.attachment :photo_gray
 

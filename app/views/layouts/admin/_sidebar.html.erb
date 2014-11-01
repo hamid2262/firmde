@@ -12,58 +12,8 @@
         <%= render 'layouts/admin/sidebar/dashboard' %>
         <%= render 'layouts/admin/sidebar/pages' %>
         <%= render 'layouts/admin/sidebar/blocks' %>
-        <li>
-          <a href="javascript:;">
-          <i class="fa fa-newspaper-o"></i>
-          <span class="title">News</span>
-          <span class="arrow "></span>
-          </a>
-          <ul class="sub-menu">
-            <li>
-              <a href="email_newsletter.html">
-              Add News</a>
-            </li>
-            <li>
-              <a href="email_system.html">
-              Manage News</a>
-            </li>
-          </ul>
-        </li>
-        
-        <li>
-          <a href="javascript:;">
-          <i class="fa fa-envelope-o"></i>
-          <span class="title">Emails</span>
-          <span class="arrow "></span>
-          </a>
-          <ul class="sub-menu">
-            <li>
-              <a href="email_newsletter.html">
-              See email</a>
-            </li>
-            <li>
-              <a href="email_system.html">
-              Manage emails</a>
-            </li>
-          </ul>
-        </li>
-        <li class="last ">
-          <a href="javascript:;">
-          <i class="fa fa-users"></i>
-          <span class="title">Kunden</span>
-          <span class="arrow "></span>
-          </a>
-          <ul class="sub-menu">
-            <li>
-              <a href="maps_google.html">
-              Add kunde</a>
-            </li>
-            <li>
-              <a href="maps_vector.html">
-              Manage Kunden</a>
-            </li>
-          </ul>
-        </li>
+        <%= render 'layouts/admin/sidebar/kundens' %>
+        <%= render 'layouts/admin/sidebar/news' %>
       </ul>
       <!-- END SIDEBAR MENU -->
     </div>

@@ -1,0 +1,16 @@
+<li class="<%= "active open" if cont?(params[:controller],["kundens"]) %>">
+  <a href="javascript:;">
+  <i class="fa fa-users"></i>
+  <span class="title">Kunden</span>
+  <span class="<%= "selected" if con_act?(params[:controller],["kundens"] , params[:action], ["show", "edit", "index"]) %>"></span>
+  <span class="arrow <%= "open" if con_act?(params[:controller],["kundens"] , params[:action], ["show", "edit", "index"]) %>"></span>
+  </a>
+  <ul class="sub-menu">
+    <li class= <%=("active" if act?(params[:action],["new"]) ) %> >
+      <%= link_to "Add kunde", new_kunden_path %>
+    </li>
+    <li class= <%=("active" if act?(params[:action],["index"]) ) %> >
+      <%= link_to "Manage Kunden", kundens_path %>
+    </li>
+  </ul>
+</li>

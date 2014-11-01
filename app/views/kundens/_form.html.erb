@@ -11,7 +11,16 @@
     <%= f.input :photo_gray, as: :file  %>
   </div>
 
-  <div class="form-actions">
-    <%= f.button :submit %>
+  <div class="row">
+    <div class="col-xs-2">
+      <%= link_to  kundens_path, class: "btn btn-default btn-block" do %>
+        <i class=" fa fa-arrow-left"></i>
+        Back
+      <% end %>
+    </div>
+    <div class="col-xs-2">
+      <%= f.button :submit, class: "btn btn-success btn-block"  %>
+    </div>
   </div>
+  
 <% end %>
