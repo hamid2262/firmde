@@ -1,0 +1,2 @@
+module KundensHelper
+end

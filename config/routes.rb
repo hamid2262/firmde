@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :kundens
+
   devise_for :users
   resources :blocks
   resources :pages

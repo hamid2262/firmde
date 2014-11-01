@@ -1,0 +1,22 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @kunden.name %>
+</p>
+
+<p>
+  <strong>Url:</strong>
+  <%= @kunden.url %>
+</p>
+
+<p>
+  <%= image_tag @kunden.photo.url %>
+</p>
+
+<p>
+  <%= image_tag @kunden.photo_gray.url %>
+</p>
+
+<%= link_to 'Edit', edit_kunden_path(@kunden) %> |
+<%= link_to 'Back', kundens_path %>
