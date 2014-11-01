@@ -1,17 +1,17 @@
+/*
+  *= require font-awesome
+  *= require bootstrap_and_overrides
 
-@import "font-awesome";
-@import "bootstrap_and_overrides";
+  *= require summernote
+  *= require codemirror
+  *= require codemirror/themes/solarized
 
-// Begin Summernote
-@import "summernote";
-@import "codemirror";
-@import "codemirror/themes/solarized";
-// End Summernote
+  *= require my_theme/admin/pages/css/tasks
+  *= require my_theme/global/css/components
 
-@import "my_theme/admin/pages/css/tasks";
-@import "my_theme/global/css/components";
+  *= require my_theme/admin/layout/css/layout
+  *= require my_theme/admin/layout/css/themes/default
 
-@import "my_theme/admin/layout/css/layout";
-@import "my_theme/admin/layout/css/themes/default";
+  *= require admin/navbar
+*/
 
-@import "admin/navbar";

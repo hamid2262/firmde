@@ -1,0 +1,42 @@
+<h1>Users list</h1>
+
+<table  class="table table-striped">
+  <thead>
+    <tr>
+      <th>id</th>
+      <th>email</th>
+      <th>sign_in_count</th>
+      <th>last_sign_in_at</th>
+      <th>last_sign_in_ip</th>
+      <th>role</th>
+      <th colspan="2"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @users.each do |user| %>
+      <tr>
+        <td><%= user.id %></td>
+        <td><%= user.email %></td>
+        <td><%= user.sign_in_count %></td>
+        <td><%= user.last_sign_in_at %></td>
+        <td><%= user.last_sign_in_ip %></td>
+        <td><strong><%= user.role %></strong></td>
+        <td>
+          <% if current_user.is_admin? %>          
+            <% if user.role.nil? %>
+              <%= link_to 'Make Editor', user_change_role_path(user, role: "editor") %>
+            <% elsif user.role =="editor" %>
+              <%= link_to 'Make Admin', user_change_role_path(user, role: "admin") %>          
+            <% end %>
+          </td>
+          <td>
+            <% if user.role == "editor"  %>
+              <%= link_to 'remove role', user_change_role_path(user) %>
+            <% end %>
+          </td>
+        <% end %>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

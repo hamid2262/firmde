@@ -1,0 +1,13 @@
+<li class="<%= "active open" if con_act?(params[:controller],["users/registrations"] , params[:action], ["index"]) %>">
+  <a href="javascript:;">
+  <i class="fa fa-twitch"></i>
+  <span class="title">Editors</span>
+  <span class="<%= "selected" if con_act?(params[:controller],["users/registrations"] , params[:action], ["index"]) %>"></span>
+  <span class="arrow <%= "open" if con_act?(params[:controller],["users/registrations"] , params[:action], ["index"]) %>"></span>
+  </a>
+  <ul class="sub-menu">
+    <li class=<%= "active" if con_act?(params[:controller],["users/registrations"] , params[:action], ["index"])  %> >
+      <%= link_to "Manage Editors", users_path %>
+    </li>  
+  </ul>
+</li>

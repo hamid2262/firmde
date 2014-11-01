@@ -16,6 +16,12 @@
     <div class="top-menu">
       <ul class="nav navbar-nav pull-right">
         <li class="dropdown dropdown-quick-sidebar-toggler">
+          <%= link_to root_path, class: "dropdown-toggle" do %>
+            Hi, <%= current_user.email %>
+          <% end %>
+        </li>
+
+        <li class="dropdown dropdown-quick-sidebar-toggler">
           <%= link_to root_path, class: "dropdown-toggle", title: "View Front End" do %>
             <i class="fa fa-eye"></i>
           <% end %>

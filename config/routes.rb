@@ -1,7 +1,12 @@
 Rails.application.routes.draw do
   resources :kundens
 
+  devise_scope :user do
+    get "/users" => "users/registrations#index"
+    get "/user/:id/change_role" => "users/registrations#change_role", as: "user_change_role"
+  end
   devise_for :users
+
   resources :blocks
   resources :pages
   
