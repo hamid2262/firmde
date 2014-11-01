@@ -1,0 +1,17 @@
+<li>
+  <div class="task-title">
+    <% if child.depth>0 %>
+      <% for i in (4..child.depth) do  %>
+        --
+      <% end %>
+    <% end %>
+    <span class="task-title-sp">
+      <%= link_to child.title, child %>
+    </span>
+  </div>
+  <%= render 'backends/loesungen/tasks',child: child %>
+</li>
+
+<% child.children.each do |ch| %>
+  <%= render 'backends/loesungen/losungen_child_child', child: ch %>                
+<% end %>

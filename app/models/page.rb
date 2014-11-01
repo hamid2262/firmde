@@ -31,4 +31,14 @@ class Page < ActiveRecord::Base
     raise
   end
 
+  def depth
+    d = 0
+    page = self
+    while page.parent
+      page = page.parent
+      d +=1
+    end
+    d
+  end
+
 end

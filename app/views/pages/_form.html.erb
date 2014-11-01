@@ -6,8 +6,11 @@
   <%= f.input :title, placeholder: 'Title' %>
   <%= f.input :body, placeholder: 'Body', input_html:{class: 'summernote'} %>
   <%= f.input :photo, as: :file %>
-  <%= f.input :parent_id, collection: Page.page_tree %>
-  <%= f.input :order, collection: -50..50 %>
+
+  <fieldset <%= "disabled" if params[:parent_id].present? %>>
+    <%= f.input :parent_id, collection: Page.page_tree %>
+  </fieldset>
+  <%= f.input :order, collection: -50..50, selected: f.object.order || 0 %>
   <%= f.input :slug %>
   <%= f.button :submit %>
 <% end %>
