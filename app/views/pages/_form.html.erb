@@ -7,9 +7,23 @@
   <%= f.input :body, placeholder: 'Body', input_html:{class: 'summernote'} %>
   <%= f.input :photo, as: :file %>
 
-  <fieldset <%= "disabled" if params[:parent_id].present? %>>
-    <%= f.input :parent_id, collection: Page.page_tree %>
-  </fieldset>
+  <% if params[:parent_id].present? %>
+
+    <div class="control-group string required page_title">
+      <label class="string control-label control-label" for="page_title">
+        <abbr title="required">*</abbr> 
+        Parent Page
+      </label>
+      <div class="form-group">        
+        <strong class="form-control-static"><%= Page.find_by(id: params[:parent_id]).title %></strong>
+        <%= hidden_field_tag :parent_id, params[:parent_id] %>
+      </div>
+    </div>
+
+    <% else %>
+      <%= f.input :parent_id, collection: Page.page_tree %>
+    <% end %>
+
   <%= f.input :order, collection: -50..50, selected: f.object.order || 0 %>
   <%= f.input :slug %>
   <%= f.button :submit %>

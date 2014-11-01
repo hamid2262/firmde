@@ -29,10 +29,9 @@ class PagesController < ApplicationController
   # POST /pages.json
   def create
     @page  = Page.new(page_params)
+    @page.parent_id  = Page.find(params[:parent_id]).id if params[:parent_id].present?
     respond_to do |format|
       if @page.save
-        @page.parent_id  = Page.find(page_params[:parent_id]).id
-        @page.save
         format.html { redirect_to @page, notice: 'Page was successfully created.' }
         format.json { render :show, status: :created, location: @page }
       else
