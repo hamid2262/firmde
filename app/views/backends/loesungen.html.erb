@@ -7,10 +7,6 @@
             <i class="fa fa-check"></i><%= loesungen_child.title %>
           </div>
           <div class="tools">
-            <a href="#portlet-config" data-toggle="modal" class="config" data-original-title="" title="">
-            </a>
-            <a href="" class="reload" data-original-title="" title="">
-            </a>
             <a href="javascript:;" class="fullscreen" data-original-title="" title="">
             </a>
           </div>
@@ -29,7 +25,7 @@
           </div>
           <div class="task-footer">
             <div class="btn-arrow-link pull-right">
-            <%= link_to "New Page", new_page_path(parent_id: loesungen_child.id) %>
+              <%= link_to "New Page", new_page_path(parent_id: loesungen_child.id) %>
               <i class="icon-arrow-right"></i>
             </div>
           </div>

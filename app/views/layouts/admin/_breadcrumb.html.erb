@@ -1,0 +1,17 @@
+<div class="page-bar">
+  <ul class="page-breadcrumb">
+    <li>
+      <i class="fa fa-home"></i>
+      <%= link_to "Home", admin_path %>
+    </li>
+    <% if @breadcrumbs %>
+      <% @breadcrumbs.each do |breadcrumb| %>
+        <li>
+          <i class="fa fa-angle-right"></i>
+          <%= link_to breadcrumb[:name], breadcrumb[:link] %>
+        </li>
+      <% end %>
+    <% end %>
+
+  </ul>
+</div>

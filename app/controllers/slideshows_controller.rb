@@ -1,6 +1,8 @@
 class SlideshowsController < ApplicationController
   layout "admin_layout"
   before_action :set_slideshow, only: [:show, :edit, :update, :destroy]
+  before_action :set_breadcrumbs, only: [:show, :edit, :index, :new]
+
   authorize_resource
 
   def index
@@ -60,5 +62,10 @@ class SlideshowsController < ApplicationController
 
     def slideshow_params
       params.require(:slideshow).permit(:background, :transition, :slotamount, :masterspeed, :delay)
+    end
+
+    def set_breadcrumbs
+      @breadcrumbs = []
+      @breadcrumbs << {name: "Slideshow", link: slideshows_path }      
     end
 end

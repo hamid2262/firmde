@@ -2,6 +2,8 @@ class ElementsController < ApplicationController
   layout "admin_layout"
   before_action :set_element, only: [:show, :edit, :update, :destroy, :remove_photo]
   before_action :set_slideshow, only: [:show,:index, :new, :create, :edit, :update, :destroy]
+  
+  before_action :set_breadcrumbs, only: [:show, :edit, :index, :new]
   authorize_resource
 
   def index
@@ -69,5 +71,16 @@ class ElementsController < ApplicationController
 
     def element_params
       params.require(:element).permit(:tag, :klass, :body, :href, :x, :y, :speed, :start, :easing, :photo, :slideshow_id)
+    end
+
+    def set_breadcrumbs
+      @breadcrumbs = []
+      @breadcrumbs << {name: "Slideshow", link: slideshows_path }      
+      @breadcrumbs << {name: "Elements", link: slideshow_elements_path }      
+      set_action unless params[:action] == "index"
+    end
+    def set_action
+      @breadcrumbs << {name: params[:action], link: "#" }      
+      
     end
 end
