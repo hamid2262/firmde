@@ -1,0 +1,26 @@
+<!-- BEGIN SLIDER -->
+<div class="page-slider margin-bottom-5">
+  <div class="fullwidthbanner-container revolution-slider">
+    <div class="fullwidthabnner">
+      <ul id="revolutionul">
+        <!-- THE NEW SLIDE -->
+        <% Slideshow.all.each do |slideshow| %>
+          <li 
+            data-transition=<%= slideshow.transition %> 
+            data-slotamount=<%= slideshow.slotamount %> 
+            data-masterspeed=<%= slideshow.masterspeed %> 
+            data-delay=<%= slideshow.delay %> >
+            <%= image_tag slideshow.background %>
+            <% slideshow.elements.each do |e| %>
+              <%= content_tag e.tag, class: e.klass, data:{ x: e.x ,y: e.y ,speed: e.speed ,start: e.start , easing: e.easing } do -%>
+                <%=raw e.body %>
+              <% end -%>
+            <% end %>
+          </li>    
+        <% end %>
+      </ul>
+      <div class="tp-bannertimer tp-bottom"></div>
+    </div>
+  </div>
+</div>
+<!-- END SLIDER -->

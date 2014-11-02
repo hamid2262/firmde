@@ -1,0 +1,25 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  tag: MyString
+  klass: MyString
+  body: MyText
+  href: MyString
+  x: 1
+  'y': 1
+  speed: 1
+  start: 1
+  easing: MyString
+  photo: 
+
+two:
+  tag: MyString
+  klass: MyString
+  body: MyText
+  href: MyString
+  x: 1
+  'y': 1
+  speed: 1
+  start: 1
+  easing: MyString
+  photo: 

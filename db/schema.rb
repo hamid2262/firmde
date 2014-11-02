@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141101084339) do
+ActiveRecord::Schema.define(version: 20141101175752) do
 
   create_table "blocks", force: true do |t|
     t.string   "title"
@@ -23,6 +23,27 @@ ActiveRecord::Schema.define(version: 20141101084339) do
   end
 
   add_index "blocks", ["title"], name: "index_blocks_on_title"
+
+  create_table "elements", force: true do |t|
+    t.string   "tag"
+    t.string   "klass"
+    t.text     "body"
+    t.string   "href"
+    t.integer  "x"
+    t.integer  "y"
+    t.integer  "speed"
+    t.integer  "start"
+    t.string   "easing"
+    t.integer  "slideshow_id"
+    t.string   "photo_file_name"
+    t.string   "photo_content_type"
+    t.integer  "photo_file_size"
+    t.datetime "photo_updated_at"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "elements", ["slideshow_id"], name: "index_elements_on_slideshow_id"
 
   create_table "kundens", force: true do |t|
     t.string   "name"
@@ -50,6 +71,19 @@ ActiveRecord::Schema.define(version: 20141101084339) do
     t.string   "photo_content_type"
     t.integer  "photo_file_size"
     t.datetime "photo_updated_at"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "slideshows", force: true do |t|
+    t.string   "transition"
+    t.integer  "slotamount"
+    t.integer  "masterspeed"
+    t.integer  "delay"
+    t.string   "background_file_name"
+    t.string   "background_content_type"
+    t.integer  "background_file_size"
+    t.datetime "background_updated_at"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

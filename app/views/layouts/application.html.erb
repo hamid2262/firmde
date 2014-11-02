@@ -1,6 +1,6 @@
 <%= render 'layouts/public/head' %>
 <%= render 'layouts/public/header' %>
-<%= render 'layouts/public/main_slideshow.html' if slide_show_visible? %>
+<%= render 'slideshows/main_slideshow' if slide_show_visible? %>
 
 <%= render "layouts/public/#{layout_selector}" %>
 

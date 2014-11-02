@@ -1,0 +1,39 @@
+<table  class="table table-striped">
+  <thead>
+    <tr>
+      <th>slideshow_id</th>
+      <th>Tag</th>
+      <th>Klass</th>
+      <th>Body</th>
+      <th>Href</th>
+      <th>X</th>
+      <th>Y</th>
+      <th>Speed</th>
+      <th>Start</th>
+      <th>Easing</th>
+      <th>Photo</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% elements.each do |element| %>
+      <tr>
+        <td><%= element.slideshow_id %></td>
+        <td><%= element.tag %></td>
+        <td><%= element.klass %></td>
+        <td><%= element.body %></td>
+        <td><%= element.href %></td>
+        <td><%= element.x %></td>
+        <td><%= element.y %></td>
+        <td><%= element.speed %></td>
+        <td><%= element.start %></td>
+        <td><%= element.easing %></td>
+        <td><%= image_tag element.photo, class: "img-thumbnail", size: "100" %></td>
+        <td><%= link_to 'Show', [@slideshow, element] %></td>
+        <td><%= link_to 'Edit', [:edit, @slideshow, element] %></td>
+        <td><%= link_to 'Destroy',  [@slideshow, element] , method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

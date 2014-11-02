@@ -67,12 +67,10 @@ class BlocksController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
     def set_block
       @block = Block.find(params[:id])
     end
 
-    # Never trust parameters from the scary internet, only allow the white list through.
     def block_params
       params.require(:block).permit(:title, :body, :css_classes, :css_id)
     end

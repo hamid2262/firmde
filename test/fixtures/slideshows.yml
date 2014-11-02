@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  background: 
+  transition: MyString
+  slotamount: 1
+  masterspeed: 1
+  delay: 1
+
+two:
+  background: 
+  transition: MyString
+  slotamount: 1
+  masterspeed: 1
+  delay: 1

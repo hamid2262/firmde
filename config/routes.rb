@@ -1,4 +1,9 @@
 Rails.application.routes.draw do
+
+  resources :slideshows do
+    resources :elements
+  end
+
   resources :kundens
 
   devise_scope :user do
