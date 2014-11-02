@@ -1,17 +1,16 @@
-<li class="last ">
+<li class="<%= "active open" if cont?(params[:controller],["blogs"] ) %>">
   <a href="javascript:;">
   <i class="fa fa-newspaper-o"></i>
   <span class="title">News</span>
-  <span class="arrow "></span>
+  <span class="<%= "selected" if cont?(params[:controller],["blogs"]) %>"></span>
+  <span class="arrow <%= "open" if cont?(params[:controller],["blogs"]) %>"></span>
   </a>
   <ul class="sub-menu">
-    <li>
-      <a href="#">
-      Add News</a>
+    <li class=<%= "active" if act?(params[:action], ["new"])  %> >
+      <%= link_to "Add News", new_blog_path %>
     </li>
-    <li>
-      <a href="#">
-      Manage News</a>
+    <li class=<%= "active" if act?(params[:action], ["admin"])  %>>
+      <%= link_to "Manage News", admin_blogs_path %>
     </li>
   </ul>
 </li>

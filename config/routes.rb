@@ -16,6 +16,9 @@ Rails.application.routes.draw do
 
   resources :blocks
   resources :pages
+  resources :blogs do
+    get 'admin', on: :collection
+  end
   
   get "admin", to:'backends#dashboard', as: "admin"
   get "admin/loesungen", to:'backends#loesungen', as: "admin_loesungen"

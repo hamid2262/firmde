@@ -1,0 +1,6 @@
+<h2 class="no-top-space">Categories</h2>
+<ul class="nav sidebar-categories margin-bottom-40">
+  <% Blog.category_count.each do |category| %>
+    <li><%= link_to "#{category[0]} (#{category[1]})", blogs_path(category: category[0]) %></li>
+  <% end %>
+</ul>

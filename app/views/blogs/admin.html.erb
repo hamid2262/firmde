@@ -1,0 +1,34 @@
+<h1>Listing blogs</h1>
+<table  class="table table-striped">
+  <thead>
+    <tr>
+      <th>Title</th>
+      <th>Body</th>
+      <th>category</th>
+      <th>slug</th>
+      <th>user_id</th>
+      <th>photo</th>
+
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @blogs.each do |blog| %>
+      <tr>
+        <td><%= blog.title %></td>
+        <td><%= raw blog.body %></td>
+        <td><%= blog.category %></td>
+        <td><%= blog.slug %></td>
+        <td><%= image_tag blog.photo.url(:thumb) %></td>
+        <td><%= link_to 'Show', blog,class: "btn btn-info"  %></td>
+        <td><%= link_to 'Edit', edit_blog_path(blog),class: "btn btn-success" %></td>
+        <td><%= link_to 'Destroy', blog, method: :delete,class: "btn btn-danger", data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New blog', new_blog_path %>

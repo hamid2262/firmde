@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141101175752) do
+ActiveRecord::Schema.define(version: 20141102181840) do
 
   create_table "blocks", force: true do |t|
     t.string   "title"
@@ -23,6 +23,22 @@ ActiveRecord::Schema.define(version: 20141101175752) do
   end
 
   add_index "blocks", ["title"], name: "index_blocks_on_title"
+
+  create_table "blogs", force: true do |t|
+    t.string   "title"
+    t.string   "category"
+    t.string   "slug"
+    t.string   "body"
+    t.integer  "user_id"
+    t.string   "photo_file_name"
+    t.string   "photo_content_type"
+    t.integer  "photo_file_size"
+    t.datetime "photo_updated_at"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "blogs", ["user_id"], name: "index_blogs_on_user_id"
 
   create_table "elements", force: true do |t|
     t.string   "tag"

@@ -1,0 +1,20 @@
+<div class="blog-item-img">
+  <div class="front-carousel">
+    <div id="myCarousel" class="carousel slide">
+      <div class="carousel-inner">
+        <div class="item active">
+          <%= image_tag @blog.photo(:large) %>
+        </div>
+        <div class="item">
+          <iframe src="http://player.vimeo.com/video/56974716?portrait=0" style="width:100%; border:0" allowfullscreen="" height="259"></iframe>
+        </div>
+      </div>
+      <a class="carousel-control left" href="#myCarousel" data-slide="prev">
+        <i class="fa fa-angle-left"></i>
+      </a>
+      <a class="carousel-control right" href="#myCarousel" data-slide="next">
+        <i class="fa fa-angle-right"></i>
+      </a>
+    </div>                
+  </div>
+</div>

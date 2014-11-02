@@ -11,6 +11,8 @@ gem 'jbuilder', '~> 2.0'
 gem 'sdoc', '~> 0.4.0',          group: :doc
 gem 'devise'
 gem "cancan"
+gem "will_paginate"
+gem 'will_paginate-bootstrap', '~> 1.0.1'
 
 gem 'summernote-rails'
 gem 'codemirror-rails'
@@ -25,6 +27,7 @@ gem 'pg'
 gem 'simple_form', '~> 3.1.0.rc1', github: 'plataformatec/simple_form', branch: 'master'
 gem 'acts_as_tree', '~> 2.1.0'
 
+gem 'truncate_html', '~> 0.9.3'
 
 # Use unicorn as the app server
 gem 'unicorn'

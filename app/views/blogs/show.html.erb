@@ -1,0 +1,14 @@
+<div class="blog_show">
+  <div class="row">
+    <div class="col-md-9 col-sm-9 blog-item">
+      <h2> <%= @blog.title %></h2>
+      <%= render 'blogs/show/image' %>
+      <%= render 'breadcrumb' %>
+      <p><%= raw @blog.body %></p>
+
+      <% if can? :edit, @blog %>
+        <%= link_to 'Edit', edit_blog_path(@blog),class: "btn btn-success" %> 
+      <% end %>
+    </div>
+  </div>
+</div>

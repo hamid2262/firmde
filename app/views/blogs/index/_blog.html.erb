@@ -1,0 +1,19 @@
+<div class="blog row">
+  <div class="col-md-4 col-sm-4">
+    <%= image_tag blog.photo(:medium), class: "img-responsive"  %>
+  </div>
+  <div class="col-md-8 col-sm-8">
+    <h2 class="title">
+      <%= link_to blog.title, blog %>
+    </h2>
+    <ul class="blog-info">
+      <li><i class="fa fa-calendar"></i> <%= blog.created_at.strftime("%d/%m/%Y") %></li>
+      <li><i class="fa fa-tags"></i> <%= blog.category %></li>
+    </ul>
+    <p><%= raw truncate_html(blog.body, length: 240, omission: '...') %></p>
+    <%= link_to blog, class: "more" do %>
+      Mehr lesen <i class="icon-angle-right"></i>
+    <% end %>
+  </div>
+</div>
+<hr class="blog-post-sep">
