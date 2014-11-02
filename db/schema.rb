@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141102181840) do
+ActiveRecord::Schema.define(version: 20141102225553) do
 
   create_table "blocks", force: true do |t|
     t.string   "title"
@@ -87,6 +87,20 @@ ActiveRecord::Schema.define(version: 20141102181840) do
     t.string   "photo_content_type"
     t.integer  "photo_file_size"
     t.datetime "photo_updated_at"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "site_settings", force: true do |t|
+    t.string   "site_name"
+    t.string   "logo_file_name"
+    t.string   "logo_content_type"
+    t.integer  "logo_file_size"
+    t.datetime "logo_updated_at"
+    t.string   "favicon_file_name"
+    t.string   "favicon_content_type"
+    t.integer  "favicon_file_size"
+    t.datetime "favicon_updated_at"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

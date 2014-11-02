@@ -1,14 +1,13 @@
-<li class="start <%= "active open" if con_act?(params[:controller],["backends", "elements", "slideshows"] , params[:action], ["dashboard", "show", "index", "new", "edit"]) %>">
+<li class="start <%= "active open" if con_act?(params[:controller],["backends", "elements", "slideshows", "site_settings"] , params[:action], ["dashboard", "show", "index", "new", "edit"]) %>">
   <a href="javascript:;">
   <i class="fa fa-home"></i>
   <span class="title">Dashboard</span>
-  <span class="<%= "selected" if con_act?(params[:controller],["backends", "elements", "slideshows"] , params[:action], ["dashboard", "show", "index", "new", "edit"]) %>"></span>
-  <span class="arrow <%= "open" if con_act?(params[:controller],["backends", "elements", "slideshows"] , params[:action], ["dashboard", "show", "index", "new", "edit"]) %>"></span>
+  <span class="<%= "selected" if con_act?(params[:controller],["backends", "elements", "slideshows", "site_settings"] , params[:action], ["dashboard", "show", "index", "new", "edit"]) %>"></span>
+  <span class="arrow <%= "open" if con_act?(params[:controller],["backends", "elements", "slideshows", "site_settings"] , params[:action], ["dashboard", "show", "index", "new", "edit"]) %>"></span>
   </a>
   <ul class="sub-menu">
-    <li>
-      <a href="#">
-      Site name & Logo </a>
+    <li class=<%= "active" if cont?(params[:controller],["site_settings"])  %> >
+      <%= link_to "Site name & Logo", SiteSetting.all.last %>
     </li>
     <li class=<%= "active" if con_act?(params[:controller],["elements", "slideshows"] , params[:action], ["index"])  %> >
     <%= link_to slideshows_path do %>

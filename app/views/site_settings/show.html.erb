@@ -1,0 +1,18 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Site name:</strong>
+  <%= @site_setting.site_name %>
+</p>
+
+<p>
+  <strong>Logo:</strong>
+  <%= image_tag @site_setting.logo %>
+</p>
+
+<p>
+  <strong>Favicon:</strong>
+  <%= image_tag @site_setting.favicon %>
+</p>
+
+<%= link_to 'Edit', edit_site_setting_path(@site_setting), class: "btn btn-success" %>

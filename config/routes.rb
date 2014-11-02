@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  resources :site_settings
+
   resources :slideshows do
     resources :elements do
       get 'remove_photo', on: :member
