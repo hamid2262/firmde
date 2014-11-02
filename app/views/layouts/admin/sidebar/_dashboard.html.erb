@@ -1,25 +1,19 @@
-<li class="start <%= "active open" if con_act?(params[:controller],["backends"] , params[:action], ["dashboard"]) %>">
+<li class="start <%= "active open" if con_act?(params[:controller],["backends", "elements", "slideshows"] , params[:action], ["dashboard", "show", "index", "new", "edit"]) %>">
   <a href="javascript:;">
   <i class="fa fa-home"></i>
   <span class="title">Dashboard</span>
-  <span class="<%= "selected" if con_act?(params[:controller],["backends"] , params[:action], ["dashboard"]) %>"></span>
-  <span class="arrow <%= "open" if con_act?(params[:controller],["backends"] , params[:action], ["dashboard"]) %>"></span>
+  <span class="<%= "selected" if con_act?(params[:controller],["backends", "elements", "slideshows"] , params[:action], ["dashboard", "show", "index", "new", "edit"]) %>"></span>
+  <span class="arrow <%= "open" if con_act?(params[:controller],["backends", "elements", "slideshows"] , params[:action], ["dashboard", "show", "index", "new", "edit"]) %>"></span>
   </a>
   <ul class="sub-menu">
-    <li class="active">
+    <li>
       <a href="#">
-      <i class="icon-bar-chart"></i>
       Site name & Logo </a>
     </li>
-    <li>
-      <a href="#">
-      <i class="icon-bulb"></i>
-      Slide Shows</a>
-    </li>
-    <li>
-      <a href="#">
-      <i class="icon-graph"></i>
-      Qoute</a>
+    <li class=<%= "active" if con_act?(params[:controller],["elements", "slideshows"] , params[:action], ["index"])  %> >
+    <%= link_to slideshows_path do %>
+      Slide Shows
+    <% end %>
     </li>
   </ul>
 </li>

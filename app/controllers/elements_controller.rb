@@ -1,6 +1,6 @@
 class ElementsController < ApplicationController
   layout "admin_layout"
-  before_action :set_element, only: [:show, :edit, :update, :destroy]
+  before_action :set_element, only: [:show, :edit, :update, :destroy, :remove_photo]
   before_action :set_slideshow, only: [:show,:index, :new, :create, :edit, :update, :destroy]
   authorize_resource
 
@@ -22,7 +22,7 @@ class ElementsController < ApplicationController
     @element = @slideshow.elements.build(element_params)
     respond_to do |format|
       if @element.save
-        format.html { redirect_to slideshow_element_path(@slideshow, @element), notice: 'element was successfully created.' }
+        format.html { redirect_to @slideshow, notice: 'element was successfully created.' }
         format.json { render :show, status: :created, location: @element }
       else
         format.html { render :new }
@@ -47,9 +47,16 @@ class ElementsController < ApplicationController
   def destroy
     @element.destroy
     respond_to do |format|
-      format.html { redirect_to elements_url, notice: 'element was successfully destroyed.' }
+      format.html { redirect_to @slideshow, notice: 'element was successfully destroyed.' }
       format.json { head :no_content }
     end
+  end
+
+  def remove_photo
+    @element.photo.destroy
+    @element.photo.clear
+    @element.save
+    redirect_to :back, alert: "image has been removed"
   end
 
   private

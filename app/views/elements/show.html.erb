@@ -1,54 +1,55 @@
-<p id="notice"><%= notice %></p>
+<div class="row">
+  <div class="col-sm-6">
+    <p>
+      <strong>Tag:</strong>
+      <%= @element.tag %>
+    </p>
 
-<p>
-  <strong>Tag:</strong>
-  <%= @element.tag %>
-</p>
+    <p>
+      <strong>Klass:</strong>
+      <%= @element.klass %>
+    </p>
 
-<p>
-  <strong>Klass:</strong>
-  <%= @element.klass %>
-</p>
+    <p>
+      <strong>Body:</strong>
+      <%= @element.body %>
+    </p>
 
-<p>
-  <strong>Body:</strong>
-  <%= @element.body %>
-</p>
+    <p>
+      <strong>Href:</strong>
+      <%= @element.href %>
+    </p>
 
-<p>
-  <strong>Href:</strong>
-  <%= @element.href %>
-</p>
+    <p>
+      <strong>X:</strong>
+      <%= @element.x %>
+    </p>
 
-<p>
-  <strong>X:</strong>
-  <%= @element.x %>
-</p>
+    <p>
+      <strong>Y:</strong>
+      <%= @element.y %>
+    </p>
 
-<p>
-  <strong>Y:</strong>
-  <%= @element.y %>
-</p>
+    <p>
+      <strong>Speed:</strong>
+      <%= @element.speed %>
+    </p>
 
-<p>
-  <strong>Speed:</strong>
-  <%= @element.speed %>
-</p>
+    <p>
+      <strong>Start:</strong>
+      <%= @element.start %>
+    </p>
 
-<p>
-  <strong>Start:</strong>
-  <%= @element.start %>
-</p>
+    <p>
+      <strong>Easing:</strong>
+      <%= @element.easing %>
+    </p>
 
-<p>
-  <strong>Easing:</strong>
-  <%= @element.easing %>
-</p>
 
-<p>
-  <strong>Photo:</strong>
-  <%= image_tag @element.photo.url %>
-</p>
-
-<%= link_to 'Edit', edit_slideshow_element_path %> |
-<%= link_to 'Back', slideshow_elements_path %>
+    <%= link_to 'Back', @slideshow, class: "btn btn-default" %>
+    <%= link_to 'Edit', edit_slideshow_element_path, class: "btn btn-success" %>
+  </div>
+  <div class="col-sm-6">
+    <%= image_tag @element.photo.url  if @element.photo.present? %>
+  </div>
+</div>

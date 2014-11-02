@@ -1,7 +1,7 @@
-<table  class="table table-striped">
+<table  class="table table-striped table-responsive">
   <thead>
     <tr>
-      <th>slideshow_id</th>
+      <th>id</th>
       <th>Tag</th>
       <th>Klass</th>
       <th>Body</th>
@@ -19,7 +19,7 @@
   <tbody>
     <% elements.each do |element| %>
       <tr>
-        <td><%= element.slideshow_id %></td>
+        <td><%= element.id %></td>
         <td><%= element.tag %></td>
         <td><%= element.klass %></td>
         <td><%= element.body %></td>
@@ -29,10 +29,10 @@
         <td><%= element.speed %></td>
         <td><%= element.start %></td>
         <td><%= element.easing %></td>
-        <td><%= image_tag element.photo, class: "img-thumbnail", size: "100" %></td>
-        <td><%= link_to 'Show', [@slideshow, element] %></td>
-        <td><%= link_to 'Edit', [:edit, @slideshow, element] %></td>
-        <td><%= link_to 'Destroy',  [@slideshow, element] , method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= image_tag(element.photo, class: "img-thumbnail", size: "100") if element.photo.present? %><td>
+        <td><%= link_to 'Show', [@slideshow, element], class: "btn btn-info btn-xs btn-block"  %>
+        <%= link_to 'Edit', [:edit, @slideshow, element], class: "btn btn-success btn-xs btn-block"  %>
+        <%= link_to 'Destroy',  [@slideshow, element] , method: :delete, class: "btn btn-danger btn-xs btn-block" , data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>

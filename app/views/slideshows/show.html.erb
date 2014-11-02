@@ -1,32 +1,34 @@
-<p id="notice"><%= notice %></p>
+<div class="row">
+  <div class="col-sm-6">
+    <%= image_tag @slideshow.background.url(:bg), class: "img-responsive" %>
+  </div>
+  <div class="col-sm-6">
 
-<p>
-  <strong>Background:</strong>
-  <%= image_tag @slideshow.background.url(:bg), class: "img-responsive" %>
-</p>
+    <p>
+      <strong>Transition:</strong>
+      <%= @slideshow.transition %>
+    </p>
 
-<p>
-  <strong>Transition:</strong>
-  <%= @slideshow.transition %>
-</p>
+    <p>
+      <strong>Slotamount:</strong>
+      <%= @slideshow.slotamount %>
+    </p>
 
-<p>
-  <strong>Slotamount:</strong>
-  <%= @slideshow.slotamount %>
-</p>
+    <p>
+      <strong>Masterspeed(slide changing):</strong>
+      <%= @slideshow.masterspeed %>
+    </p>
 
-<p>
-  <strong>Masterspeed(slide changing):</strong>
-  <%= @slideshow.masterspeed %>
-</p>
+    <p>
+      <strong>Delay:</strong>
+      <%= @slideshow.delay %>
+    </p>
 
-<p>
-  <strong>Delay:</strong>
-  <%= @slideshow.delay %>
-</p>
+    <%= link_to 'Back', slideshows_path, class: "btn btn-default" %>
+    <%= link_to 'Edit', edit_slideshow_path(@slideshow),class: "btn btn-success" %>
 
-<%= link_to 'Edit', edit_slideshow_path(@slideshow) %> |
-<%= link_to 'Back', slideshows_path %>
+    <%= link_to 'Add New Element', new_slideshow_element_path(slideshow_id: @slideshow), class: "btn btn-primary" %>    
+  </div>
+</div>
 
 <%= render 'elements/table', elements: @slideshow.elements %>
-<%= link_to 'new element', new_slideshow_element_path(slideshow_id: @slideshow) %>

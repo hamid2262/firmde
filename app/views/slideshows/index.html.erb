@@ -3,6 +3,7 @@
 <table  class="table table-striped">
   <thead>
     <tr>
+      <th>ID</th>
       <th>Transition</th>
       <th>Slotamount</th>
       <th>Masterspeed</th>
@@ -15,14 +16,15 @@
   <tbody>
     <% @slideshows.each do |slideshow| %>
       <tr>
+        <td><%= slideshow.id %></td>
         <td><%= slideshow.transition %></td>
         <td><%= slideshow.slotamount %></td>
         <td><%= slideshow.masterspeed %></td>
         <td><%= slideshow.delay %></td>
         <td><%= image_tag slideshow.background, class: "img-responsive" %></td>
-        <td><%= link_to 'Show', slideshow %></td>
-        <td><%= link_to 'Edit', edit_slideshow_path(slideshow) %></td>
-        <td><%= link_to 'Destroy', slideshow, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Show', slideshow,class: "btn btn-info"  %></td>
+        <td><%= link_to 'Edit', edit_slideshow_path(slideshow),class: "btn btn-success" %></td>
+        <td><%= link_to 'Destroy', slideshow, method: :delete,class: "btn btn-danger", data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>
@@ -30,4 +32,4 @@
 
 <br>
 
-<%= link_to 'New Slideshow', new_slideshow_path %>
+<%= link_to 'Create New Slideshow', new_slideshow_path, class: "btn btn-primary" %>

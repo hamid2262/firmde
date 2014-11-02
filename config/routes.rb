@@ -1,7 +1,9 @@
 Rails.application.routes.draw do
 
   resources :slideshows do
-    resources :elements
+    resources :elements do
+      get 'remove_photo', on: :member
+    end
   end
 
   resources :kundens
