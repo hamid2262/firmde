@@ -1,19 +1,21 @@
 /*
+  * require my_theme/global/css/components
+
   *= require font-awesome
   *= require bootstrap_and_overrides
 
-  *= require summernote
-  *= require codemirror
-  *= require codemirror/themes/solarized
-
   *= require my_theme/admin/pages/css/tasks
-  *= require my_theme/global/css/components
 
   *= require my_theme/admin/layout/css/layout
   *= require my_theme/admin/layout/css/themes/default
 
   *= require admin/navbar
   *= require elements
+
+  *= require summernote
+  *= require codemirror
+  *= require codemirror/themes/solarized
+
 
 */
 
