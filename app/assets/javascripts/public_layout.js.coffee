@@ -1,5 +1,5 @@
 $ ->
   $("#navbar .dropdown").mouseenter ->
-      $(".overlay").fadeIn(100)
+    $(".my_overlay").fadeIn(100)
   $("#navbar .dropdown").mouseleave ->
-    $(".overlay").fadeOut(100)
+    $(".my_overlay").fadeOut(100)

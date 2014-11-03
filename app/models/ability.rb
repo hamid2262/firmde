@@ -14,6 +14,7 @@ class Ability
       can [:new, :create], User
     end
     
+    can [:show, :index], Blog
     can [:show], Page
     can :role, :index, user.has_access?
   end

@@ -1,4 +1,7 @@
-<h1>Listing blogs</h1>
+<h1>
+  Listing blogs
+  <%= link_to 'New blog', new_blog_path,class: "btn btn-success pull-right" %>
+</h1>
 <table  class="table table-striped">
   <thead>
     <tr>
@@ -28,7 +31,3 @@
     <% end %>
   </tbody>
 </table>
-
-<br>
-
-<%= link_to 'New blog', new_blog_path %>
