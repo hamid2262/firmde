@@ -4,4 +4,7 @@ class Slideshow < ActiveRecord::Base
   validates_attachment_content_type :background, :content_type => /\Aimage\/.*\Z/
 
   has_many :elements
+
+  validates :name, presence: true
+  
 end

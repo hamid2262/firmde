@@ -3,7 +3,8 @@
 <table  class="table table-striped">
   <thead>
     <tr>
-      <th>ID</th>
+      <th>Name</th>
+      <th>order</th>
       <th>Transition</th>
       <th>Slotamount</th>
       <th>Masterspeed</th>
@@ -16,7 +17,8 @@
   <tbody>
     <% @slideshows.each do |slideshow| %>
       <tr>
-        <td><%= slideshow.id %></td>
+        <td><%= slideshow.name %></td>
+        <td><%= slideshow.order %></td>
         <td><%= slideshow.transition %></td>
         <td><%= slideshow.slotamount %></td>
         <td><%= slideshow.masterspeed %></td>

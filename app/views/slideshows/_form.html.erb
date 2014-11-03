@@ -5,6 +5,8 @@
   <%= f.error_notification %>
 
   <div class="form-inputs">
+    <%= f.input :name %>
+    <%= f.input :order, collection: (1..10), include_blank: false %>
     <%= f.input :transition, collection: ["fade"], include_blank: false %>
     <%= f.input :slotamount, hint: "(0 - 8) 0 = random" %>
     <%= f.input :masterspeed, hint: "(slide changing)" %>

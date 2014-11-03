@@ -61,7 +61,7 @@ class SlideshowsController < ApplicationController
     end
 
     def slideshow_params
-      params.require(:slideshow).permit(:background, :transition, :slotamount, :masterspeed, :delay)
+      params.require(:slideshow).permit(:background, :transition, :slotamount, :masterspeed, :delay, :order, :name)
     end
 
     def set_breadcrumbs
