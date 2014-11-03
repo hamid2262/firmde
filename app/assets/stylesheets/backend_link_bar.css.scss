@@ -1,0 +1,17 @@
+#backend_link_bar{
+  position: fixed;
+  margin-bottom: 15px;
+  width: 100px;
+  background: rgb(97, 97, 122);
+  color: white;
+  right: -10px;
+  top: 42px;
+  z-index: 10000;
+  font-weight: bold;
+  padding: 10px;
+  height: 39px;
+  border-radius: 6px 0 0 6px;
+  a{
+    color: white;
+  }
+}
