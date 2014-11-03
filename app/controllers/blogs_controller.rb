@@ -8,7 +8,7 @@ class BlogsController < ApplicationController
   end
 
   def admin
-    @blogs = Blog.all #.page(params[:page]).per_page(1)
+    @blogs = Blog.page(params[:page]).per_page(1)
   end
 
   def show
