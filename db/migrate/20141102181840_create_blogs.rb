@@ -4,7 +4,7 @@ class CreateBlogs < ActiveRecord::Migration
       t.string :title
       t.string :category
       t.string :slug
-      t.string :body
+      t.text :body
       t.integer :user_id
       t.attachment :photo
 

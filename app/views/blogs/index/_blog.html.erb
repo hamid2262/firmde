@@ -10,7 +10,7 @@
       <li><i class="fa fa-calendar"></i> <%= blog.created_at.strftime("%d/%m/%Y") %></li>
       <li><i class="fa fa-tags"></i> <%= blog.category %></li>
     </ul>
-    <p><%= raw truncate_html(blog.body, length: 240, omission: '...') %></p>
+    <p><%= raw truncate(blog.body, length: 240, omission: '...') %></p>
     <%= link_to blog, class: "more" do %>
       Mehr lesen <i class="icon-angle-right"></i>
     <% end %>

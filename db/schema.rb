@@ -28,7 +28,7 @@ ActiveRecord::Schema.define(version: 20141102225553) do
     t.string   "title"
     t.string   "category"
     t.string   "slug"
-    t.string   "body"
+    t.text     "body"
     t.integer  "user_id"
     t.string   "photo_file_name"
     t.string   "photo_content_type"
