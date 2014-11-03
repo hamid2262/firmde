@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  get 'static_pages/contact_us'
+
   resources :site_settings
 
   resources :slideshows do

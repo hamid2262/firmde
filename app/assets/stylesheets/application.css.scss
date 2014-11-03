@@ -7,7 +7,7 @@
  *= require my_theme/global/plugins/slider-revolution-slider/rs-plugin/css/settings.css
 
  *= require my_theme/global/css/components
- *= require my_theme/frontend/layout/css/themes/red
+ * require my_theme/frontend/layout/css/themes/red
  *= require my_theme/frontend/layout/css/style
  *= require my_theme/frontend/layout/css/style-responsive
  *= require my_theme/frontend/layout/css/custom.css
@@ -28,5 +28,3 @@
  *= require backend_link_bar
  *= require_self
  */
-
-
