@@ -4,11 +4,11 @@ class BlogsController < ApplicationController
   authorize_resource
 
   def index
-    @blogs = Blog.filter_category(params[:category]) #.page(params[:page]).per_page(1)
+    @blogs = Blog.filter_category(params[:category]).page(params[:page]).per_page(2)
   end
 
   def admin
-    @blogs = Blog.page(params[:page]).per_page(1)
+    @blogs = Blog.all
   end
 
   def show

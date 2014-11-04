@@ -9,7 +9,7 @@ class ApplicationController < ActionController::Base
   end
 
   after_action  :user_activity
-  
+
   private
 
     def user_activity

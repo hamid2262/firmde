@@ -29,21 +29,22 @@
         </div> 
 -->
       </div>
-      <!-- END BOTTOM ABOUT BLOCK -->
 
-      <!-- BEGIN BOTTOM CONTACTS -->
       <div class="col-md-4 col-sm-6 pre-footer-col">
         <% title = "footer-kontakt" %>
         <%= render 'blocks/show', block: Block.find_by(title: title), title: title %>
       </div>
-      <!-- END BOTTOM CONTACTS -->
 
-      <!-- BEGIN TWITTER BLOCK --> 
       <div class="col-md-4 col-sm-6 pre-footer-col">
         <h2 class="margin-bottom-0">Latest News</h2>
-        <a class="twitter-timeline" href="https://twitter.com/twitterapi" data-tweet-limit="2" data-theme="dark" data-link-color="#57C8EB" data-widget-id="455411516829736961" data-chrome="noheader nofooter noscrollbar noborders transparent">Loading tweets by @keenthemes...</a>
+        <hr>        
+        <% Blog.footer_last_blogs.each_with_index do |blog, index| %>
+          <%= render 'layouts/public/footer/last_news', blog: blog %>     
+          <% unless Blog.footer_last_blogs.last == blog %>
+            <hr>     
+          <% end %>     
+        <% end %>
       </div>
-      <!-- END TWITTER BLOCK -->
     </div>
   </div>
 </div>

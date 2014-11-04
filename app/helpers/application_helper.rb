@@ -42,6 +42,11 @@ module ApplicationHelper
     (arr.include?(cont)) ? true : false
   end
 
+  def sanitizer_except_br txt
+    p = truncate(sanitize( txt, tags: %w(br) ), length: 140, omission: '...')
+    p.gsub("&lt;br&gt;", ". ")  if p
+  end
+
   private
     def flash_creator_tag_maker klass, message
       "<div class=\"alert alert-#{klass}\"><button type=\"button\" class=\"pull-right\" data-dismiss=\"alert\"><span aria-hidden=\"true\">&times;</span><span class=\"sr-only\">Close</span></button>#{message}</div>"  

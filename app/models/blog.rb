@@ -10,4 +10,9 @@ class Blog < ActiveRecord::Base
   def self.category_count
     Blog.group(:category).count
   end
+
+  def self.footer_last_blogs
+    @footer_last_blogs ||= Blog.order(:updated_at).limit(2)
+  end
+  
 end

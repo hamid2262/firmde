@@ -4,7 +4,7 @@
     <div class="fullwidthabnner">
       <ul id="revolutionul">
         <!-- THE NEW SLIDE -->
-        <% Slideshow.all.each do |slideshow| %>
+        <% Slideshow.order(:order).each do |slideshow| %>
           <li 
             data-transition=<%= slideshow.transition %> 
             data-slotamount=<%= slideshow.slotamount %> 
