@@ -1,0 +1,16 @@
+<li class="dropdown-submenu">
+  <a href="<%= page_path(child) %>">
+    <%= child.title %> 
+    <% if child.children.any? %>
+      <i class="fa fa-angle-right"></i>
+    <% end %>
+  </a>
+  <ul class="dropdown-menu" role="menu">
+    <% if child %>
+      <% child.children.each do |child_child| %>
+        <%#= render 'layouts/public/header/navbar/services/child', child: child_child %>
+        <li><%= link_to child_child.title, child_child %></li>
+      <% end %>
+    <% end %>
+  </ul>
+</li>    

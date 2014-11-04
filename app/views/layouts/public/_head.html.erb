@@ -6,12 +6,15 @@
   <title>OPC cardsystems</title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%#= javascript_include_tag 'modernizr-min' %>
-  <%= csrf_meta_tags %>
 
-  <!-- Fonts START -->
+  <% if SiteSetting.last %>
+    <link rel="shortcut icon" href=<%= SiteSetting.last.favicon.url  %> type="image/x-icon">
+    <link rel="icon" href=<%= SiteSetting.last.favicon.url %> type="image/x-icon">
+  <% end %>
+
   <link href="http://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700|PT+Sans+Narrow|Source+Sans+Pro:200,300,400,600,700,900&amp;subset=all" rel="stylesheet" type="text/css">
-  <link href="http://fonts.googleapis.com/css?family=Source+Sans+Pro:200,300,400,600,700,900&amp;subset=all" rel="stylesheet" type="text/css"><!--- fonts for slider on the index page -->  
-  <!-- Fonts END -->
+  <link href="http://fonts.googleapis.com/css?family=Source+Sans+Pro:200,300,400,600,700,900&amp;subset=all" rel="stylesheet" type="text/css">
+  <%= csrf_meta_tags %>
 
 </head>
 <body>

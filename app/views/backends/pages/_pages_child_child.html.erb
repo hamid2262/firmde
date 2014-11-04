@@ -9,9 +9,9 @@
       <%= link_to child.title, child %>
     </span>
   </div>
-  <%= render 'backends/loesungen/tasks',child: child %>
+  <%= render 'backends/pages/tasks',child: child %>
 </li>
 
 <% child.children.each do |ch| %>
-  <%= render 'backends/loesungen/losungen_child_child', child: ch %>                
+  <%= render 'backends/pages/pages_child_child', child: ch %>                
 <% end %>

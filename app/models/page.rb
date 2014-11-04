@@ -8,6 +8,7 @@ class Page < ActiveRecord::Base
   validates_attachment_content_type :photo, :content_type => /\Aimage\/.*\Z/
   validates :title, presence: true
   validates :parent_id, presence: true
+  validate  :parent_must_not_be_itself
   # validates :slug, presence: true
 
   def to_params
@@ -41,4 +42,13 @@ class Page < ActiveRecord::Base
     d
   end
 
+  def self.services
+    Page.find_by(title: "Services")
+  end
+
+  def parent_must_not_be_itself
+    if self.id == self.parent_id
+      errors.add(:parent_id, "parent page can not be itself")
+    end
+  end
 end

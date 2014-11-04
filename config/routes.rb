@@ -26,6 +26,7 @@ Rails.application.routes.draw do
   
   get "admin", to:'backends#dashboard', as: "admin"
   get "admin/loesungen", to:'backends#loesungen', as: "admin_loesungen"
+  get "admin/services", to:'backends#services', as: "admin_services"
   
 
   get 'home/index'

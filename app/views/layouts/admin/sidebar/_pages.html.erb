@@ -1,27 +1,20 @@
 
-<li class="<%= "active open" if con_act?(params[:controller],["backends"] , params[:action], ["loesungen"])  || cont?(params[:controller],["pages"]) %>">
+<li class="<%= "active open" if con_act?(params[:controller],["backends"] , params[:action], ["loesungen", "services"])  || cont?(params[:controller],["pages"]) %>">
   <a href="javascript:;">
   <i class="fa fa-archive"></i>
   <span class="title">Pages</span>
-  <span class="<%= "selected" if con_act?(params[:controller],["backends"] , params[:action], ["loesungen"]) || cont?(params[:controller],["pages"]) %>"></span>
-  <span class="arrow <%= "open" if con_act?(params[:controller],["backends"] , params[:action], ["loesungen"]) || cont?(params[:controller],["pages"]) %>"></span>
+  <span class="<%= "selected" if con_act?(params[:controller],["backends"] , params[:action], ["loesungen", "services"]) || cont?(params[:controller],["pages"]) %>"></span>
+  <span class="arrow <%= "open" if con_act?(params[:controller],["backends"] , params[:action], ["loesungen", "services"]) || cont?(params[:controller],["pages"]) %>"></span>
   </a>
   <ul class="sub-menu">
     <li class="<%= "active" if con_act?(params[:controller],["backends"] , params[:action], ["loesungen"]) || cont?(params[:controller],["pages"]) %>">
       <%= link_to "Loesungen", admin_loesungen_path %>
     </li>
-    <li>
-      <a href="#">
-      Kartentechnologien</a>
+
+    <li class="<%= "active" if con_act?(params[:controller],["backends"] , params[:action], ["services"]) || cont?(params[:controller],["pages"]) %>">
+      <%= link_to "Services", admin_services_path %>
     </li>
-    <li>
-      <a href="#">
-      Services</a>
-    </li>
-    <li>
-      <a href="#">
-      Kontakt</a>
-    </li>
+    
     <li>
       <%= link_to "New Page", new_page_path %>
     </li>

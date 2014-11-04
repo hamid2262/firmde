@@ -7,11 +7,11 @@
   </a>
   <ul class="sub-menu">
     <li class=<%= "active" if cont?(params[:controller],["site_settings"])  %> >
-      <%= link_to "Site name & Logo", SiteSetting.all.last %>
+      <%= link_to "Site name & Logo", SiteSetting.all.last ? SiteSetting.all.last : new_site_setting_path %>
     </li>
     <li class=<%= "active" if con_act?(params[:controller],["elements", "slideshows"] , params[:action], ["index"])  %> >
     <%= link_to slideshows_path do %>
-      Slide Shows
+      Slideshows
     <% end %>
     </li>
   </ul>
