@@ -4,7 +4,7 @@ class Page < ActiveRecord::Base
 
   acts_as_tree #order: "title"
 
-  has_attached_file :photo, :styles => { :top_image => "1920x280#", :thumb => "100x100>" }, :default_url => "/images/:style/missing.png"
+  has_attached_file :photo, :styles => { :top_image => "850x200#", :thumb => "100x100>" }, :default_url => "/images/:style/missing.png"
   validates_attachment_content_type :photo, :content_type => /\Aimage\/.*\Z/
   validates :title, presence: true
   validates :parent_id, presence: true

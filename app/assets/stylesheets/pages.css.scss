@@ -1,8 +1,4 @@
 #pages{
-  #top_image{
-    background-repeat: inherit;
-  }
-  
   #my_sidebar{
     .sidebar-menu{
       // margin-left: -20px;
@@ -30,4 +26,11 @@
 
 .product-page{
   padding-right: 0;
+}
+
+#page_show{
+  #top_image, .title-wrapper {
+    min-height: 200px;
+    background-repeat: inherit;
+  }
 }
