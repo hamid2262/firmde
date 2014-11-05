@@ -2,10 +2,14 @@
   <%#= render 'side_bar_left' %>
   <%= render 'pages/show/top_image' %>
   <%= render 'pages/show/breadcrumb' %>
-  <p>
+  <div>
     <%= raw @page.body %>
-  </p>
-
-  <%= link_to 'Edit', edit_page_path(@page) %> |
-  <%= link_to 'Back', pages_path %>
+  </div>
+  
+  <% if can? :edit, @page %>
+    <%= link_to 'Edit', edit_page_path(@page) %> |
+    <%= link_to 'Back', pages_path %>
+  <% end %>
 </div>
+
+

@@ -4,6 +4,15 @@
   }  do |f| %>
   <%=  f.error_notification %>
   <%= f.input :title, placeholder: 'Title' %>
+  
+  <div class="col-sm-6">
+    <%= f.input :title_on_image, placeholder: 'Title on Image', input_html:{class: 'summernote1', data:{ height: "100"}} %>
+  </div>
+  
+  <div class="col-sm-6">
+    <%= f.input :subtitle_on_image, placeholder: 'SubTitle on Image', input_html:{class: 'summernote2', data:{height: "100"}} %>
+  </div>
+
   <%= f.input :body, placeholder: 'Body', input_html:{class: 'summernote'} %>
   <%= f.input :photo, as: :file %>
 
@@ -28,5 +37,3 @@
   <%= f.input :slug %>
   <%= f.button :submit %>
 <% end %>
-
-

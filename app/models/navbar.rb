@@ -1,5 +1,4 @@
 class Navbar < Page
-
   def self.partner_area_exist?
     Page.find_by(title: "Partner-Area")
   end

@@ -1,5 +1,5 @@
-  <% if Navbar.partner_area %>
-    <li><%= link_to "Partner-Area", Navbar.partner_area %> </li>
-  <% else %>
-    <li><%= link_to "Partner-Area", new_page_path(parent_id: Navbar.home.id) %> </li>
-  <% end %>
+<% if Navbar.partner_area %>
+  <li><%= link_to "Partner-Area", Navbar.partner_area %> </li>
+<% else %>
+  <li><%= link_to "Partner-Area", new_page_path %> </li>
+<% end %>
