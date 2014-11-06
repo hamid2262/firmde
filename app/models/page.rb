@@ -51,4 +51,13 @@ class Page < ActiveRecord::Base
       errors.add(:parent_id, "parent page can not be itself")
     end
   end
+
+  def self.sidebar(r)
+    r.children.where(visible_on_sidebar: true).order(:order)
+  end
+
+  def self.navbar(r)
+    r.children.where(visible_on_navbar: true).order(:order)
+  end
+
 end

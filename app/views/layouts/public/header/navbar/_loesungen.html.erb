@@ -6,7 +6,7 @@
   <ul class="dropdown-menu">
     <li>
       <div class="header-navigation-content">
-        <% Page.find_by(title: "Lösungen").children.each_with_index do |loesungen_child, index| %>    
+        <% Page.find_by(title: "Lösungen").children.where(visible_on_navbar: true).order(:order).each_with_index do |loesungen_child, index| %>    
           <% if [0,4].include? index  %>
             <div class="row">
           <% end %>
@@ -14,7 +14,7 @@
           <div class="menu-list col-md-3 col-sm-4 col-xs-6">
               <h4><%= loesungen_child.title %></h4>
               <ul>
-              <% loesungen_child.children.each do |child| %>
+              <% loesungen_child.children.where(visible_on_navbar: true).order(:order).each do |child| %>
                 <li><%= link_to child.title, child %></li>
               <% end %>
               </ul>

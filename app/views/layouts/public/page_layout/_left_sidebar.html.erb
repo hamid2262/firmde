@@ -1,6 +1,6 @@
 <div id="my_sidebar" class="sidebar col-md-3 col-sm-5">
   <ul class="sidebar-menu">
-    <% Page.root.children.order(:order).each do |child| %>
+    <% Page.sidebar(Page.root).each do |child| %>
       <%= render 'layouts/public/page_layout/left_sidebar/print_children', child: child %>
     <% end %>
   </ul>

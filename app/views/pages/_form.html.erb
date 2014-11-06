@@ -34,6 +34,23 @@
     <% end %>
 
   <%= f.input :order, collection: -50..50, selected: f.object.order || 0 %>
+
+  <div class="checkbox">
+    <label>
+      <input type="checkbox" value="">
+      <%= f.check_box :visible_on_sidebar %>
+      Visible on Left Sidebar
+    </label>
+  </div>
+
+  <div class="checkbox">
+    <label>
+      <input type="checkbox" value="">
+      <%= f.check_box :visible_on_navbar %>
+      Visible on Top Navbar
+    </label>
+  </div>
+
   <%= f.input :slug %>
   <%= f.button :submit %>
 <% end %>
