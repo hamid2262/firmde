@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141105135700) do
+ActiveRecord::Schema.define(version: 20141106084432) do
 
   create_table "blocks", force: true do |t|
     t.string   "title"
@@ -89,8 +89,8 @@ ActiveRecord::Schema.define(version: 20141105135700) do
     t.datetime "photo_updated_at"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.string   "title_on_image"
     t.text     "subtitle_on_image"
+    t.text     "title_on_image"
   end
 
   create_table "site_settings", force: true do |t|
