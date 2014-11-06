@@ -23,7 +23,19 @@
         <td><%= slideshow.slotamount %></td>
         <td><%= slideshow.masterspeed %></td>
         <td><%= slideshow.delay %></td>
-        <td><%= image_tag slideshow.background, class: "img-responsive" %></td>
+        <td>
+          <%= image_tag slideshow.background, class: "img-responsive" %>
+          <table  class="table table-striped">
+            <tbody>
+            <tr>
+              <% slideshow.elements_with_image.each do |element| %>
+                <td>
+                  <%= image_tag element.photo, class: "img-responsive" if element.present? %>
+                </td>
+              <% end %>
+            </tr>
+          </table>
+        </td>
         <td><%= link_to 'Show', slideshow,class: "btn btn-info"  %></td>
         <td><%= link_to 'Edit', edit_slideshow_path(slideshow),class: "btn btn-success" %></td>
         <td><%= link_to 'Destroy', slideshow, method: :delete,class: "btn btn-danger", data: { confirm: 'Are you sure?' } %></td>

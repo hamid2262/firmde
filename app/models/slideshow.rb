@@ -7,4 +7,8 @@ class Slideshow < ActiveRecord::Base
 
   validates :name, presence: true
   
+  def elements_with_image
+    elements.where.not(photo_updated_at: nil)
+  end
+
 end

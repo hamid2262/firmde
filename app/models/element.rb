@@ -4,4 +4,5 @@ class Element < ActiveRecord::Base
   validates_attachment_content_type :photo, :content_type => /\Aimage\/.*\Z/
 
   belongs_to :slideshow
+
 end
