@@ -1,0 +1,24 @@
+#my_sidebar{
+  padding-left: 0;
+  .sidebar-menu{
+    // margin-left: -20px;
+    padding-left: 0px;
+    list-style: none;
+    ul{
+      margin-left: -25px;
+      list-style: none;
+    }
+    li{
+      a {
+        text-transform: none;
+        color: #3e4d5c;
+      }
+    } 
+    li.active a {
+      color: #E02222;
+      i{
+        color: #888;
+      }
+    }
+  } 
+}

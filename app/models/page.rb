@@ -60,4 +60,16 @@ class Page < ActiveRecord::Base
     r.children.where(visible_on_navbar: true).order(:order)
   end
 
+  def self.loesungen
+    Page.find_by(title: "Lösungen")
+  end
+
+  def photo_of_self_or_parent
+    obj =  self
+    while obj && !obj.photo.exists?
+      obj = obj.parent
+    end
+    obj ? obj.photo.url(:top_image) : self.photo.url(:top_image)
+  end
+
 end

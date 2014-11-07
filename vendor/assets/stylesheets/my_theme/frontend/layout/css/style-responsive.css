@@ -35,7 +35,7 @@
 		display: block !important;
 		clear: both;
 		margin-top: -10px;
-		float: left !important;
+		float: left;
 	}
 	.reduce-header .header-navigation {
 		margin-top: -6px;
