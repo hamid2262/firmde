@@ -17,6 +17,7 @@
 
 //= require contact-us
 //= require public_layout
+//= require home
 
 $(function() {
   // Layout.init();    
