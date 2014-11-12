@@ -21,6 +21,16 @@ module ApplicationHelper
     params[:controller]=="home" and params[:action]== "index" ? true : false
   end
 
+  def front_end_path 
+    if params[:action] == "edit"
+      a = request.url
+      a.slice! "edit"
+      a
+    else
+      root_path
+    end
+  end
+
   def layout_selector
     case "#{params[:controller]}##{params[:action]}"
     when "pages#show"

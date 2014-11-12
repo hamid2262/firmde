@@ -1,49 +1,51 @@
-<h1>Listing slideshows</h1>
+<div id="admin_index">
+  <h1>slideshows</h1>
 
-<table  class="table table-striped">
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>order</th>
-      <th>Transition</th>
-      <th>Slotamount</th>
-      <th>Masterspeed</th>
-      <th>Delay</th>
-      <th>Background</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @slideshows.each do |slideshow| %>
+  <table  class="table table-striped">
+    <thead>
       <tr>
-        <td><%= slideshow.name %></td>
-        <td><%= slideshow.order %></td>
-        <td><%= slideshow.transition %></td>
-        <td><%= slideshow.slotamount %></td>
-        <td><%= slideshow.masterspeed %></td>
-        <td><%= slideshow.delay %></td>
-        <td>
-          <%= image_tag slideshow.background, class: "img-responsive" %>
-          <table  class="table table-striped">
-            <tbody>
-            <tr>
-              <% slideshow.elements_with_image.each do |element| %>
-                <td>
-                  <%= image_tag element.photo, class: "img-responsive" if element.present? %>
-                </td>
-              <% end %>
-            </tr>
-          </table>
-        </td>
-        <td><%= link_to 'Show', slideshow,class: "btn btn-info"  %></td>
-        <td><%= link_to 'Edit', edit_slideshow_path(slideshow),class: "btn btn-success" %></td>
-        <td><%= link_to 'Destroy', slideshow, method: :delete,class: "btn btn-danger", data: { confirm: 'Are you sure?' } %></td>
+        <th>Name</th>
+        <th>order</th>
+        <th>Transition</th>
+        <th>Slotamount</th>
+        <th>Masterspeed</th>
+        <th>Delay</th>
+        <th>Background</th>
+        <th colspan="3"></th>
       </tr>
-    <% end %>
-  </tbody>
-</table>
+    </thead>
 
-<br>
+    <tbody>
+      <% @slideshows.each do |slideshow| %>
+        <tr>
+          <td><%= slideshow.name %></td>
+          <td><%= slideshow.order %></td>
+          <td><%= slideshow.transition %></td>
+          <td><%= slideshow.slotamount %></td>
+          <td><%= slideshow.masterspeed %></td>
+          <td><%= slideshow.delay %></td>
+          <td>
+            <%= image_tag slideshow.background, class: "img-responsive" %>
+            <table  class="table table-striped">
+              <tbody>
+              <tr>
+                <% slideshow.elements_with_image.each do |element| %>
+                  <td>
+                    <%= image_tag element.photo, class: "element" if element.present? %>
+                  </td>
+                <% end %>
+              </tr>
+            </table>
+          </td>
+          <td><%= link_to 'Show', slideshow,class: "btn btn-info"  %></td>
+          <td><%= link_to 'Edit', edit_slideshow_path(slideshow),class: "btn btn-success" %></td>
+          <td><%= link_to 'Destroy', slideshow, method: :delete,class: "btn btn-danger", data: { confirm: 'Are you sure?' } %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
 
-<%= link_to 'Create New Slideshow', new_slideshow_path, class: "btn btn-primary" %>
+  <br>
+
+  <%= link_to 'Create New Slideshow', new_slideshow_path, class: "btn btn-primary" %>
+</div>
