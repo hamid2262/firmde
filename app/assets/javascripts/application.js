@@ -18,6 +18,7 @@
 //= require contact-us
 //= require public_layout
 //= require home
+//= require contact_opener
 
 $(function() {
   // Layout.init();    

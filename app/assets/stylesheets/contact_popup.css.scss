@@ -1,0 +1,44 @@
+#contact_popup {
+  width: 300px;
+  height: 500px;
+  position: fixed;
+  bottom: -446px;
+  transition: bottom 500ms;
+  right: 77px;
+  z-index: 1199;
+  .btn-holder{
+    overflow: hidden;
+    margin-bottom: 0;
+    .opener {
+      color: #fff;
+      position: relative;
+      display: inline-block;
+      vertical-align: top;
+      padding: 0 18px;
+      border-radius: 4px 4px 0 0 !important;
+      background: #1e1e1e;
+      text-transform: uppercase;
+      font-size: 14px;
+      line-height: 55px;
+      font-weight: normal;
+      float: right;
+    }
+    .opener:after {
+      content: "";
+      display: inline-block;
+      vertical-align: middle;
+      width: 22px;
+      height: 24px;
+      overflow: hidden;
+      margin-left: 12px;
+      background: url('http://www.sunzinet.com/fileadmin/templates/images/sprite01.png') no-repeat -134px -224px;
+    }
+  }
+  .contact_content{
+    height: 100%;
+    background: white;
+    background-image: url('https://s3-eu-west-1.amazonaws.com/opcde/images/contact_us.jpg');
+    background-repeat: no-repeat;
+    border: 1px solid #EBEBEB;
+  }
+}

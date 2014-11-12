@@ -1,7 +1,12 @@
 <%= render 'layouts/public/head' %>
 <%= render 'layouts/public/header' %>
-<%= render 'slideshows/main_slideshow' if slide_show_visible? %>
+
+<span  class="hidden-xs hidden-sm" >
+  <%= render 'slideshows/main_slideshow' if slide_show_visible? %>
+</span>
 
 <%= render "layouts/public/#{layout_selector}" %>
+
+<%= render 'layouts/public/contact_popup' %>
 
 <%= render 'layouts/public/footer' %>
