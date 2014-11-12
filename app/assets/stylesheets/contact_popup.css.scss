@@ -1,8 +1,8 @@
 #contact_popup {
   width: 300px;
-  height: 500px;
+  height: 412px;
   position: fixed;
-  bottom: -446px;
+  bottom: -361px;
   transition: bottom 500ms;
   right: 77px;
   z-index: 1199;
@@ -35,6 +35,7 @@
     }
   }
   .contact_content{
+    padding-top: 125px;
     height: 100%;
     background: white;
     background-image: url('https://s3-eu-west-1.amazonaws.com/opcde/images/contact_us.jpg');
