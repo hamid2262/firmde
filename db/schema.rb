@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141106125315) do
+ActiveRecord::Schema.define(version: 20141113102436) do
 
   create_table "blocks", force: true do |t|
     t.string   "title"
@@ -57,6 +57,7 @@ ActiveRecord::Schema.define(version: 20141106125315) do
     t.datetime "photo_updated_at"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "width"
   end
 
   add_index "elements", ["slideshow_id"], name: "index_elements_on_slideshow_id"
@@ -107,6 +108,7 @@ ActiveRecord::Schema.define(version: 20141106125315) do
     t.datetime "favicon_updated_at"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.text     "contact_form_text"
   end
 
   create_table "slideshows", force: true do |t|

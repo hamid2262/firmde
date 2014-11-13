@@ -4,9 +4,12 @@
   </p>
   <div class="contact_content">
     <div class="col-md-12">
-      <p class="bodytext">Rückruf-Service<br><span style="font-weight: bold;">JETZT BERATEN LASSEN!</span>
+      <p class="bodytext">
+        <%= raw SiteSetting.last.contact_form_text %>
+        <% if can? :edit, SiteSetting.last %>
+          <%= link_to "edit", [:edit, SiteSetting.last] %>
+        <% end %>
       </p>
-      <p class="bodytext">OPC<br>+49 (0) 651 / 84 08 - 0</p>
       <em>
         <form action="#" role="form">
           <div class="form-group">

@@ -15,4 +15,11 @@
   <%= image_tag @site_setting.favicon %>
 </p>
 
+<div class="panel panel-default">
+  <div class="panel-heading">contact_form_text:</div>
+  <div class="panel-body">
+  <%= raw @site_setting.contact_form_text %>
+  </div>
+</div>
+
 <%= link_to 'Edit', edit_site_setting_path(@site_setting), class: "btn btn-success" %>

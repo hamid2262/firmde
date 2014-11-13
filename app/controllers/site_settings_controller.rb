@@ -58,6 +58,6 @@ class SiteSettingsController < ApplicationController
     end
 
     def site_setting_params
-      params.require(:site_setting).permit(:site_name, :logo, :favicon)
+      params.require(:site_setting).permit(:site_name, :logo, :favicon, :contact_form_text)
     end
 end
