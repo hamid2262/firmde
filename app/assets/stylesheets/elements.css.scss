@@ -1,3 +1,17 @@
-#element_form{
-  overflow: hidden;
+#edit_element{
+  #top{
+    height: 285px;
+  }
+  #element_form{
+    overflow: hidden;
+    img{
+      max-height: 100px;
+      width: auto;
+    }
+  }
+
+  .slider_preview{
+    max-height: 200px;
+    width: auto;
+  }
 }

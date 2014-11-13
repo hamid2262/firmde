@@ -1,6 +1,10 @@
-<h1>Editing element</h1>
+<div id="edit_element">
+  <%= render 'slider_preview' %>
+  <div class="edit_element_form">
+  <%= render 'form' %>
 
-<%= render 'form' %>
+  <%= link_to 'Show', [@slideshow, @element] %> |
+  <%= link_to 'Back', slideshow_elements_path %>
+  </div>
 
-<%= link_to 'Show', [@slideshow, @element] %> |
-<%= link_to 'Back', slideshow_elements_path %>
+</div>

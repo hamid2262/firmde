@@ -31,7 +31,9 @@
               <tr>
                 <% slideshow.elements_with_image.each do |element| %>
                   <td>
-                    <%= image_tag element.photo, class: "element" if element.present? %>
+                    <%= link_to [slideshow, element] do %>
+                      <%= image_tag element.photo, class: "element" if element.present? %>
+                    <% end %>
                   </td>
                 <% end %>
               </tr>

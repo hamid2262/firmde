@@ -1,9 +1,7 @@
-<!-- BEGIN SLIDER -->
 <div class="page-slider margin-bottom-5">
   <div class="fullwidthbanner-container revolution-slider">
     <div class="fullwidthabnner">
       <ul id="revolutionul">
-        <!-- THE NEW SLIDE -->
         <% Slideshow.order(:order).each do |slideshow| %>
           <li 
             data-transition=<%= slideshow.transition %> 
@@ -15,7 +13,6 @@
               <%= content_tag e.tag, class: e.klass, data:{ x: e.x ,y: e.y ,speed: e.speed ,start: e.start , easing: e.easing } do -%>
                 <%=raw e.body if e.body.present? %>
                 <%=image_tag e.photo.url if e.photo.present? %>
-                <%#= link_to "edit", [:edit, e.slideshow,e], style:"z-index:1011100;" %>
               <% end -%>
             <% end %>
           </li>    
@@ -25,4 +22,3 @@
     </div>
   </div>
 </div>
-<!-- END SLIDER -->

@@ -3,6 +3,15 @@
 //= require my_theme/global/plugins/jquery-migrate.min.js
 //= require bootstrap-sprockets
 
+//= require codemirror
+//= require codemirror/modes/ruby
+//= require codemirror/modes/shell
+//= require codemirror/modes/htmlmixed
+//= require codemirror/modes/css
+//= require summernote
+//= require my_summernote
+
+
 //= require my_theme/global/plugins/fancybox/source/jquery.fancybox.pack.js
 //= require my_theme/global/plugins/carousel-owl-carousel/owl-carousel/owl.carousel.min.js
 //= require my_theme/global/plugins/slider-revolution-slider/rs-plugin/js/jquery.themepunch.revolution.min.js
@@ -21,18 +30,9 @@
 //= require contact_opener
 
 $(function() {
-  // Layout.init();    
-  // Layout.initOWL();
-  // LayersliderInit.initLayerSlider();
-  // Layout.initImageZoom();
-  // Layout.initTouchspin();
-  // RevosliderInit.initRevoSlider();
-  // Layout.initTwitter();
     Layout.init();    
     Layout.initOWL();
     RevosliderInit.initRevoSlider();
     Layout.initTwitter();
     ContactUs.init();
-    //Layout.initFixHeaderWithPreHeader(); /* Switch On Header Fixing (only if you have pre-header) */
-    //Layout.initNavScrolling();
 });

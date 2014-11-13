@@ -27,7 +27,14 @@
     <%= f.input :start %>
     <%= f.input :easing, collection: ["easeOutExpo", "easeOutBack"], include_blank: false  %>
     <%= f.input :href %>
-    <%= f.input :photo, as: :file %>
+    <div class="row">
+      <div class="col-xs-6">
+        <%= f.input :photo, as: :file %>
+      </div>
+      <div class="col-xs-6">
+        <%= image_tag @element.photo, class: "element" if @element.photo.present? %>        
+      </div>
+    </div>
     <%= link_to "remove image", [:remove_photo,@slideshow, @element] if @element.photo.present? %>
     <%= f.input :body, input_html: {rows: 10,class: 'summernote' } %>
   </div>

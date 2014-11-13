@@ -1,0 +1,33 @@
+<div id="top" class="row">
+  <div class="col-sm-4">
+    <h1>Editing element of slideshow</h1>
+    <%= link_to "Slideshow page", (@slideshow), class: "btn btn-success" %>
+  </div>
+
+  <div class="col-sm-8">
+    <div class="slider_preview margin-bottom-5">
+      <div class="fullwidthbanner-container revolution-slider">
+        <div class="fullwidthabnner">
+          <ul id="revolutionul">
+            <% [@slideshow, @slideshow].each do |slideshow| %>
+              <li 
+                data-transition=<%= slideshow.transition %> 
+                data-slotamount=<%= slideshow.slotamount %> 
+                data-masterspeed=<%= slideshow.masterspeed %> 
+                data-delay=<%= slideshow.delay %> >
+                <%= image_tag slideshow.background %>
+                <% slideshow.elements.each do |e| %>
+                  <%= content_tag e.tag, class: e.klass, data:{ x: e.x ,y: e.y ,speed: e.speed ,start: e.start , easing: e.easing } do -%>
+                    <%=raw e.body if e.body.present? %>
+                    <%=image_tag e.photo.url if e.photo.present? %>
+                  <% end -%>
+                <% end %>
+              </li>    
+            <% end %>
+          </ul>
+          <div class="tp-bannertimer tp-bottom"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

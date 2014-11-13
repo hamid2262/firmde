@@ -1,5 +1,5 @@
 class ElementsController < ApplicationController
-  layout "admin_layout"
+  layout "admin_layout", except: :edit
   before_action :set_element, only: [:show, :edit, :update, :destroy, :remove_photo]
   before_action :set_slideshow, only: [:show,:index, :new, :create, :edit, :update, :destroy]
   
@@ -36,7 +36,8 @@ class ElementsController < ApplicationController
   def update
     respond_to do |format|
       if @element.update(element_params)
-        format.html { redirect_to :back, notice: 'element was successfully updated.' }
+        # format.html { redirect_to :back, notice: 'element was successfully updated.' }
+        format.html { redirect_to :back }
         # format.html { redirect_to [@slideshow, @element], notice: 'element was successfully updated.' }
         format.json { render :show, status: :ok, location: [@slideshow, @element]}
       else

@@ -31,7 +31,7 @@
 .slide_title_white {
 	color: #fff;
 	text-align: center;
-	text-transform: uppercase;
+	
 	font: 300 47px/66px "Open Sans", sans-serif;
 }
 .slide_title_white_bold {
@@ -44,7 +44,7 @@
 	padding: 5px 10px;
 	color: #fff;
 	text-align: center;
-	text-transform: uppercase;
+	
 }
 .slider-colored {
 	z-index: 1;
@@ -61,21 +61,21 @@
 .slide_title {
 	font: 300 47px/66px "Open Sans", sans-serif;
 	color: #3f5862;
-	text-transform: uppercase;
+	
 }
 .slide_subtitle {
 	font: 400 18px/25px "Open Sans", sans-serif;
 	background: #E84D1C;
 	padding: 5px;
 	color: #fafafa;
-	text-transform: uppercase;
+	
 }
 .slide_list_item {
 	font: 400 14px/20px "Open Sans", sans-serif;
 	background: #E84D1C;
 	padding: 5px;
 	color: #fafafa;
-	text-transform: uppercase;
+	
 }
 .slide_desc {
 	color: #7b8793;
@@ -91,7 +91,7 @@
 	background: #6fc561;
 	padding: 7px 15px;
 	color: #fff;
-	text-transform: uppercase;
+	
 	cursor: pointer;
 }
 .tp-leftarrow.default,
