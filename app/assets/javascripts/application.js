@@ -30,9 +30,10 @@
 //= require contact_opener
 
 $(function() {
-    Layout.init();    
-    Layout.initOWL();
-    RevosliderInit.initRevoSlider();
-    Layout.initTwitter();
-    ContactUs.init();
+  Layout.init();    
+  Layout.initOWL();
+  RevosliderInit.initRevoSlider();
+  Layout.initTwitter();
+  ContactUs.init();
 });
+
