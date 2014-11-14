@@ -4,7 +4,6 @@ body.ecommerce {
 .ecommerce h1, .ecommerce h2, .ecommerce h3, .ecommerce h4, .ecommerce h5, .ecommerce h6 {
 	font-family: "PT Sans Narrow", sans-serif;
 	margin: 0 0 10px;
-	text-transform: uppercase;
 }
 .ecommerce h1 {
 	font-size: 23px;
@@ -318,7 +317,6 @@ Header and header elements
 
 /* breadcrumb */
 .ecommerce .breadcrumb {
-	text-transform: uppercase;
 	font: 13px "PT Sans Narrow", sans-serif;
 }
 
@@ -444,7 +442,6 @@ Header and header elements
 .goods-data th,
 .checkout-page th {
 	font: 16px "PT Sans Narrow", sans-serif;
-	text-transform: uppercase;
 	border-bottom: solid 1px #ecebeb;
 	padding-bottom: 8px;
 }
@@ -553,7 +550,6 @@ Header and header elements
 .checkout-total-block em {
 	font: 18px 'PT Sans Narrow', sans-serif;
 	float: left;
-	text-transform: uppercase;
 	position: relative;
 	top: 2px;
 }
@@ -721,7 +717,6 @@ Header and header elements
 .ecommerce .sidebar {
 	font: 15px 'PT Sans Narrow', sans-serif;
 	color: #3E4D5C;
-	text-transform: uppercase;
 }
 .ecommerce .sidebar .list-group-item {
     background: #fff;
@@ -894,7 +889,6 @@ Header and header elements
 }
 .product-page-options label {
 	font-weight: normal;
-	text-transform: uppercase;
 	color: #8e9ca8;
 	font-family: "PT Sans Narrow", sans-serif;
 	float: left;
@@ -1021,7 +1015,6 @@ table .product-quantity .input-group {
 }
 
 .ecommerce .nav-tabs {
-	text-transform: uppercase;
 	font: 16px/1 "PT Sans Narrow", sans-serif;	
 }
 .ecommerce .nav-tabs > li > a, .ecommerce .nav-tabs > li > a:hover, .ecommerce .nav-tabs > li > a:focus {
@@ -1106,7 +1099,6 @@ table .product-quantity .input-group {
 }
 .list-view-sorting label {
 	font-weight: normal;
-	text-transform: uppercase;
 	font-size: 14px;
 	color: #8e9ca8;
 	font-family: "PT Sans Narrow", sans-serif;
@@ -1131,7 +1123,6 @@ table .product-quantity .input-group {
 
 .content-form-page legend {
 	font: 18px 'PT Sans Narrow', sans-serif;
-	text-transform: uppercase;
 	margin-bottom: 14px;
 }
 
@@ -1139,5 +1130,4 @@ table .product-quantity .input-group {
 Shop Stype Buttons
 ***/
 .btn {
-	text-transform: uppercase;
 }
