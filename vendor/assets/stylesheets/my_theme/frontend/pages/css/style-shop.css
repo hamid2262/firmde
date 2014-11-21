@@ -2,7 +2,7 @@ body.ecommerce {
 	background: #f9f9f9;
 }
 .ecommerce h1, .ecommerce h2, .ecommerce h3, .ecommerce h4, .ecommerce h5, .ecommerce h6 {
-	font-family: "PT Sans Narrow", sans-serif;
+	font-family: "Open Sans", sans-serif;
 	margin: 0 0 10px;
 }
 .ecommerce h1 {
@@ -56,7 +56,7 @@ Header and header elements
 
 /* Navigation */
 .ecommerce .header-navigation {
-	font: 19px "PT Sans Narrow", sans-serif;
+	font: 19px "Open Sans", sans-serif;
 	letter-spacing: 1px;
 	margin: 0;
 }
@@ -317,7 +317,7 @@ Header and header elements
 
 /* breadcrumb */
 .ecommerce .breadcrumb {
-	font: 13px "PT Sans Narrow", sans-serif;
+	font: 13px "Open Sans", sans-serif;
 }
 
 /* Catalogue styles */
@@ -406,7 +406,7 @@ Header and header elements
 }
 .pi-price {
 	color: #e84d1c;
-	font: 18px 'PT Sans Narrow', sans-serif;
+	font: 18px 'Open Sans', sans-serif;
 	float: left;
 	padding-top: 1px;
 }
@@ -441,7 +441,7 @@ Header and header elements
 }
 .goods-data th,
 .checkout-page th {
-	font: 16px "PT Sans Narrow", sans-serif;
+	font: 16px "Open Sans", sans-serif;
 	border-bottom: solid 1px #ecebeb;
 	padding-bottom: 8px;
 }
@@ -463,7 +463,7 @@ Header and header elements
 .goods-page-total,
 .checkout-price,
 .checkout-total {
-	font-family: 'PT Sans Narrow', sans-serif;
+	font-family: 'Open Sans', sans-serif;
 }
 .goods-page-price strong, 
 .goods-page-total strong,
@@ -548,7 +548,7 @@ Header and header elements
 }
 .shopping-total em,
 .checkout-total-block em {
-	font: 18px 'PT Sans Narrow', sans-serif;
+	font: 18px 'Open Sans', sans-serif;
 	float: left;
 	position: relative;
 	top: 2px;
@@ -556,7 +556,7 @@ Header and header elements
 .shopping-total strong,
 .checkout-total-block strong {
 	color: #e84d1c;
-	font: 21px 'PT Sans Narrow', sans-serif;
+	font: 21px 'Open Sans', sans-serif;
 	font-weight: normal;
 	float: right;
 }
@@ -577,7 +577,7 @@ Header and header elements
 .checkout-page h2 {
 	background: #a7b0b8;
 	color: #fff;
-	font: 17px 'PT Sans Narrow', sans-serif;
+	font: 17px 'Open Sans', sans-serif;
 	margin: 0 0 15px;
 }
 .checkout-page h2 a {
@@ -603,7 +603,7 @@ Header and header elements
 	color: #E02222;
 }
 .checkout-page h3 {
-	font: 23px 'PT Sans Narrow', sans-serif;
+	font: 23px 'Open Sans', sans-serif;
 	color: #3e4d5c;
 	padding-top: 10px;
 }
@@ -715,7 +715,7 @@ Header and header elements
 }
 
 .ecommerce .sidebar {
-	font: 15px 'PT Sans Narrow', sans-serif;
+	font: 15px 'Open Sans', sans-serif;
 	color: #3E4D5C;
 }
 .ecommerce .sidebar .list-group-item {
@@ -804,7 +804,7 @@ Header and header elements
 .sidebar-products .price {
 	margin-left: 80px;
     color: #E84D1C;
-    font: 16px 'PT Sans Narrow', sans-serif;
+    font: 16px 'Open Sans', sans-serif;
 }
 
 /* BEGIN product page */
@@ -843,7 +843,7 @@ Header and header elements
 }
 .price-availability-block .price {
 	float: left;
-	font-family: 'PT Sans Narrow', sans-serif;
+	font-family: 'Open Sans', sans-serif;
 }
 .price-availability-block .price strong {
 	color: #e84d1c;
@@ -890,7 +890,7 @@ Header and header elements
 .product-page-options label {
 	font-weight: normal;
 	color: #8e9ca8;
-	font-family: "PT Sans Narrow", sans-serif;
+	font-family: "Open Sans", sans-serif;
 	float: left;
 	margin-right: 10px;
 	padding-top: 2px;
@@ -1015,7 +1015,7 @@ table .product-quantity .input-group {
 }
 
 .ecommerce .nav-tabs {
-	font: 16px/1 "PT Sans Narrow", sans-serif;	
+	font: 16px/1 "Open Sans", sans-serif;	
 }
 .ecommerce .nav-tabs > li > a, .ecommerce .nav-tabs > li > a:hover, .ecommerce .nav-tabs > li > a:focus {
 	padding: 5px 15px 3px;
@@ -1101,7 +1101,7 @@ table .product-quantity .input-group {
 	font-weight: normal;
 	font-size: 14px;
 	color: #8e9ca8;
-	font-family: "PT Sans Narrow", sans-serif;
+	font-family: "Open Sans", sans-serif;
 	float: left;
 	margin-right: 10px;
 	position: relative;
@@ -1122,7 +1122,7 @@ table .product-quantity .input-group {
 }
 
 .content-form-page legend {
-	font: 18px 'PT Sans Narrow', sans-serif;
+	font: 18px 'Open Sans', sans-serif;
 	margin-bottom: 14px;
 }
 
