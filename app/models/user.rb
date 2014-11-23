@@ -4,6 +4,10 @@ class User < ActiveRecord::Base
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
 
+  has_many :pages
+  has_many :page_backups
+  # has_many :page_backups, :through => :pages
+
   def is_super_user?
     true if self.email == 'hamid2262@yahoo.com'
   end

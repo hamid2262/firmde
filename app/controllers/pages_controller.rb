@@ -17,6 +17,7 @@ class PagesController < ApplicationController
   end
 
   def edit
+    @page_backups = @page.page_backups.order("updated_at desc").limit(10)
   end
 
   def create
@@ -24,6 +25,7 @@ class PagesController < ApplicationController
     @page.parent_id  = Page.find(params[:parent_id]).id if params[:parent_id].present?
     respond_to do |format|
       if @page.save
+        build_page_backup  
         format.html { redirect_to @page, notice: 'Page was successfully created.' }
         format.json { render :show, status: :created, location: @page }
       else
@@ -40,6 +42,7 @@ class PagesController < ApplicationController
       destination = @page
     end
     respond_to do |format|
+      build_page_backup
       if @page.update(page_params)
         format.html { redirect_to destination, notice: 'Page was successfully updated.' }
         format.json { render :show, status: :ok, location: @page }
@@ -65,5 +68,15 @@ class PagesController < ApplicationController
 
     def page_params
       params.require(:page).permit(:title, :title_on_image, :subtitle_on_image, :body, :photo, :parent_id, :order, :slug, :visible_on_sidebar, :visible_on_navbar)
+    end
+
+    def page_backup_params
+      params.require(:page).permit(:title, :title_on_image, :subtitle_on_image, :body, :slug)
+    end
+
+    def build_page_backup  
+      page_backup = @page.page_backups.build(page_backup_params)
+      page_backup.user = current_user
+      page_backup.save
     end
 end

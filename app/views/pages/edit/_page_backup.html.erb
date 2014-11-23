@@ -1,0 +1,18 @@
+<% @page_backups.each do |page_backup| %>
+  <hr>  
+  <div class="row">
+    <div class="col-sm-4">  
+      title: <%=raw page_backup.title_on_image %> <br>
+      subtitle: <%=raw page_backup.subtitle_on_image %> <br>
+
+      <hr>
+      <%= link_to "replace with current", [:replace, @page, page_backup], class: "btn btn-success" %><br>
+      <hr>
+      edited by: <%= page_backup.user.try(:email) %> <br>
+      <%= time_ago_in_words(page_backup.updated_at) %>
+
+
+    </div>
+    <div class="col-sm-8">  <%=raw page_backup.body  %> </div>
+  </div>
+<% end %>

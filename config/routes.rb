@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
 
+
   get 'static_pages/contact_us'
 
   resources :site_settings
@@ -19,7 +20,12 @@ Rails.application.routes.draw do
   devise_for :users
 
   resources :blocks
-  resources :pages
+  resources :pages do
+    resources :page_backups, only: [:show, :index, :destroy] do 
+      get 'replace', on: :member
+    end
+  end
+
   resources :blogs do
     get 'admin', on: :collection
   end

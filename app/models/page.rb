@@ -2,6 +2,9 @@ class Page < ActiveRecord::Base
   extend ActsAsTree::TreeView
   extend ActsAsTree::TreeWalker
 
+  has_many :page_backups
+  belongs_to :user
+  
   acts_as_tree #order: "title"
 
   has_attached_file :photo, :styles => { :top_image => "850x230#", :thumb => "100x100>" }, :default_url => "/images/:style/missing.png"
