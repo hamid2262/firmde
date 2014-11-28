@@ -29,6 +29,9 @@
 //= require home
 //= require contact_opener
 
+//= require accordion_scroll
+//= require nav_tab
+
 $(function() {
   Layout.init();    
   Layout.initOWL();
