@@ -3,12 +3,15 @@ class Page < ActiveRecord::Base
   extend ActsAsTree::TreeWalker
 
   has_many :page_backups
-  belongs_to :user
   
   acts_as_tree #order: "title"
 
   has_attached_file :photo, :styles => { :top_image => "850x230#", :thumb => "100x100>" }, :default_url => "/images/:style/missing.png"
   validates_attachment_content_type :photo, :content_type => /\Aimage\/.*\Z/
+
+  has_attached_file :pictogram, :styles => { :thumb => "24x24>" }, :default_url => "/images/:style/missing.png"
+  validates_attachment_content_type :pictogram, :content_type => /\Aimage\/.*\Z/
+
   validates :title, presence: true
   validates :parent_id, presence: true
   validate  :parent_must_not_be_itself

@@ -1,11 +1,9 @@
-<div id="my_sidebar" class="sidebar col-md-3 col-sm-5">
-  <ul class="sidebar-menu">
-    <% if @page.ancestors.include?(Page.loesungen) %>
-      <%= render 'layouts/public/page_layout/left_sidebar/print_children', child: Page.loesungen %>
-    <% else %>
-      <% Page.sidebar(Page.root).each do |child| %>
-        <%= render 'layouts/public/page_layout/left_sidebar/print_children', child: child %>
-      <% end %>
-    <% end %>  
-  </ul>
-</div>
+<ul class="sidebar-menu">
+  <% if @page.ancestors.include?(Page.loesungen) %>
+    <%= render 'layouts/public/page_layout/left_sidebar/print_children', child: Page.loesungen %>
+  <% else %>
+    <% Page.sidebar(Page.root).each do |child| %>
+      <%= render 'layouts/public/page_layout/left_sidebar/print_children', child: child %>
+    <% end %>
+  <% end %>  
+</ul>

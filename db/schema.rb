@@ -11,7 +11,10 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141123122939) do
+ActiveRecord::Schema.define(version: 20141128152112) do
+
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
 
   create_table "blocks", force: true do |t|
     t.string   "title"
@@ -22,7 +25,7 @@ ActiveRecord::Schema.define(version: 20141123122939) do
     t.datetime "updated_at"
   end
 
-  add_index "blocks", ["title"], name: "index_blocks_on_title"
+  add_index "blocks", ["title"], name: "index_blocks_on_title", using: :btree
 
   create_table "blogs", force: true do |t|
     t.string   "title"
@@ -38,7 +41,7 @@ ActiveRecord::Schema.define(version: 20141123122939) do
     t.datetime "updated_at"
   end
 
-  add_index "blogs", ["user_id"], name: "index_blogs_on_user_id"
+  add_index "blogs", ["user_id"], name: "index_blogs_on_user_id", using: :btree
 
   create_table "elements", force: true do |t|
     t.string   "tag"
@@ -57,14 +60,14 @@ ActiveRecord::Schema.define(version: 20141123122939) do
     t.datetime "photo_updated_at"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.integer  "width"
   end
 
-  add_index "elements", ["slideshow_id"], name: "index_elements_on_slideshow_id"
+  add_index "elements", ["slideshow_id"], name: "index_elements_on_slideshow_id", using: :btree
 
   create_table "kundens", force: true do |t|
     t.string   "name"
     t.string   "url"
+    t.integer  "position"
     t.string   "photo_file_name"
     t.string   "photo_content_type"
     t.integer  "photo_file_size"
@@ -75,7 +78,6 @@ ActiveRecord::Schema.define(version: 20141123122939) do
     t.datetime "photo_gray_updated_at"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.integer  "position"
   end
 
   create_table "page_backups", force: true do |t|
@@ -90,8 +92,8 @@ ActiveRecord::Schema.define(version: 20141123122939) do
     t.datetime "updated_at"
   end
 
-  add_index "page_backups", ["page_id"], name: "index_page_backups_on_page_id"
-  add_index "page_backups", ["user_id"], name: "index_page_backups_on_user_id"
+  add_index "page_backups", ["page_id"], name: "index_page_backups_on_page_id", using: :btree
+  add_index "page_backups", ["user_id"], name: "index_page_backups_on_user_id", using: :btree
 
   create_table "pages", force: true do |t|
     t.string   "title"
@@ -107,8 +109,12 @@ ActiveRecord::Schema.define(version: 20141123122939) do
     t.datetime "updated_at"
     t.text     "subtitle_on_image"
     t.text     "title_on_image"
-    t.boolean  "visible_on_sidebar", default: true
-    t.boolean  "visible_on_navbar",  default: true
+    t.boolean  "visible_on_sidebar",     default: true
+    t.boolean  "visible_on_navbar",      default: true
+    t.string   "pictogram_file_name"
+    t.string   "pictogram_content_type"
+    t.integer  "pictogram_file_size"
+    t.datetime "pictogram_updated_at"
   end
 
   create_table "site_settings", force: true do |t|
@@ -141,7 +147,7 @@ ActiveRecord::Schema.define(version: 20141123122939) do
     t.integer  "order"
   end
 
-  add_index "slideshows", ["order"], name: "index_slideshows_on_order"
+  add_index "slideshows", ["order"], name: "index_slideshows_on_order", using: :btree
 
   create_table "users", force: true do |t|
     t.string   "email",                  default: "", null: false
@@ -159,7 +165,7 @@ ActiveRecord::Schema.define(version: 20141123122939) do
     t.string   "role"
   end
 
-  add_index "users", ["email"], name: "index_users_on_email", unique: true
-  add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
+  add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
+  add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
 
 end

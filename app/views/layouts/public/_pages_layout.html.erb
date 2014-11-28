@@ -2,8 +2,12 @@
   <div class="ecommerce">
     <div class="main">
       <div class="container">
-        <%= render 'layouts/public/page_layout/left_sidebar' %>
-        <%= render 'layouts/public/page_layout/content' %>
+        <div id="my_sidebar" class="sidebar col-md-3 hidden-xs hidden-sm hidden-md">
+          <%= render 'layouts/public/page_layout/left_sidebar' %>
+        </div>
+        <div class="col-md-12 col-lg-9 ">
+          <%= render 'layouts/public/page_layout/content' %>
+        </div>
       </div>
     </div>
   </div>
