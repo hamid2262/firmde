@@ -1,15 +1,18 @@
 <div id="page_show">
   <%#= render 'side_bar_left' %>
+
   <%= render 'pages/show/top_image' %>
   <%= render 'pages/show/breadcrumb' %>
-  <div>
-    <%= raw @page.body %>
-  </div>
-  
+
   <% if can? :edit, @page %>
     <%= link_to 'Edit', edit_page_path(@page) %> |
     <%= link_to 'Back', pages_path %>
   <% end %>
+  
+  <div>
+    <%= raw @page.body %>
+  </div>
+  
 </div>
 
 

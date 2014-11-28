@@ -18,7 +18,12 @@
     .header-navigation-content{
       .menu-list{
         h4 {
-          font: bold 14px 'Open Sans', Arial, sans-serif !important;
+          font: bold 12px 'Open Sans', Arial, sans-serif !important;
+          .pictogram{
+            float: left;
+            margin: -10px 7px 4px 5px;
+            height: 31px;            
+          }
         }
         li a:hover{
           background: #e6400c;

@@ -12,6 +12,9 @@ class Page < ActiveRecord::Base
   has_attached_file :pictogram, :styles => { :thumb => "24x24>" }, :default_url => "/images/:style/missing.png"
   validates_attachment_content_type :pictogram, :content_type => /\Aimage\/.*\Z/
 
+  has_attached_file :pictogram_hover, :styles => { :thumb => "24x24>" }, :default_url => "/images/:style/missing.png"
+  validates_attachment_content_type :pictogram_hover, :content_type => /\Aimage\/.*\Z/
+
   validates :title, presence: true
   validates :parent_id, presence: true
   validate  :parent_must_not_be_itself

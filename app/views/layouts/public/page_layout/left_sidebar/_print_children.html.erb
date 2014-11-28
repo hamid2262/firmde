@@ -1,6 +1,8 @@
 <li class="list-group-item clearfix <%= "active" if @page.self_and_ancestors.include?(child) %>">
   <%= link_to  page_path("#{child.id}-#{child.title}") do %>
-    <% if child.pictogram.exists? %>
+    <% if child.pictogram_hover.exists? and @page.self_and_ancestors.include?(child) %>
+      <%= image_tag child.pictogram_hover.url, class: "pictogram" %>
+    <% elsif child.pictogram.exists?%>
       <%= image_tag child.pictogram.url, class: "pictogram" %>
     <% else %>
       <i class="fa fa-angle-right"></i>

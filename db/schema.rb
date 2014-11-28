@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141128152112) do
+ActiveRecord::Schema.define(version: 20141128215346) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -109,12 +109,16 @@ ActiveRecord::Schema.define(version: 20141128152112) do
     t.datetime "updated_at"
     t.text     "subtitle_on_image"
     t.text     "title_on_image"
-    t.boolean  "visible_on_sidebar",     default: true
-    t.boolean  "visible_on_navbar",      default: true
+    t.boolean  "visible_on_sidebar",           default: true
+    t.boolean  "visible_on_navbar",            default: true
     t.string   "pictogram_file_name"
     t.string   "pictogram_content_type"
     t.integer  "pictogram_file_size"
     t.datetime "pictogram_updated_at"
+    t.string   "pictogram_hover_file_name"
+    t.string   "pictogram_hover_content_type"
+    t.integer  "pictogram_hover_file_size"
+    t.datetime "pictogram_hover_updated_at"
   end
 
   create_table "site_settings", force: true do |t|
