@@ -1,6 +1,8 @@
-<div id="home_index">
-  <%= render '/home/index/losungen_boxes' %>
-  <%= render '/home/index/qoute' %>
-  <%= render '/home/index/w_questions' %>
-  <%= render '/home/index/clients' %>
-</div>
+<% cache ["home", "main"], expires_in: 20.minutes do %>
+  <div id="home_index">
+    <%= render '/home/index/losungen_boxes' %>
+    <%= render '/home/index/qoute' %>
+    <%= render '/home/index/w_questions' %>
+    <%= render '/home/index/clients' %>
+  </div>
+<% end %>

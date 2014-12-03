@@ -1,4 +1,3 @@
-<% cache do %>
 <ul class="sidebar-menu">
   <% if @page.ancestors.include?(Page.loesungen) %>
     <%= render 'layouts/public/page_layout/left_sidebar/print_children', child: Page.loesungen %>
@@ -8,4 +7,3 @@
     <% end %>
   <% end %>  
 </ul>
-<% end %>
