@@ -4,17 +4,15 @@
 <% end %>
 <%= render 'layouts/public/header/pre_header' %>
 
-<% cache "header", expires_in: 20.minutes do %>
-  <div class="header">
-    <div class="container">
-      <%= link_to root_path, class: "site-logo" do %>
-        <% if SiteSetting.last %>
-          <%= image_tag SiteSetting.last.logo.url, class: "img-responsive" %>
-        <% else %>
-          <%= image_tag "OPC_Logo_120.gif", class: "img-responsive" %>
-        <% end %>
+<div class="header">
+  <div class="container">
+    <%= link_to root_path, class: "site-logo" do %>
+      <% if SiteSetting.last %>
+        <%= image_tag SiteSetting.last.logo.url, class: "img-responsive" %>
+      <% else %>
+        <%= image_tag "OPC_Logo_120.gif", class: "img-responsive" %>
       <% end %>
-      <%= render 'layouts/public/header/navbar' %>
-    </div>
+    <% end %>
+    <%= render 'layouts/public/header/navbar' %>
   </div>
-<% end %>
+</div>

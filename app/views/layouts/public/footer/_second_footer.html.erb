@@ -19,7 +19,8 @@
                 <% end %>
               </li>
               <li><a href="#" class="menu">Sitemap</a></li>
-              <li><a href="#" class="menu">Impressum</a></li>
+              <li><%= link_to "Nutzungsbedingungen", Page.where(title: "Nutzungsbedingungen").last, class: "menu" %></li>
+              <li><%= link_to "Impressum", Page.where(title: "Impressum").last, class: "menu" %></li>
             </ul>  
           </div>
         </div>
