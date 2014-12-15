@@ -31,6 +31,7 @@
 
 //= require accordion_scroll
 //= require nav_tab
+//= require carousel_interval
 
 $(function() {
   Layout.init();    
