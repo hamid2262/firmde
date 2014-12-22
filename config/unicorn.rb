@@ -1,4 +1,4 @@
-root = "/home/deployer/apps/firmde/current"
+root = "/home/vr10123/apps/firmde/current"
 working_directory root
 pid "#{root}/tmp/pids/unicorn.pid"
 stderr_path "#{root}/log/unicorn.log"
