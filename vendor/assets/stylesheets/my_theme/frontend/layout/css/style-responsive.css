@@ -408,7 +408,7 @@
 
 	.service-box p, .service-box .service-box-heading em, .service-box .service-box-heading span {
 		display: block;
-		text-align: center;
+		text-align: justify;
 	}
 	.service-box .service-box-heading em {
 		margin-bottom: 10px;

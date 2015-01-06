@@ -9,6 +9,10 @@
   background: rgba(170,170,170,0.37);
 }
 
+.modal-backdrop {
+  z-index: -1;
+}
+
 #kartentechnologien{
   .dropdown-menu{
     a:hover{

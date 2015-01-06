@@ -1,12 +1,16 @@
+<!-- Button trigger modal -->
 <div id="log-in-modal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
-  <div class="modal-dialog modal-sm">
+  <div class="modal-dialog modal-lg">
     <div class="modal-content">
 
       <div class="panel panel-primary">
-        <div class="panel-heading">Bitte geben Username und Password</div>
+        <div class="panel-heading">
+          <h4>Login Partner-Area</h4>
+        </div>
         <div class="panel-body">
+          <p>Geben Sie Ihren Benutzernamen und Ihr Passwort ein, um sich an in der Partner-Area anzumelden</p>
           <%#= render 'sessions/form' %>
-          <%= simple_form_for(User.new, url: "/users/sign_in" , 
+          <%= simple_form_for(User.new, url: "/users" , 
               defaults: { 
                 input_html: { class: 'form-control' }, 
                 wrapper_html: { class: 'form-group' }
@@ -21,3 +25,5 @@
     </div>
   </div>
 </div>
+
+
