@@ -15,4 +15,7 @@ class Blog < ActiveRecord::Base
     @footer_last_blogs ||= Blog.order(:updated_at).limit(2)
   end
   
+  def display_date
+     self.my_date ? self.my_date.strftime("%d/%m/%Y") : self.created_at.strftime("%d/%m/%Y")
+  end
 end

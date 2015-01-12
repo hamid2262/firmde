@@ -4,3 +4,4 @@
 
 <%= link_to 'Show', @blog %> |
 <%= link_to 'Back', admin_blogs_path %>
+<%= link_to 'Delete Page- be carefull', @blog, method: :delete,class: "btn btn-link pull-right", data: { confirm: 'Are you sure?' } %>

@@ -24,6 +24,7 @@
         <td><%= blog.category %></td>
         <td><%= blog.slug %></td>
         <td><%= image_tag blog.photo.url(:thumb) %></td>
+        <td><%= blog.my_date.strftime("%d/%m/%Y") if blog.my_date %></td>
         <td><%= link_to 'Show', blog,class: "btn btn-info"  %></td>
         <td><%= link_to 'Edit', edit_blog_path(blog),class: "btn btn-success" %></td>
         <td><%= link_to 'Destroy', blog, method: :delete,class: "btn btn-danger", data: { confirm: 'Are you sure?' } %></td>
