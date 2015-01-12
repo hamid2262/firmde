@@ -5,5 +5,16 @@
 <%= link_to 'Show', @page %> |
 <%= link_to 'Back', pages_path %>
 
+<% unless @page.children.any? %>
+  <%= link_to 'Delete Page- be carefull', @page, method: :delete,class: "btn btn-link pull-right", data: { confirm: 'Are you sure?' } %>
+<% else %>
+  <h2>Children Pages</h2>
+  <ul>
+    <%  @page.children.each do |child| %>
+      <li><%= link_to child.title, edit_page_path(child) %></li>
+    <% end %>
+  </ul>
+<% end %>
+
 
 <%= render 'pages/edit/page_backup'%>

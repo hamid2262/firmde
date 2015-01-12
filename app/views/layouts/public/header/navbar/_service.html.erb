@@ -4,7 +4,7 @@
   </a>
 
   <ul class="dropdown-menu">
-    <% Page.services.children.each do |child| %>
+    <% Page.services.children.order(:order).each do |child| %>
       <%= render 'layouts/public/header/navbar/services/child', child: child %>
     <% end %>
   </ul>
