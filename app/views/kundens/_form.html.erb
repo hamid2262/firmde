@@ -7,8 +7,8 @@
   <div class="form-inputs">
     <%= f.input :name %>
     <%= f.input :url %>
-    <%= f.input :photo, as: :file  %>
-    <%= f.input :photo_gray, as: :file  %>
+    <%= f.input :photo, as: :file, hint: 'width: 159 pixel, height: 101 pixel. Es soll Farbbild und transparent sein.'  %>
+    <%= f.input :photo_gray, as: :file, hint: 'width: 159 pixel, height: 101 pixel. Es soll grau (Schwarz-Weiß) und transparent sein.'  %>
   </div>
 
   <div class="row">
