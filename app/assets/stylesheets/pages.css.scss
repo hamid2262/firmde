@@ -8,9 +8,12 @@
     text-transform: none;
   }
   #top_image, .title-wrapper {
-    min-height: 230px;
+    // min-height: 230px;
     padding-top: 27px;
     background-repeat: inherit;
+    img{
+      width: 100%;
+    }
   }
 
   .panel .panel-body {

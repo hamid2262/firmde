@@ -1,7 +1,10 @@
-<div id="top_image" class="title-wrapper", style="background-image: url('<%= @page.photo_of_self_or_parent %>');">
-  <div class="">
-    <div class="col-xs-12"><%= raw @page.title_on_image %></div>
-    <div class="col-xs-12"><%= raw @page.subtitle_on_image %></div>
-  </div>
+<!-- <div id="top_image" class="title-wrapper", style="background-image: url('<%#= @page.photo_of_self_or_parent %>');">
+
+</div>
+
+ -->
+
+<div id="top_image" class="title-wrapper">
+  <%= image_tag @page.photo_of_self_or_parent, class: "img-responsive" %> 
 </div>
 
