@@ -1,4 +1,5 @@
 <ul class="sidebar-menu">
+  <span class="menus">
   <% if @page.ancestors.include?(Page.loesungen) %>
     <%= render 'layouts/public/page_layout/left_sidebar/print_children', child: Page.loesungen %>
   <% else %>
@@ -6,4 +7,18 @@
       <%= render 'layouts/public/page_layout/left_sidebar/print_children', child: child %>
     <% end %>
   <% end %>  
+  </span>
+
+
+  <% title = "pages:sidebarb lock 1" %>
+  <%= render 'blocks/show', block: Block.find_by(title: title), title: title %>
+
+  <% title = "pages:sidebarb lock 2" %>
+  <%= render 'blocks/show', block: Block.find_by(title: title), title: title %>
+
+  <% title = "pages:sidebarb lock 2" %>
+  <%= render 'blocks/show', block: Block.find_by(title: title), title: title %>
+
 </ul>
+
+
