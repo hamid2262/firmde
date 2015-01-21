@@ -17,9 +17,9 @@ class Page < ActiveRecord::Base
 
   validates :title, presence: true
   validates :parent_id, presence: true
+  validates :slug, presence: true, uniqueness: { case_sensitive: false }
   validate  :parent_must_not_be_itself
-  # validates :slug, presence: true
-
+  
   def to_params
     "#{id}-#{title}"
   end
