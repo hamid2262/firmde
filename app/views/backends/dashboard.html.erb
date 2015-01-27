@@ -1,3 +1,10 @@
 <h3 class="page-title">
   Dashboard <small>settings & news</small>
 </h3>
+
+<div class="col-sm-6">  
+  
+  <%= link_to "Database Backup", db_backup_path, class: "btn btn-warning" %>
+  <br>
+  Path: <%=  "/home/vr10123/apps/backups/#{DateTime.now.strftime('%Y-%m-%d-T-%H-%M')}" %>
+</div>
