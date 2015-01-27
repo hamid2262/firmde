@@ -15,7 +15,15 @@
       width: 100%;
     }
   }
+  .panel-heading{
+    .panel-title{
+      span{
+        font-weight: normal;
+        font-size: 17px;
+      }
 
+    }
+  }
   .panel .panel-body {
     font-size: 14px;
   }
