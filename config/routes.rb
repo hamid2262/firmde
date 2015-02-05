@@ -2,6 +2,7 @@ Rails.application.routes.draw do
 
 
   get 'static_pages/contact_us'
+  get 'static_pages/google_search'
 
   resources :site_settings
 
