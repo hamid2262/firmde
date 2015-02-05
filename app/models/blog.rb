@@ -4,7 +4,7 @@ class Blog < ActiveRecord::Base
   validates :title, presence: true  
 
   def self.filter_category(category)
-    category.present? ? where( "category LIKE ?", "%#{category}%") : where(nil)
+    category.present? ? where( "category LIKE ?", "%#{category}%").order("my_date desc") : where(nil).order("my_date desc")
   end
 
   def self.category_count
