@@ -12,7 +12,7 @@ class Blog < ActiveRecord::Base
   end
 
   def self.footer_last_blogs
-    @footer_last_blogs ||= Blog.order(:updated_at).limit(2)
+    @footer_last_blogs ||= Blog.order("updated_at desc").limit(2)
   end
   
   def display_date

@@ -29,7 +29,7 @@ Block.create(title: 'home-page-qoute<br>why',
 Block.create(title: 'home-page-topbar-tel', body: '+49 (0) 651-8408-0' )
 Block.create(title: 'home-page-topbar-email', 
   body:
-    '<a href="mailto:someone@example.com?Subject=contact%20from%20website" target="_top">
+    '<a href="mailto:info@opc.de?Subject=contact%20from%20website" target="_top">
       <i class="fa fa-envelope-o"></i>
       info@opc.de
     </a>')
