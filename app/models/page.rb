@@ -20,8 +20,8 @@ class Page < ActiveRecord::Base
   validates :slug, presence: true, uniqueness: { case_sensitive: false }
   validate  :parent_must_not_be_itself
   
-  def to_params
-    "#{id}-#{title}"
+  def to_param
+    "#{id}-#{slug}"
   end
   
   def visible_pages
