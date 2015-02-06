@@ -1,16 +1,19 @@
-<li class="list-group-item clearfix <%= "active" if @page.self_and_ancestors.include?(child) %>">
-  <%= link_to  page_path("#{child.id}-#{child.title}") do %>
-    <% if child.pictogram_hover.exists? and @page.self_and_ancestors.include?(child) %>
-      <%= image_tag child.pictogram_hover.url, class: "pictogram" %>
-    <% elsif child.pictogram.exists?%>
-      <%= image_tag child.pictogram.url, class: "pictogram" %>
-    <% else %>
-      <i class="fa fa-angle-right"></i>
+<% unless child.depth==1 %>
+  <li class="list-group-item clearfix <%= "active" if @page.self_and_ancestors.include?(child) %>">
+    <%= link_to child do %>
+      <% if child.pictogram_hover.exists? and @page.self_and_ancestors.include?(child) %>
+        <%= image_tag child.pictogram_hover.url, class: "pictogram" %>
+      <% elsif child.pictogram.exists?%>
+        <%= image_tag child.pictogram.url, class: "pictogram" %>
+      <% else %>
+        <i class="fa fa-angle-right"></i>
+      <% end %>
+      <%#= "#{child.title}-#{child.id}" %>
+      <%= child.title %>
     <% end %>
-    <%#= "#{child.title}-#{child.id}" %>
-    <%= child.title %>
-  <% end %>
-</li>
+  </li>
+<% end %>
+
 <% if @page.self_and_ancestors.include?(child) %>
   <ul>
     <% Page.sidebar(child).each do |child_2| %>
@@ -18,3 +21,4 @@
     <% end %>
   </ul>
 <% end %>
+

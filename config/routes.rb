@@ -2,6 +2,7 @@ Rails.application.routes.draw do
 
 
   get 'static_pages/contact_us'
+  get 'static_pages/google_search'
 
   resources :site_settings
 
@@ -31,6 +32,7 @@ Rails.application.routes.draw do
   end
   
   get "admin", to:'backends#dashboard', as: "admin"
+  get "db_backup", to:'backends#db_backup', as: "db_backup"
   get "admin/loesungen", to:'backends#loesungen', as: "admin_loesungen"
   get "admin/services", to:'backends#services', as: "admin_services"
   

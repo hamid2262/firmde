@@ -4,7 +4,7 @@ class Blog < ActiveRecord::Base
   validates :title, presence: true  
 
   def self.filter_category(category)
-    category.present? ? where( "category LIKE ?", "%#{category}%") : where(nil)
+    category.present? ? where( "category LIKE ?", "%#{category}%").order("my_date desc") : where(nil).order("my_date desc")
   end
 
   def self.category_count
@@ -12,7 +12,9 @@ class Blog < ActiveRecord::Base
   end
 
   def self.footer_last_blogs
-    @footer_last_blogs ||= Blog.order(:updated_at).limit(2)
+    Rails.cache.fetch([:blogs, :footer_last_blogs], expires_in: 2.minutes) do 
+      Blog.order("my_date desc").limit(2)
+    end
   end
   
   def display_date

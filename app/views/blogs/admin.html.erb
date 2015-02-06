@@ -11,6 +11,7 @@
       <th>slug</th>
       <th>user_id</th>
       <th>photo</th>
+      <th>date</th>
 
       <th colspan="3"></th>
     </tr>
@@ -23,6 +24,7 @@
         <td><%= raw blog.body %></td>
         <td><%= blog.category %></td>
         <td><%= blog.slug %></td>
+        <td><%= blog.user_id %></td>
         <td><%= image_tag blog.photo.url(:thumb) %></td>
         <td><%= blog.my_date.strftime("%d/%m/%Y") if blog.my_date %></td>
         <td><%= link_to 'Show', blog,class: "btn btn-info"  %></td>

@@ -8,7 +8,7 @@ class BlogsController < ApplicationController
   end
 
   def admin
-    @blogs = Blog.all
+    @blogs = Blog.order("my_date desc")
   end
 
   def show
