@@ -4,6 +4,9 @@
       <h2> <%= @blog.title %></h2>
       <%= render 'blogs/show/image' %>
       <%= render 'breadcrumb' %>
+      <div class="datum">
+        <%= @blog.display_date %> <i class="fa fa-calendar"></i>
+      </div>
       <p><%= raw @blog.body %></p>
 
       <% if can? :edit, @blog %>
