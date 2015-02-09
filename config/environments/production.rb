@@ -81,28 +81,31 @@ Rails.application.configure do
   config.active_record.dump_schema_after_migration = false
 
 
-  config.action_mailer.delivery_method = :sendmail
   config.action_mailer.perform_deliveries = true
-  # config.action_mailer.delivery_method = :smtp
   config.action_mailer.raise_delivery_errors = true
 
-  # config.action_mailer.smtp_settings = {
-  #   address: "smtp.gmail.com",
-  #   port: 587,
-  #   domain: '178.62.178.32',
-  #   authentication: :plain,
-  #   enable_starttls_auto: true,
-  #   user_name: 'otoyabi2@gmail.com',
-  #   password: 'Ns_h9166'
-  # }
-
-  # config.middleware.use ExceptionNotification::Rack,
-  #   :email => {
-  #     :sender_address => %{"opc notifier" <noreply@hamsafaryab.com>},
-  #     :exception_recipients => %w{hamsafaryab@gmail.com}
-  #   }
-
-
   # for devise
-  config.action_mailer.default_url_options = { host: '178.62.178.32' }
+  # config.action_mailer.default_url_options = { host: '178.62.178.32' }
+
+  config.action_mailer.smtp_settings = {
+    address: "mail51.webspaceconfig.de",
+    port: 25,
+    # :port => 25,
+    domain: 'webspaceconfig.de',
+    authentication: :plain,
+    enable_starttls_auto: true,
+    # user_name: ENV['GMAIL_USER_NAME'],
+    # password: ENV['GMAIL_PASSWORD']
+    user_name: 'p110180p35',
+    password: 'oPcbugREP'
+  }
+
+  config.middleware.use ExceptionNotification::Rack,
+    :email => {
+      # :email_prefix => "[Whatever] ",
+      :sender_address => %{"opc" <noreply@opc.de>},
+      :exception_recipients => %w{hrmohseni@yahoo.com}
+    }
+  config.action_mailer.delivery_method = :smtp
+
 end

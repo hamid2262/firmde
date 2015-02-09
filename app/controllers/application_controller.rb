@@ -9,11 +9,16 @@ class ApplicationController < ActionController::Base
   end
  
   after_action  :user_activity
+  before_action  :initialize_contact
 
   private
 
     def user_activity
       current_user.try :touch
+    end
+
+    def initialize_contact
+      @contact = Contact.new      
     end
 
 end

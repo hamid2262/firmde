@@ -1,11 +1,15 @@
 Rails.application.routes.draw do
 
-
-  get 'static_pages/contact_us'
   get 'static_pages/google_search'
+
+  # get 'contacts/index'
+  # post 'contacts/contact_action_full'
+  # post 'contacts/contact_action_brief'
 
   resources :site_settings
 
+  resources :contacts
+  
   resources :slideshows do
     resources :elements do
       get 'remove_photo', on: :member

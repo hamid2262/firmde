@@ -2,7 +2,7 @@ $ ->
   $("#contact_popup .opener").click (e) ->
     e.preventDefault()
     if $(this).parent().parent().css("bottom") == "55px"
-      $(this).parent().parent().css("bottom", "-409px")
+      $(this).parent().parent().css("bottom", "-431px")
       $(".my_overlay").fadeOut(500)
     else
       $(this).parent().parent().css("bottom", "55px")
@@ -16,5 +16,5 @@ $(window).on "scroll", ->
   if (scrollHeight - scrollPosition) / scrollHeight is 0
     $("#contact_popup .opener").parent().parent().css("bottom", "-466px")
   else
-    $("#contact_popup .opener").parent().parent().css("bottom", "-409px")
+    $("#contact_popup .opener").parent().parent().css("bottom", "-431px")
   return

@@ -1,0 +1,20 @@
+<div class="main">
+  <div class="container">
+    <ul class="breadcrumb">
+        <li><%= link_to "Home", root_path %></li>
+        <li class="active">Anfrage</li>
+    </ul>
+    <div class="row margin-bottom-40">
+      <div class="col-md-12">
+        <div class="row">
+          <div class="col-md-9 col-sm-9">
+            <% title = "contact_us:Anfrage Formular" %>
+            <%= render 'blocks/show', block: Block.find_by(title: title), title: title %>
+            <%= render 'contacts/new/form' %>
+          </div>
+          <%= render 'contacts/new/sidebar' %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

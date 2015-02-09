@@ -45,4 +45,29 @@ Rails.application.configure do
 
   # for devise
   config.action_mailer.default_url_options = { host: 'localhost', port: 3000 }
+
+
+  config.action_mailer.smtp_settings = {
+    address: "mail51.webspaceconfig.de",
+    port: 25,
+    # :port => 25,
+    domain: 'webspaceconfig.de',
+    authentication: :plain,
+    enable_starttls_auto: true,
+    # user_name: ENV['GMAIL_USER_NAME'],
+    # password: ENV['GMAIL_PASSWORD']
+    user_name: 'p110180p35',
+    password: 'oPcbugREP'
+  }
+
+  # config.middleware.use ExceptionNotification::Rack,
+  #   :email => {
+  #     # :email_prefix => "[Whatever] ",
+  #     :sender_address => %{"opc" <noreply@opc.de>},
+  #     :exception_recipients => %w{hrmohseni@yahoo.com}
+  #   }
+    
+  config.action_mailer.delivery_method = :smtp
+  # config.action_mailer.delivery_method = :letter_opener
+
 end

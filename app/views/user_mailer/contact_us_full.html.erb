@@ -1,0 +1,39 @@
+<style>
+  td, th {
+    background: #EBEBEB;
+    text-align: left;
+  }
+  
+  table{
+    font-size: 13px; 
+    font-family: sans-serif;
+  }
+
+</style>
+
+<table>
+  <tr>
+    <th>UNTERNEHMEN: </th>
+    <td> <%= @contact.company %></td>
+  </tr>
+  <tr>
+    <th>Name: </th>
+    <td> <%= @contact.name %></td>
+  </tr>
+  <tr>
+    <th>E-MAIL: </th>
+    <td> <%= @contact.email %></td>
+  </tr>
+  <tr>
+    <th>TELEFON: </th>
+    <td> <%= @contact.tel %></td>
+  </tr>
+  <tr>
+    <th>ADDRESS: </th>
+    <td> <%= @contact.address %></td>
+  </tr>
+  <tr>
+    <th>WIE_KNNEN_WIR_IHNEN_HELFEN: </th>
+    <td> <%= @contact.message %></td>
+  </tr>
+</table>
