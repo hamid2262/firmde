@@ -3,6 +3,11 @@ class Blog < ActiveRecord::Base
   validates_attachment_content_type :photo, :content_type => /\Aimage\/.*\Z/
   validates :title, presence: true  
 
+  
+  def to_param
+    "#{id}-#{title.gsub " ", "-"}"
+  end
+
   def self.filter_category(category)
     category.present? ? where( "category LIKE ?", "%#{category}%").order("my_date desc") : where(nil).order("my_date desc")
   end
