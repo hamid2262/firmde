@@ -4,6 +4,8 @@
   }  do |f| %>
   <%=  f.error_notification %>
   <%= f.input :title, placeholder: 'Title' %>
+  <%= f.input :seo_title, placeholder: 'seo title' %>
+
   
   <div class="col-sm-6">
     <%= f.input :title_on_image, placeholder: 'Title on Image', input_html:{class: 'summernote1', data:{ height: "100"}} %>

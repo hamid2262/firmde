@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150206140520) do
+ActiveRecord::Schema.define(version: 20150209135820) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -132,6 +132,7 @@ ActiveRecord::Schema.define(version: 20150206140520) do
     t.string   "pictogram_hover_content_type"
     t.integer  "pictogram_hover_file_size"
     t.datetime "pictogram_hover_updated_at"
+    t.string   "seo_title"
   end
 
   create_table "site_settings", force: true do |t|
