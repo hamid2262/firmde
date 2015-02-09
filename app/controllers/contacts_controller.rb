@@ -12,7 +12,7 @@ class ContactsController < ApplicationController
       if @contact.save
         UserMailer.contact_us_full(@contact).deliver
 
-        format.html { redirect_to :back, notice: 'Vielen Dank für Ihre Anfrage, <br>wir werden uns gerne mit Ihnen in Verbindung setzen.<br>Ihr OPC Vertriebteam' }
+        format.html { redirect_to :back, notice: 'Vielen Dank für Ihre Anfrage, <br>wir werden uns gerne mit Ihnen in Verbindung setzen.<br>Ihr OPC Vertriebsteam' }
       else
         format.html { render :index }
       end
