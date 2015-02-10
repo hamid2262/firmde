@@ -9,12 +9,9 @@ class BlocksController < ApplicationController
     @blocks = Block.all
   end
 
-  # GET /blocks/1
-  # GET /blocks/1.json
   def show
   end
 
-  # GET /blocks/new
   def new
     @block = Block.new
     if params[:title].present?
@@ -22,12 +19,9 @@ class BlocksController < ApplicationController
     end
   end
 
-  # GET /blocks/1/edit
   def edit
   end
 
-  # POST /blocks
-  # POST /blocks.json
   def create
     @block = Block.new(block_params)
     @block.title = params[:title] if params[:title].present?
@@ -42,8 +36,6 @@ class BlocksController < ApplicationController
     end
   end
 
-  # PATCH/PUT /blocks/1
-  # PATCH/PUT /blocks/1.json
   def update
     respond_to do |format|
       if @block.update(block_params)
@@ -56,8 +48,6 @@ class BlocksController < ApplicationController
     end
   end
 
-  # DELETE /blocks/1
-  # DELETE /blocks/1.json
   def destroy
     @block.destroy
     respond_to do |format|
