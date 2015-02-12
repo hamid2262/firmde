@@ -1,10 +1,19 @@
+@media (max-width: 400px) {
+  #contact_popup {
+    right: 0px;
+  }
+}
+@media (min-width: 400px) {
+  #contact_popup {
+    right: 77px;
+  }
+}
 #contact_popup {
   width: 300px;
   height: 484px;
   position: fixed;
   bottom: -431px;
   transition: bottom 500ms;
-  right: 77px;
   z-index: 1199;
   .btn-holder{
     overflow: hidden;
