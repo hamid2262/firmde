@@ -1,5 +1,5 @@
 $ ->
-  $("#contact_popup .opener").click (e) ->
+  $("#contact_popup #contact_popup_opener").click (e) ->
     e.preventDefault()
     if $(this).parent().parent().css("bottom") == "55px"
       $(this).parent().parent().css("bottom", "-431px")
@@ -14,7 +14,7 @@ $(window).on "scroll", ->
   
   # when scroll to bottom of the page
   if (scrollHeight - scrollPosition) / scrollHeight is 0
-    $("#contact_popup .opener").parent().parent().css("bottom", "-466px")
+    $("#contact_popup #contact_popup_opener").parent().parent().css("bottom", "-466px")
   else
-    $("#contact_popup .opener").parent().parent().css("bottom", "-431px")
+    $("#contact_popup #contact_popup_opener").parent().parent().css("bottom", "-431px")
   return
