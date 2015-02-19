@@ -1,0 +1,40 @@
+Software requirnments
+ 1. Ruby 2.0 or higher
+ 2. postgres latest version
+ 3. memcached
+ 4. imagemagick
+
+Database:
+  database: postgres
+  database name: opc_production
+  username: deployer
+  password: 2010opcCS
+
+Connection mit ssh zu Server:
+  ssh vr10123@185.15.194.123
+  pass: ********
+
+Connection can be stablished by direct on the server or by pgAdmin-3 program
+
+updating the code and sending process to server:
+  after changing in the code, by running following commands update will be automaticly done.
+  1. git add .
+  2. git commit -m 'MESSAGE'
+  3. git push
+  4. cap deploy
+  5. (if there is changes in database) cap deploy:migrations
+
+These commands will: 
+  stop rails and nginx server, 
+  pull code from git, 
+  change database if a migration exists, 
+  create a new version of code in the git repository on the server, 
+  compile coffeescript and sass files to javascript and css files, 
+  compress css files and javascript file into one file, 
+  clear all cache, 
+  restart nginx and unicorn server
+
+backup and restart database can be done by running following commands:
+  backup:  pg_dump -F c -v -U postgres -h localhost opc_production -f /home/deployer/apps/backups/backup8.psql
+
+  restore: g_restore --verbose --clean --no-acl --no-owner -h localhost -U deployer -d opc_production /home/vr10123/apps/backups/backupi.psql
