@@ -4,3 +4,21 @@
     text-decoration: none;
   }
 }
+
+.pre-footer{
+  .languages{
+    padding-top: 26px;
+    background: url("https://s3-eu-west-1.amazonaws.com/opcde/assets/img/world.png");
+    background-repeat: no-repeat;
+    background-position: right bottom;
+    width: 158px;
+    margin-top: 35px;
+    ul{
+      list-style: none;
+      padding: 0;      
+      li{
+        
+      }
+    }
+  }
+}

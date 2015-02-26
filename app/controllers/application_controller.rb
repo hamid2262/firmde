@@ -10,9 +10,24 @@ class ApplicationController < ActionController::Base
  
   after_action  :user_activity
   before_action  :initialize_contact
+  before_action  :set_locale
 
+  def default_url_options(options = {})
+    {locale: I18n.locale, host: "aa.localhost:3000/aa/"}
+  end
+    
   private
+    def set_locale
 
+      I18n.locale = params[:locale] || I18n.default_locale
+
+      # I18n.locale = params[:locale] if params[:locale].present?
+      # current_user.locale
+      # request.subdomain
+      # request.env["HTTP_ACCEPT_LANGUAGE"]
+      # request.remote_ip
+    end
+    
     def user_activity
       current_user.try :touch
     end
