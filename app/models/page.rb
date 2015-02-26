@@ -3,6 +3,7 @@ class Page < ActiveRecord::Base
   extend ActsAsTree::TreeWalker
 
   has_many :page_backups
+  has_many :sub_pages
   
   acts_as_tree #order: "title"
 

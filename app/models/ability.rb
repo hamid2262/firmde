@@ -10,6 +10,7 @@ class Ability
       can [:show, :index, :new, :create, :edit, :update], Slideshow
       can [:show, :index, :new, :create, :edit, :update, :destroy], Element
       can [:new, :create, :edit, :update, :index], Page
+      can [:new, :create, :edit, :update, :index], SubPage
       can [:new, :create, :edit, :update, :index, :destroy], Kunden
     else
       ####  Guest users
@@ -19,6 +20,7 @@ class Ability
     can [:new, :create], Contact
     can [:show, :index], Blog
     can [:show], Page
+    can [:show], SubPage
     can :role, :index, user.has_access?
   end
 end

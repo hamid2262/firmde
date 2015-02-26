@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150209135820) do
+ActiveRecord::Schema.define(version: 20150226012209) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -166,6 +166,19 @@ ActiveRecord::Schema.define(version: 20150209135820) do
   end
 
   add_index "slideshows", ["order"], name: "index_slideshows_on_order", using: :btree
+
+  create_table "sub_pages", force: true do |t|
+    t.string   "title"
+    t.string   "seo_title"
+    t.text     "body"
+    t.integer  "page_id"
+    t.integer  "order"
+    t.string   "slug"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "sub_pages", ["page_id"], name: "index_sub_pages_on_page_id", using: :btree
 
   create_table "users", force: true do |t|
     t.string   "email",                  default: "", null: false

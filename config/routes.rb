@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
 
-  scope ":locale", locale: /#{I18n.available_locales.join("|")}/ do
+  scope ":locale", locale: /en|de/ do
+  # scope ":locale", locale: /#{I18n.available_locales.join("|")}/ do
 
     get 'static_pages/google_search'
 
@@ -28,9 +29,12 @@ Rails.application.routes.draw do
 
     resources :blocks
     resources :pages do
+      resources :sub_pages
+      
       resources :page_backups, only: [:show, :index, :destroy] do 
         get 'replace', on: :member
       end
+
     end
 
     resources :blogs do

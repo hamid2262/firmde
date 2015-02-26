@@ -1,0 +1,35 @@
+<h1>Listing sub_pages</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Title</th>
+      <th>Seo title</th>
+      <th>Body</th>
+      <th>Page</th>
+      <th>Order</th>
+      <th>Slug</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @sub_pages.each do |sub_page| %>
+      <tr>
+        <td><%= sub_page.title %></td>
+        <td><%= sub_page.seo_title %></td>
+        <td><%= sub_page.body %></td>
+        <td><%= sub_page.page %></td>
+        <td><%= sub_page.order %></td>
+        <td><%= sub_page.slug %></td>
+        <td><%= link_to 'Show',  page_sub_page_path(id: sub_page.id) %></td>
+        <td><%= link_to 'Edit', edit_page_sub_page_path(id: sub_page) %></td>
+        <td><%= link_to 'Destroy', page_sub_page_path(id: sub_page.id) , method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Sub page', new_page_sub_page_path %>
