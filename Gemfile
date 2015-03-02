@@ -26,8 +26,8 @@ gem "paperclip", "~> 4.2"
 gem 'pg'
 gem 'simple_form', '~> 3.1.0.rc1', github: 'plataformatec/simple_form', branch: 'master'
 gem 'acts_as_tree', '~> 2.1.0'
-
 gem 'truncate_html', '~> 0.9.3'
+gem 'globalize', '~> 4.0.3'
 
 # Use unicorn as the app server
 gem 'unicorn'

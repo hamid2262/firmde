@@ -1,0 +1,18 @@
+<div class="panel panel-default">
+  <div class="panel-heading" role="tab" id="headingOne">
+    <h4 class="panel-title">
+      <a data-toggle="collapse" data-parent="#accordion" href="#collapse<%= sub_page.order %>" aria-expanded="false" aria-controls="collapse<%= sub_page.order %>" class="collapsed">
+        <span style="font-weight: bold;"><%= raw sub_page.title %></span>
+      </a>
+    </h4>
+  </div>
+  <div id="collapse<%= sub_page.order %>" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingOne" aria-expanded="false" style="height: 0px;">
+    <div class="panel-body" style="text-align: justify;">
+      <%= raw sub_page.body %>
+    </div>
+  </div>
+</div>
+
+<% if can? "edit", sub_page %>
+  <%= link_to 'Edit', edit_page_sub_page_path(id:sub_page, page_id: @page.id)%>
+<% end %>

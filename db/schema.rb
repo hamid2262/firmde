@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150226012209) do
+ActiveRecord::Schema.define(version: 20150302114229) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -108,6 +108,20 @@ ActiveRecord::Schema.define(version: 20150226012209) do
   add_index "page_backups", ["page_id"], name: "index_page_backups_on_page_id", using: :btree
   add_index "page_backups", ["user_id"], name: "index_page_backups_on_user_id", using: :btree
 
+  create_table "page_translations", force: true do |t|
+    t.integer  "page_id",    null: false
+    t.string   "locale",     null: false
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string   "title"
+    t.string   "seo_title"
+    t.string   "slug"
+    t.text     "body"
+  end
+
+  add_index "page_translations", ["locale"], name: "index_page_translations_on_locale", using: :btree
+  add_index "page_translations", ["page_id"], name: "index_page_translations_on_page_id", using: :btree
+
   create_table "pages", force: true do |t|
     t.string   "title"
     t.text     "body"
@@ -166,6 +180,20 @@ ActiveRecord::Schema.define(version: 20150226012209) do
   end
 
   add_index "slideshows", ["order"], name: "index_slideshows_on_order", using: :btree
+
+  create_table "sub_page_translations", force: true do |t|
+    t.integer  "sub_page_id", null: false
+    t.string   "locale",      null: false
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string   "title"
+    t.string   "seo_title"
+    t.string   "slug"
+    t.text     "body"
+  end
+
+  add_index "sub_page_translations", ["locale"], name: "index_sub_page_translations_on_locale", using: :btree
+  add_index "sub_page_translations", ["sub_page_id"], name: "index_sub_page_translations_on_sub_page_id", using: :btree
 
   create_table "sub_pages", force: true do |t|
     t.string   "title"
