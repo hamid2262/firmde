@@ -5,7 +5,7 @@
   <ul class="dropdown-menu">
     <li>
       <div class="header-navigation-content">
-        <% Page.find_by(title: "Lösungen").children.where(visible_on_navbar: true).order(:order).each_with_index do |loesungen_child, index| %>    
+        <% Page.loesungen.children.where(visible_on_navbar: true).order(:order).each_with_index do |loesungen_child, index| %>    
           <% if [0,4].include? index  %>
             <div class="row">
           <% end %>

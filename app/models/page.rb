@@ -53,9 +53,6 @@ class Page < ActiveRecord::Base
     d
   end
 
-  def self.services
-    Page.find_by(title: "Services")
-  end
 
   def parent_must_not_be_itself
     if self.id == self.parent_id
@@ -72,7 +69,15 @@ class Page < ActiveRecord::Base
   end
 
   def self.loesungen
-    Page.find_by(title: "Lösungen")
+    Page.where("title='Lösungen'").first
+  end
+
+  def self.uber_uns
+    Page.where("title='Über uns'").first
+  end
+
+  def self.services
+    Page.where("title= 'Services'").first
   end
 
   def photo_of_self_or_parent

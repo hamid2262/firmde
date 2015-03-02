@@ -14,7 +14,8 @@ development:
   encoding: unicode
   pool: 5
   host: localhost
-  database: firmde_development
+  # database: firmde_development
+  database: firmde_production
   username: deploye
   password: hamid
 
@@ -31,5 +32,5 @@ production:
   database: firmde_production
   pool: 5
   host: localhost
-  username: firmde
+  username: deploye
   password: hamid
