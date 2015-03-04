@@ -1,5 +1,7 @@
+<% @page_desc="OPC® cardsystems ist Hersteller von Kassen- und bargeldlosen Abrechnungssysteme sowie Systemanbieter von individuellen Chipkartensystemen." %>
 <%# cache ["home", "main"], expires_in: 20.minutes do %>
   <div id="home_index">
+    <h1 class="seo_title"><%= @page_desc %></h1>
     <%= render '/home/index/losungen_boxes' %>
     <%= render '/home/index/qoute' %>
     <%= render '/home/index/w_questions' %>

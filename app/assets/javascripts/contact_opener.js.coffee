@@ -14,7 +14,7 @@ $(window).on "scroll", ->
   
   # when scroll to bottom of the page
   if (scrollHeight - scrollPosition) / scrollHeight is 0
-    $("#contact_popup #contact_popup_opener").parent().parent().css("bottom", "-466px")
+    $("#contact_popup #contact_popup_opener").parent().parent().css("bottom", "-486px")
   else
     $("#contact_popup #contact_popup_opener").parent().parent().css("bottom", "-431px")
   return

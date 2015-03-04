@@ -52,3 +52,12 @@
     border: 1px solid #EBEBEB;
   }
 }
+
+@media (max-width: 400px) {
+  #contact_popup {
+    .btn-holder .opener {
+      float: left;
+      margin-left: 20px;
+    }
+  }
+}

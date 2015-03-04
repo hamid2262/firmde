@@ -1,6 +1,8 @@
+<% if current_user %>
 <div class="languages">
   <ul>
       <li><%= link_to_unless_current t("english"), locale: "en" %></li>
       <li><%= link_to_unless_current t("german"), locale: "de" %></li> 
   </ul>
 </div>
+<% end %>
