@@ -2,6 +2,8 @@ class Page < ActiveRecord::Base
   extend ActsAsTree::TreeView
   extend ActsAsTree::TreeWalker
 
+  # translates :title, :seo_title, :slug, :body 
+  
   has_many :page_backups
   has_many :sub_pages
   
