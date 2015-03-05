@@ -1,6 +1,6 @@
 <li id="Loesungen" class="dropdown dropdown100 nav-catalogue">
   <a class="dropdown-toggle hidden-xs hidden-sm" data-toggle="dropdown" data-target="" href="#"> Lösungen</a>
-  <a class="dropdown-toggle hidden-md hidden-lg" data-toggle="dropdown" data-target="" href=<%= root_path %>> Lösungen</a>
+  <!-- <a class="dropdown-toggle hidden-md hidden-lg" data-toggle="dropdown" data-target="" href=<%= root_path %>> Lösungen</a> -->
     
   <ul class="dropdown-menu">
     <li>
@@ -17,11 +17,16 @@
                   <%= image_tag loesungen_child.pictogram.url, class: "pictogram" %>
                 <% end %>
               </h4>
-              <ul>
-              <% loesungen_child.children.where(visible_on_navbar: true).order(:order).each do |child| %>
-                <li><%= link_to child.title, child %></li>
-              <% end %>
-              </ul>
+              <p> 
+                <%= link_to loesungen_child do %> 
+                  <%= image_tag "navbar/loesungen/brands/#{loesungen_child.id}.jpg", class: "img-responsive" %>
+                <% end %>
+              </p>
+<!--               <ul>
+              <%# loesungen_child.children.where(visible_on_navbar: true).order(:order).each do |child| %>
+                <li><%#= link_to child.title, child %></li>
+              <%# end %>
+              </ul> -->
           </div>
 
           <% if [3,7].include? index  %>
@@ -29,52 +34,52 @@
           <% end %>
 
         <% end %>
-        <div class="row">
+<!--         <div class="row">
           <div class="col-md-12">
             <ul>
               <li class="brand">
-                <%= link_to Page.find_by(title: "Disco, Club & Events"), title: "Disco, Club & Events" do %>
-                  <%= image_tag "navbar/loesungen/brands/disco.jpg", class: "img-responsive" %>
-                <% end %>
+                <%#= link_to Page.find_by(title: "Disco, Club & Events"), title: "Disco, Club & Events" do %>
+                  <%#= image_tag "navbar/loesungen/brands/disco.jpg", class: "img-responsive" %>
+                <%# end %>
               </li>
               <li class="brand">
-                <%= link_to Page.find_by(title: "Freizeitcenter & Bowlingcenter"), title: "Freizeitcenter & Bowlingcenter" do %>
-                  <%= image_tag "navbar/loesungen/brands/freizeitbetriebe.jpg", class: "img-responsive" %>
-                <% end %>
+                <%#= link_to Page.find_by(title: "Freizeitcenter & Bowlingcenter"), title: "Freizeitcenter & Bowlingcenter" do %>
+                  <%#= image_tag "navbar/loesungen/brands/freizeitbetriebe.jpg", class: "img-responsive" %>
+                <%# end %>
               </li>
               <li class="brand">
-                <%= link_to Page.find_by(title: "Betriebsrestaurant & Mensa"), title: "Betriebsrestaurant & Mensa" do %>
-                  <%= image_tag "navbar/loesungen/brands/kantine-content1.jpg", class: "img-responsive" %>
-                <% end %>
+                <%#= link_to Page.find_by(title: "Betriebsrestaurant & Mensa"), title: "Betriebsrestaurant & Mensa" do %>
+                  <%#= image_tag "navbar/loesungen/brands/kantine-content1.jpg", class: "img-responsive" %>
+                <%# end %>
               </li>
               <li class="brand">
-                <%= link_to Page.find_by(title: "Kliniken & Rehazentren"), title: "Kliniken & Rehazentren" do %>
-                  <%= image_tag "navbar/loesungen/brands/klinik.jpg", class: "img-responsive" %>
-                <% end %>
+                <%#= link_to Page.find_by(title: "Kliniken & Rehazentren"), title: "Kliniken & Rehazentren" do %>
+                  <%#= image_tag "navbar/loesungen/brands/klinik.jpg", class: "img-responsive" %>
+                <%# end %>
               </li>
               <li class="brand">
-                <%= link_to Page.find_by(title: "Gastronomie & Restaurant"), title: "Gastronomie & Restaurant"  do %>
-                  <%= image_tag "navbar/loesungen/brands/gastro-content1.png", class: "img-responsive" %>
-                <% end %>
+                <%#= link_to Page.find_by(title: "Gastronomie & Restaurant"), title: "Gastronomie & Restaurant"  do %>
+                  <%#= image_tag "navbar/loesungen/brands/gastro-content1.png", class: "img-responsive" %>
+                <%# end %>
               </li>
               <li class="brand">
-                <%= link_to Page.find_by(title: "Tourismus & Hotellerie"), title: "Tourismus & Hotellerie"  do %>
-                  <%= image_tag "navbar/loesungen/brands/tourismus.jpg", class: "img-responsive" %>
-                <% end %>
+                <%#= link_to Page.find_by(title: "Tourismus & Hotellerie"), title: "Tourismus & Hotellerie"  do %>
+                  <%#= image_tag "navbar/loesungen/brands/tourismus.jpg", class: "img-responsive" %>
+                <%# end %>
               </li>
               <li class="brand">
-                <%= link_to Page.find_by(title: "Schulverpflegung & Kitas"), title: "Schulverpflegung & Kitas" do %>
-                  <%= image_tag "navbar/loesungen/brands/schulmensa.jpg", class: "img-responsive" %>
-                <% end %>
+                <%#= link_to Page.find_by(title: "Schulverpflegung & Kitas"), title: "Schulverpflegung & Kitas" do %>
+                  <%#= image_tag "navbar/loesungen/brands/schulmensa.jpg", class: "img-responsive" %>
+                <%# end %>
               </li>
               <li class="brand">
-                <%= link_to Page.find_by(title: "Stadien & Arenen"), title: "Stadien & Arenen" do %>
-                  <%= image_tag "navbar/loesungen/brands/Stadio.jpg", class: "img-responsive" %>
-                <% end %>
+                <%#= link_to Page.find_by(title: "Stadien & Arenen"), title: "Stadien & Arenen" do %>
+                  <%#= image_tag "navbar/loesungen/brands/Stadio.jpg", class: "img-responsive" %>
+                <%# end %>
               </li>
             </ul>
           </div>        
-        </div>        
+        </div>  -->       
       </div>
     </li>
   </ul>
