@@ -13,7 +13,7 @@ class ApplicationController < ActionController::Base
   before_action  :set_locale
 
   def default_url_options(options = {})
-    {locale: I18n.locale, host: "aa.localhost:3000/aa/"}
+    {locale: I18n.locale}
   end
     
   private

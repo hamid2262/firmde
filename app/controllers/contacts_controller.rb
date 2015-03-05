@@ -1,4 +1,5 @@
 class ContactsController < ApplicationController
+  layout "admin_layout", only: [:index]
   authorize_resource
 
   def new
@@ -17,6 +18,16 @@ class ContactsController < ApplicationController
         format.html { render :index }
       end
     end
+  end
+
+  def index
+    @contacts = Contact.order("updated_at desc")
+  end
+
+  def destroy
+    contact = Contact.find(params[:id])
+    contact.destroy
+    redirect_to :back, notice: 'contact was successfully destroyed.'
   end
 
 private

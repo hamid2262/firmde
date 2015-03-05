@@ -7,12 +7,12 @@ class User < ActiveRecord::Base
   has_many :page_backups
   # has_many :page_backups, :through => :pages
 
-  def is_super_user?
-    true if self.email == 'hamid2262@yahoo.com'
+  def is_superadmin?
+    true if self.email == 'hamid2262@yahoo.com' || self.email == 'superadmin@opc.de'
   end
 
   def is_admin?
-    true if self.role=="admin" || self.email == 'hamid2262@yahoo.com'
+    true if is_superadmin? || self.role=="admin" || self.email == 'hamid2262@yahoo.com'
   end
 
   def is_editor?

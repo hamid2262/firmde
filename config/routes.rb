@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
 
-  scope ":locale", locale: /en|de/ do
+  scope "(:locale)", locale: /en|de/ do
   # scope ":locale", locale: /#{I18n.available_locales.join("|")}/ do
 
     get 'static_pages/google_search'
@@ -53,8 +53,7 @@ Rails.application.routes.draw do
 
   end
 
-
-  get '*path', to: redirect("/#{I18n.default_locale}/%{path}")
+  # get '*path', to: redirect("/#{I18n.default_locale}/%{path}")
   get '', to: redirect("/#{I18n.default_locale}")
   
 end

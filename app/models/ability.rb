@@ -3,8 +3,19 @@ class Ability
 
   def initialize(user)
     user ||= User.new 
-    if user.is_admin?
+    if user.is_superadmin?
       can :manage, :all
+
+    elsif user.is_admin?
+      can :manage, Block
+      can :manage, Slideshow
+      can :manage, Element
+      can :manage, Page
+      can :manage, SubPage
+      can :manage, Kunden
+      can :manage, Blog
+      can [:index], Contact
+
     elsif user.is_editor?
       can [:new, :create, :edit, :update, :index], Block
       can [:show, :index, :new, :create, :edit, :update], Slideshow

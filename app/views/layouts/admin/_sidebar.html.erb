@@ -14,7 +14,8 @@
         <%= render 'layouts/admin/sidebar/blocks' %>
         <%= render 'layouts/admin/sidebar/kundens' %>
         <%= render 'layouts/admin/sidebar/news' %>
-        <%= render 'layouts/admin/sidebar/editors' if current_user.is_super_user? %>
+        <%= render 'layouts/admin/sidebar/contacts' %>
+        <%= render 'layouts/admin/sidebar/editors' if current_user.is_superadmin? %>
       </ul>
       <!-- END SIDEBAR MENU -->
     </div>
