@@ -8,7 +8,7 @@ class PagesController < ApplicationController
   end
 
   def show
-    redirect_to root_path if @page == Page.root
+    redirect_to root_path if (@page == Page.root) || (@page.title == "Lösungen")
   end
 
   def new
