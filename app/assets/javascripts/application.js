@@ -31,6 +31,7 @@
 
 //= require accordion_scroll
 //= require nav_tab
+//= require navbar
 //= require carousel_interval
 //= require carousel_top
 
