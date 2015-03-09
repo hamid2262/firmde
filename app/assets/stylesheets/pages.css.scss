@@ -2,6 +2,20 @@
   padding-right: 0;
 }
 
+@media (max-width: 400px) {
+  #page_show{
+    .page-body{
+      .table-responsive {
+        font-size: 10px;
+        tbody tr td:first-child {
+          padding-right: 0;
+          width: 10px;
+        }
+      }
+    }
+  }
+}
+
 #page_show{
   .seo_title{
     position: absolute;
@@ -32,6 +46,8 @@
   .panel .panel-body {
     font-size: 14px;
   }
+
+
 }
 
 
