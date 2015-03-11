@@ -107,5 +107,5 @@ Rails.application.configure do
       :exception_recipients => %w{hrmohseni@yahoo.com}
     }
   config.action_mailer.delivery_method = :smtp
-
+  
 end

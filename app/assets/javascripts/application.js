@@ -18,13 +18,13 @@
 //= require my_theme/global/plugins/slider-revolution-slider/rs-plugin/js/jquery.themepunch.tools.min.js
 //= require my_theme/frontend/pages/scripts/revo-slider-init.js
 
-//= require my_theme/global/plugins/gmaps/gmaps
+// require my_theme/global/plugins/gmaps/gmaps
 
 //= require my_theme/frontend/layout/scripts/back-to-top.js
 //= require my_theme/frontend/pages/scripts/layerslider-init.js
 //= require my_theme/frontend/layout/scripts/layout.js
 
-//= require contact-us
+// require contact-us
 //= require public_layout
 //= require home
 //= require contact_opener
@@ -40,6 +40,6 @@ $(function() {
   Layout.initOWL();
   RevosliderInit.initRevoSlider();
   Layout.initTwitter();
-  ContactUs.init();
+  // ContactUs.init();
 });
 
