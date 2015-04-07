@@ -32,7 +32,7 @@
             <% end %>
           </td>
           <td>
-            <% if user.role == "editor"  %>
+            <% if can? 'index', User %>
               <%= link_to 'remove role', user_change_role_path(user) %>
             <% end %>
           </td>
