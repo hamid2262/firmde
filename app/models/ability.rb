@@ -19,6 +19,7 @@ class Ability
     elsif user.is_editor?
       can [:new, :create, :edit, :update, :index], Block
       can [:show, :index, :new, :create, :edit, :update], Slideshow
+      can [:show, :index, :new, :create, :edit, :update], Blog
       can [:show, :index, :new, :create, :edit, :update, :destroy], Element
       can [:new, :create, :edit, :update, :index], Page
       can [:new, :create, :edit, :update, :index], SubPage

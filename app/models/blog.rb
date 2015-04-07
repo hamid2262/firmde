@@ -5,7 +5,7 @@ class Blog < ActiveRecord::Base
 
   
   def to_param
-    "#{id}-#{title.gsub " ", "-"}"
+    "#{id}-#{slug.gsub " ", "-"}"
   end
 
   def self.filter_category(category)

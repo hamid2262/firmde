@@ -25,7 +25,7 @@ class BlogsController < ApplicationController
     @blog = Blog.new(blog_params)
     respond_to do |format|
       if @blog.save
-        format.html { redirect_to admin_blogs_path, notice: 'blog was successfully created.' }
+        format.html { redirect_to @blog, notice: 'blog was successfully created.' }
         format.json { render :show, status: :created, location: @blog }
       else
         format.html { render :new }
@@ -37,7 +37,7 @@ class BlogsController < ApplicationController
   def update
     respond_to do |format|
       if @blog.update(blog_params)
-        format.html { redirect_to admin_blogs_path, notice: 'blog was successfully updated.' }
+        format.html { redirect_to @blog, notice: 'blog was successfully updated.' }
         format.json { render :show, status: :ok, location: @blog }
       else
         format.html { render :edit }
