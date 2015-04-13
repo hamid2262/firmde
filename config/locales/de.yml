@@ -1,3 +1,6 @@
 de:
   english: "Englisch"
   german: "Deutsch"
+  will_paginate:
+    next_label: '>'
+    previous_label: '<'

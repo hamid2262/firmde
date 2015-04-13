@@ -6,7 +6,7 @@
   <% elsif params[:action] == "show" %>
     <li><%= link_to "News", blogs_path %></li>
     <li><%= link_to @blog.category, blogs_path(category: @blog.category) %></li>
-    <li class="active"><%= @blog.title %></li>
+    <li class="active"><%= raw @blog.title %></li>
   <% else %>
     <li class="active">News</li>
   <% end %>

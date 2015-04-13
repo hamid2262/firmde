@@ -7,7 +7,7 @@
     <p><%= blog.display_date  %></p>
   </div>
   <div class="col-xs-9">
-    <h5><%= link_to truncate(blog.title, length: 70, omission: '...'), blog %></h5>
+    <h5><%= link_to truncate(blog.title.html_safe, length: 70, omission: '...'), blog %></h5>
     <p><%= sanitizer_except_br blog.body %></p>
 
   </div>

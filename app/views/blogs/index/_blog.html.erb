@@ -6,7 +6,7 @@
   </div>
   <div class="col-md-8 col-sm-8">
     <h2 class="title">
-      <%= link_to blog.title, blog %>
+      <%= link_to (blog.title).html_safe, blog %>
     </h2>
     <ul class="blog-info">
       <li><i class="fa fa-calendar"></i> <%= blog.display_date %></li>
