@@ -40,6 +40,7 @@ $(function() {
   Layout.initOWL();
   RevosliderInit.initRevoSlider();
   Layout.initTwitter();
+  Layout.initOWL();
   // ContactUs.init();
 });
 

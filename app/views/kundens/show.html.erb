@@ -1,22 +1,176 @@
-<p id="notice"><%= notice %></p>
+<div class="main">
+  <div class="container">
+    <ul class="breadcrumb">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="#">Portfolio</a></li>
+        <li class="active">Portfolio Item</li>
+    </ul>
+    <!-- BEGIN SIDEBAR & CONTENT -->
+    <div class="row margin-bottom-40">
+      <!-- BEGIN CONTENT -->
+      <div class="col-md-12 col-sm-12">
+        <h1>OPC Chipcard System fuer OTIS</h1>
+        <div class="content-page">
+          <div class="row margin-bottom-30">
+            <!-- BEGIN CAROUSEL -->            
+            <div class="col-md-5 front-carousel">
+              <div class="carousel slide" id="myCarousel">
+                <!-- Carousel items -->
+                <div class="carousel-inner" style="border: 1px solid #E0E0E0;">
+                  <div class="item">
+                    <img alt="" src="https://s3-eu-west-1.amazonaws.com/opcde/temp/Aufzuege-thumb1001.jpg">
+                    <div class="carousel-caption">
+                      <p>Excepturi sint occaecati cupiditate non provident</p>
+                    </div>
+                  </div>
+                  <div class="item active">
+                    <img alt="" src="https://s3-eu-west-1.amazonaws.com/opcde/temp/2000px-Otis_log1o.jpg">
+                    <div class="carousel-caption">
+                      <p>Ducimus qui blanditiis praesentium voluptatum</p>
+                    </div>
+                  </div>
+                  <div class="item">
+                    <img alt="" src="https://s3-eu-west-1.amazonaws.com/opcde/temp/2123-riedl61.jpg">
+                    <div class="carousel-caption">
+                      <p>Ut non libero consectetur adipiscing elit magna</p>
+                    </div>
+                  </div>
+                </div>
+                <!-- Carousel nav -->
+                <a data-slide="prev" href="#myCarousel" class="carousel-control left" style="height: 35px;">
+                  <i class="fa fa-angle-left"></i>
+                </a>
+                <a data-slide="next" href="#myCarousel" class="carousel-control right" style="height: 35px;">
+                  <i class="fa fa-angle-right"></i>
+                </a>
+              </div>                
+            </div>
+            <!-- END CAROUSEL -->                             
 
-<p>
-  <strong>Name:</strong>
-  <%= @kunden.name %>
-</p>
+            <!-- BEGIN PORTFOLIO DESCRIPTION -->            
+            <div class="col-md-7">
+              <h2>Weltgrößter Hersteller von Aufzügen und Fahrtreppen</h2>
+              <p>Mit einem Umsatz von 12,4 MRD US $ bei ca. 61.000 Mitarbeitern weltweit ist OTIS der weltgrößte Hersteller von Aufzügen, Fahrtreppen und Fahrsteigen.</p>
+              <p>Bundesweit leben mehr als 1200 Servicetechniker an mehr als 100 Standorten und garantieren so im Supportfalle kürzeste Reaktionszeiten und ein hohes Maß an Kundenzufriedenheit.</p>
+              <br>
+              <div class="row front-lists-v2 margin-bottom-15">
+                <div class="col-md-6">
+                  <ul class="list-unstyled">
+                    <li><i class="fa fa-html5"></i>OPC<sup>®</sup> TouchPOS</li>
+                    <li><i class="fa fa-bell"></i> OPC<sup>®</sup> TabletPOS</li>
+                    <li><i class="fa fa-globe"></i> OPC<sup>®</sup> DeskReader</li>
+                    <li><i class="fa fa-shopping-cart"></i> ePaymentSytems</li>
+                  </ul>
+                </div>
+                <div class="col-md-6">
+                  <ul class="list-unstyled">
+                    <li><i class="fa fa-dropbox"></i> Checkout-Waage</li>
+                    <li><i class="fa fa-cloud"></i> Peripherie</li>
+                    <li><i class="fa fa-comments"></i> Warenwirtschaft</li>
+                    <li><i class="fa fa-star"></i>OPC<sup>®</sup> CardOffice </li>
+                  </ul>
+                </div>
+              </div>
+              <a class="btn btn-primary" href="#"> MEHR VON DEM PROJEKT</a>
+            </div>
+            <!-- END PORTFOLIO DESCRIPTION -->            
+          </div>
 
-<p>
-  <strong>Url:</strong>
-  <%= @kunden.url %>
-</p>
+          <div class="row quote-v1 margin-bottom-30">
+            <div class="col-md-7 quote-v1-inner">
+              <span>Lorem ipsum dolor sit amet, consectetuer adipiscing tempor</span>
+            </div>
+            <div class="col-md-5 quote-v1-inner text-right">
+              <a href="#" class="btn-transparent"><i class="fa fa-rocket margin-right-10"></i>Adipiscing</a>
+              <a href="#" class="btn-transparent"><i class="fa fa-gift margin-right-10"></i>Get it FREE</a>
+            </div>
+          </div>
 
-<p>
-  <%= image_tag @kunden.photo.url %>
-</p>
+          <!-- BEGIN RECENT WORKS -->
+          <div class="row recent-work margin-bottom-40">
+            <div class="col-md-3">
+              <h2><a href="portfolio.html">Recent Works</a></h2>
+              <p>Lorem ipsum dolor sit amet, dolore eiusmod quis tempor incididunt ut et dolore Ut veniam unde voluptatem. Sed unde omnis iste natus error sit voluptatem.</p>
+            </div>
+            <div class="col-md-9">
+              <div class="owl-carousel owl-carousel3">
+                <div class="recent-work-item">
+                  <em>
+                    <img src="https://s3-eu-west-1.amazonaws.com/opcde/temp/2000px-Otis_log1o.jpg" alt="Amazing Project" class="img-responsive"  style="border: 1px solid #E0E0E0;">
+                    <a href="portfolio-item.html"><i class="fa fa-link"></i></a>
+                    <a href="https://s3-eu-west-1.amazonaws.com/opcde/temp/2000px-Otis_log1o.jpg" class="fancybox-button" title="Project Name #1" data-rel="fancybox-button"><i class="fa fa-search"></i></a>
+                  </em>
+                  <a class="recent-work-description" href="#">
+                    <strong>Amazing Project</strong>
+                    <b>Agenda corp.</b>
+                  </a>
+                </div>
+                <div class="recent-work-item">
+                  <em>
+                    <img src="https://s3-eu-west-1.amazonaws.com/opcde/temp/2123-riedl61.jpg" alt="Amazing Project" class="img-responsive">
+                    <a href="portfolio-item.html"><i class="fa fa-link"></i></a>
+                    <a href="https://s3-eu-west-1.amazonaws.com/opcde/temp/2123-riedl61.jpg" class="fancybox-button" title="Project Name #2" data-rel="fancybox-button"><i class="fa fa-search"></i></a>
+                  </em>
+                  <a class="recent-work-description" href="#">
+                    <strong>Amazing Project</strong>
+                    <b>Agenda corp.</b>
+                  </a>
+                </div>
+                <div class="recent-work-item">
+                  <em>
+                    <img src="https://s3-eu-west-1.amazonaws.com/opcde/temp/Aufzuege-thumb1001.jpg" alt="Amazing Project" class="img-responsive">
+                    <a href="portfolio-item.html"><i class="fa fa-link"></i></a>
+                    <a href="https://s3-eu-west-1.amazonaws.com/opcde/temp/Aufzuege-thumb1001.jpg" class="fancybox-button" title="Project Name #3" data-rel="fancybox-button"><i class="fa fa-search"></i></a>
+                  </em>
+                  <a class="recent-work-description" href="#">
+                    <strong>Amazing Project</strong>
+                    <b>Agenda corp.</b>
+                  </a>
+                </div>
+                <div class="recent-work-item">
+                  <em>
+                    <img src="https://s3-eu-west-1.amazonaws.com/opcde/temp/Aufzuege-thumb1001.jpg" alt="Amazing Project" class="img-responsive">
+                    <a href="portfolio-item.html"><i class="fa fa-link"></i></a>
+                    <a href="https://s3-eu-west-1.amazonaws.com/opcde/temp/Aufzuege-thumb1001.jpg" class="fancybox-button" title="Project Name #4" data-rel="fancybox-button"><i class="fa fa-search"></i></a>
+                  </em>
+                  <a class="recent-work-description" href="#">
+                    <strong>Amazing Project</strong>
+                    <b>Agenda corp.</b>
+                  </a>
+                </div>
+                <div class="recent-work-item">
+                  <em>
+                    <img src="https://s3-eu-west-1.amazonaws.com/opcde/temp/2123-riedl61.jpg" alt="Amazing Project" class="img-responsive">
+                    <a href="portfolio-item.html"><i class="fa fa-link"></i></a>
+                    <a href="https://s3-eu-west-1.amazonaws.com/opcde/temp/2123-riedl61.jpg" class="fancybox-button" title="Project Name #5" data-rel="fancybox-button"><i class="fa fa-search"></i></a>
+                  </em>
+                  <a class="recent-work-description" href="#">
+                    <strong>Amazing Project</strong>
+                    <b>Agenda corp.</b>
+                  </a>
+                </div>
+                <div class="recent-work-item">
+                  <em>
+                    <img src="https://s3-eu-west-1.amazonaws.com/opcde/temp/Aufzuege-thumb1001.jpg" alt="Amazing Project" class="img-responsive">
+                    <a href="portfolio-item.html"><i class="fa fa-link"></i></a>
+                    <a href="https://s3-eu-west-1.amazonaws.com/opcde/temp/Aufzuege-thumb1001.jpg" class="fancybox-button" title="Project Name #4" data-rel="fancybox-button"><i class="fa fa-search"></i></a>
+                  </em>
+                  <a class="recent-work-description" href="#">
+                    <strong>Amazing Project</strong>
+                    <b>Agenda corp.</b>
+                  </a>
+                </div>
+              </div>       
+            </div>
+          </div>   
+          <!-- END RECENT WORKS -->
+        </div>
+      </div>
+      <!-- END CONTENT -->
+    </div>
+    <!-- BEGIN SIDEBAR & CONTENT -->
+  </div>
+</div>
 
-<p>
-  <%= image_tag @kunden.photo_gray.url %>
-</p>
 
-<%= link_to 'Edit', edit_kunden_path(@kunden) %> |
-<%= link_to 'Back', kundens_path %>
+<%= link_to 'Edit', edit_kunden_path(@kunden) %>

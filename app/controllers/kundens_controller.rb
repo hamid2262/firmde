@@ -1,5 +1,5 @@
 class KundensController < ApplicationController
-  layout "admin_layout"
+  layout "admin_layout", except: [:show]
   before_action :set_kunden, only: [:show, :edit, :update, :destroy]
   authorize_resource
 
