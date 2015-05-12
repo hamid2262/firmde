@@ -14,6 +14,7 @@
 
 
 //= require my_theme/global/plugins/fancybox/source/jquery.fancybox.pack.js
+//= require my_theme/global/plugins/jquery-mixitup/jquery.mixitup.min.js
 //= require my_theme/global/plugins/carousel-owl-carousel/owl-carousel/owl.carousel.min.js
 //= require my_theme/global/plugins/slider-revolution-slider/rs-plugin/js/jquery.themepunch.revolution.min.js
 //= require my_theme/global/plugins/slider-revolution-slider/rs-plugin/js/jquery.themepunch.tools.min.js
@@ -24,6 +25,7 @@
 //= require my_theme/frontend/layout/scripts/back-to-top.js
 //= require my_theme/frontend/pages/scripts/layerslider-init.js
 //= require my_theme/frontend/layout/scripts/layout.js
+//= require my_theme/frontend/pages/scripts/portfolio.js
 
 // require contact-us
 //= require public_layout
@@ -42,6 +44,7 @@ $(function() {
   RevosliderInit.initRevoSlider();
   Layout.initTwitter();
   Layout.initOWL();
+  Portfolio.init();
   // ContactUs.init();
 
   $(".my_fancybox_image").on( "mouseenter", function() {

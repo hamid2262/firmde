@@ -1,30 +1,47 @@
-<h1>Listing kundens</h1>
+        <div class="row margin-bottom-40">
+          <!-- BEGIN CONTENT -->
+          <div class="col-md-12 col-sm-12">
+            <h1>Portfolio 4 Column</h1>
+            <div class="content-page">
+                <div class="filter-v1">
+                  <ul class="mix-filter">
+                    <li data-filter="all" class="filter active">All</li>
+                    <li data-filter="category_1" class="filter">Disco, Club & Events</li>
+                    <li data-filter="category_2" class="filter">Schulverpflegung & Kitas</li>
+                    <li data-filter="category_3" class="filter">Betriebsrestauration & Mensa</li>
+                    <li data-filter="category_4" class="filter">Kliniken & Rehazentren</li>
+                    <li data-filter="category_5" class="filter">Gastronomie & Restaurant</li>
+                    <li data-filter="category_6" class="filter">Tourismus & Hotellerie</li>
+                    <li data-filter="category_7" class="filter">Freizeitcenter & Bowlingcenter</li>
+                    <li data-filter="category_8" class="filter">Stadien & Arenen</li>
+                  </ul>
+                  <div class="row mix-grid thumbnails">
+                    <% @kundens.each do |kunden| %>
 
-<table  class="table table-striped">
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Photo</th>
-      <th>Photo gray</th>
-      <th>Url</th>
-      <th colspan="2"></th>
-    </tr>
-  </thead>
 
-  <tbody>
-    <% @kundens.each do |kunden| %>
-      <tr>
-        <td><%= kunden.name %></td>
-        <td><%= image_tag kunden.photo.url %></td>
-        <td><%= image_tag kunden.photo_gray.url %></td>
-        <td><%= kunden.url %></td>
-        <td><%= link_to 'Edit', edit_kunden_path(kunden),class: "btn btn-success" %></td>
-        <td><%= link_to 'Delete', kunden, method: :delete, class: "btn btn-danger", data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
+                      <div class="col-md-3 col-sm-4 mix category_<%= [1,2,3,4,5,6,7,8].sample %> mix_all" style="display: block; opacity: 1; ">
+                        <div class="mix-inner">
+                           <img alt="" src="<%= kunden.ref_image.url %>" class="img-responsive">
+                           <div class="mix-details">
+                              <h4><%= kunden.name %></h4>
+                              <a class="mix-link"><i class="fa fa-link"></i></a>
+                              <a data-rel="fancybox-button" title="Project Name" href="<%= kunden.ref_image.url %>" class="mix-preview fancybox-button"><i class="fa fa-search"></i></a>
+                      <%= link_to 'Edit', edit_kunden_path(kunden) %>
+                      <%= link_to 'Delete', kunden, method: :delete, data: { confirm: 'Are you sure?' } %>
+                           </div>           
+                        </div>                       
+                      </div>
 
+                    <% end %>
+
+
+                  </div>
+              </div>
+            </div>
+          </div>
+          <!-- END CONTENT -->
+        </div>
 <br>
 
 <%= link_to 'New Kunden', new_kunden_path %>
+

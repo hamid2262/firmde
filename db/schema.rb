@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150304011943) do
+ActiveRecord::Schema.define(version: 20150512143957) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -91,6 +91,10 @@ ActiveRecord::Schema.define(version: 20150304011943) do
     t.datetime "photo_gray_updated_at"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "ref_image_file_name"
+    t.string   "ref_image_content_type"
+    t.integer  "ref_image_file_size"
+    t.datetime "ref_image_updated_at"
   end
 
   create_table "page_backups", force: :cascade do |t|

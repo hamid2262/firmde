@@ -1,5 +1,5 @@
 class KundensController < ApplicationController
-  layout "admin_layout", except: [:show]
+  layout "admin_layout", except: [:show, :index]
   before_action :set_kunden, only: [:show, :edit, :update, :destroy]
   authorize_resource
 
@@ -57,6 +57,6 @@ class KundensController < ApplicationController
     end
 
     def kunden_params
-      params.require(:kunden).permit(:name, :url, :photo, :photo_gray)
+      params.require(:kunden).permit(:name, :url, :photo, :photo_gray, :ref_image)
     end
 end
