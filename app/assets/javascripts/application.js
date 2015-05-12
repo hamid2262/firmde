@@ -1,4 +1,5 @@
 //= require jquery
+
 //= require jquery_ujs
 //= require my_theme/global/plugins/jquery-migrate.min.js
 //= require bootstrap-sprockets
@@ -42,5 +43,13 @@ $(function() {
   Layout.initTwitter();
   Layout.initOWL();
   // ContactUs.init();
+
+  $(".my_fancybox_image").on( "mouseenter", function() {
+    attrSrc = $(this).attr( "src" )
+    $(this).after("<div class='gallery-item'><a data-rel='fancybox-button' title='' href="+attrSrc+" class='fancybox-button'>"+"<img alt='x' src="+attrSrc+" class='img-responsive'>"+"<div class='zoomix'><i class='fa fa-search'></i></div></a></div>");
+    $(this).remove()
+  } )
+
+    
 });
 
