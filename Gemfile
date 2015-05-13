@@ -31,7 +31,7 @@ gem 'truncate_html', '~> 0.9.3'
 gem 'globalize'
 
 # Use unicorn as the app server
-gem 'unicorn'
+gem 'unicorn', '4.8.3'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
@@ -53,6 +53,14 @@ group :development do
   gem 'binding_of_caller'
   gem 'meta_request'
   # gem 'bullet'
-  gem 'spring'
+  gem 'spring', '1.3.3'
+  # gem 'spring'
   gem 'capistrano', "~> 2.15.5"
 end
+
+
+gem "autoprefixer-rails" , '5.1.7'
+gem 'listen', '2.8.5'
+gem 'loofah', '2.0.1'
+gem 'rake', '10.4.2'
+gem 'sprockets-rails', '2.2.4'
