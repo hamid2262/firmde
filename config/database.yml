@@ -31,5 +31,7 @@ production:
   database: firmde_production
   pool: 5
   host: localhost
-  username: firmde
+  # username: firmde
+  # password: hamid
+  username: deploye
   password: hamid

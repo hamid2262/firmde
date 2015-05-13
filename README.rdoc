@@ -1,3 +1,6 @@
+ bundle exec rake assets:precompile
+
+
 * install dalli for cache
 sudo apt-get install memcached
 sudo apt-get install libsasl2

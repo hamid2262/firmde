@@ -278,6 +278,8 @@ var Layout = function () {
 
         if (jQuery(".fancybox-button").size() > 0) {            
             jQuery(".fancybox-button").fancybox({
+                autoScale: false,
+                width: 300,
                 groupAttr: 'data-rel',
                 prevEffect: 'none',
                 nextEffect: 'none',

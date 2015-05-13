@@ -8589,7 +8589,7 @@ button.close {
 }
 
 #fancybox-loading, .fancybox-close, .fancybox-prev span, .fancybox-next span {
-	background-image: url('/images/fancybox_sprite.png');
+	background-image: url('https://s3-eu-west-1.amazonaws.com/opcde/assets/public/assets/images/fancybox_sprite.png');
 }
 
 #fancybox-loading {
@@ -8607,7 +8607,7 @@ button.close {
 #fancybox-loading div {
 	width: 44px;
 	height: 44px;
-	background: url('/images/fancybox_loading.gif') center center no-repeat;
+	background: url('https://s3-eu-west-1.amazonaws.com/opcde/assets/public/assets/images/fancybox_loading.gif') center center no-repeat;
 }
 
 .fancybox-close {
@@ -8688,7 +8688,7 @@ button.close {
 	overflow: hidden;
 	display: none;
 	z-index: 8010;
-	background: url('/images/fancybox_overlay.png');
+	background: url('https://s3-eu-west-1.amazonaws.com/opcde/assets/public/assets/images/fancybox_overlay.png');
 }
 
 .fancybox-overlay-fixed {
@@ -29170,7 +29170,7 @@ view-port
 .cm-s-solarized.cm-s-light .CodeMirror-activeline-background {
   background: rgba(0, 0, 0, 0.10);
 }
-@charset "UTF-8";
+
 @media (max-width: 400px) {
   /* line 2, /home/hamid/Dropbox/opc/app/assets/stylesheets/page_content.css.scss */
   .nav_tab_width {
