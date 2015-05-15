@@ -7,6 +7,9 @@
     <%#= render 'layouts/public/header/navbar/kartentechnologien' %>
     <li><%= link_to "news", blogs_path %></li>
     <%= render 'layouts/public/header/navbar/service' %>
+    <% if can? :index, Kunden %>
+        <li><%= link_to "Referenzen", kundens_path %></li>
+    <% end %>
     <li><%= link_to "Anfrage", new_contact_path %></li>
     <%#= render 'layouts/public/header/navbar/anfrage' %>
     <%= render 'layouts/public/header/navbar/partner_area' %>

@@ -53,7 +53,7 @@ group :development do
   gem 'binding_of_caller'
   gem 'meta_request'
   # gem 'bullet'
-  gem 'spring', '1.3.3'
+  # gem 'spring', '1.3.3'
   # gem 'spring'
   gem 'capistrano', "~> 2.15.5"
 end

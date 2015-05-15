@@ -1,3 +1,35 @@
-// Place all the styles related to the kundens controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+#kundens-index{
+  .mix-wrapper{
+    border: 1px solid rgba(228, 79, 0, 0.56);
+    padding: 20px 36px 0px;
+    border-radius: 6px !important;
+    p{
+      color: rgba(153, 153, 153, 1);
+      text-align: center;
+      margin-top: 10px;
+      height: 40px;
+    }
+    .name{
+      font-weight: bold;
+      display: block;      
+    }
+    .city{
+      display: block;      
+    }
+  }
+  .mix-details{
+    padding: 20px;
+    h4{
+      margin-top: 0px;
+      padding: 0px;
+      padding-bottom: 6px;
+    }
+    .brief_details{
+      background: #fff;
+      // margin: 12px 16px;
+      color: #5F5F5F;
+      text-align: left;
+      padding: 10px;
+    }
+  }
+}

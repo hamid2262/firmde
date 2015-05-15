@@ -33,7 +33,7 @@ class KundensController < ApplicationController
   def update
     respond_to do |format|
       if @kunden.update(kunden_params)
-        format.html { redirect_to @kunden, notice: 'kunden was successfully updated.' }
+        format.html { redirect_to kundens_url, notice: 'kunden was successfully updated.' }
         format.json { render :show, status: :ok, location: @kunden }
       else
         format.html { render :edit }
@@ -57,6 +57,6 @@ class KundensController < ApplicationController
     end
 
     def kunden_params
-      params.require(:kunden).permit(:name, :url, :photo, :photo_gray, :ref_image)
+      params.require(:kunden).permit(:name, :url, :photo, :photo_gray, :ref_image, :brief_details, :city)
     end
 end
