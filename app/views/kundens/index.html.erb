@@ -7,7 +7,7 @@
       <div class="content-page">
           <div class="filter-v1">
             <ul class="mix-filter">
-<!--               <li data-filter="all" class="filter active">All</li>
+<!--               <li data-filter="all" class="filter active">Alle</li>
               <li data-filter="category_1" class="filter">Disco, Club & Events</li>
               <li data-filter="category_2" class="filter">Schulverpflegung & Kitas</li>
               <li data-filter="category_3" class="filter">Betriebsrestauration & Mensa</li>
@@ -36,6 +36,8 @@
                         <a data-rel="fancybox-button" title="Project Name" href="<%= kunden.ref_image.url %>" class="mix-preview fancybox-button"><i class="fa fa-search"></i></a> -->
                         <% if can? :edit, kunden  %>
                           <%= link_to 'Edit', edit_kunden_path(kunden) %>
+                        <% end %>
+                        <% if current_user and current_user.is_superadmin?  %>
                           <%= link_to 'Delete', kunden, method: :delete, data: { confirm: 'Are you sure?' } %>
                         <% end %>
                      </div>           

@@ -53,6 +53,10 @@ $(function() {
     $(this).remove()
   } )
 
+  $("img").tooltip({
+    placement: 'top',
+    html: true
+  })
     
 });
 

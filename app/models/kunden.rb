@@ -9,7 +9,7 @@ class Kunden < ActiveRecord::Base
   has_attached_file :photo_gray, :styles => { :thumb => "159x101>" }, :default_url => "/images/:style/missing.png"
   validates_attachment_content_type :photo_gray, :content_type => /\Aimage\/.*\Z/  
 
-  has_attached_file :ref_image, :styles => { :thumb => "180x180!" }, :default_url => "/images/kundens/ref_image/:style/missing.jpg"
+  has_attached_file :ref_image, :styles => { :thumb => "150x150!" }, :default_url => "/images/kundens/ref_image/:style/missing.jpg"
   validates_attachment_content_type :ref_image, :content_type => /\Aimage\/.*\Z/  
 
   def clear_cache

@@ -9,6 +9,10 @@
       margin-top: 10px;
       height: 40px;
     }
+    img{
+      margin: 0 auto;
+      margin-bottom: 40px;
+    }
     .name{
       font-weight: bold;
       display: block;      
@@ -19,6 +23,7 @@
   }
   .mix-details{
     padding: 20px;
+    border-radius: 6px !important;
     h4{
       margin-top: 0px;
       padding: 0px;

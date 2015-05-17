@@ -1175,6 +1175,7 @@ Customized Bootstrap Buttons
   color: #8c8c8c;
 }
 
+/*
 .btn-primary {
   color: white;
   background-color: #428bca;
@@ -1204,7 +1205,7 @@ Customized Bootstrap Buttons
   color: #428bca;
   background-color: white;
 }
-
+*/
 .btn-success {
   color: white;
   background-color: #45b6af;

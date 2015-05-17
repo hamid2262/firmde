@@ -95,7 +95,7 @@ ActiveRecord::Schema.define(version: 20150515075813) do
     t.string   "ref_image_content_type"
     t.integer  "ref_image_file_size"
     t.datetime "ref_image_updated_at"
-    t.string   "brief_details"
+    t.text     "brief_details"
     t.string   "city"
   end
 
