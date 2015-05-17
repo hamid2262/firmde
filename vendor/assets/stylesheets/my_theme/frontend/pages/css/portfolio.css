@@ -41,7 +41,7 @@
   bottom: -100%;
   text-align: center;
   position: absolute;
-  background: rgba(228,79,0,1);
+  background: #d73d04;
   transition: all 0.5s ease;
   -o-transition: all 0.5s ease;
   -ms-transition: all 0.5s ease;
