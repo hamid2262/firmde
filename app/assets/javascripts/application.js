@@ -58,5 +58,16 @@ $(function() {
     html: true
   })
     
+  $(window).scroll(function () { 
+    if ($(window).scrollTop() > 20) {
+      $('.header').addClass('fixed-header');
+      $('.pre-header').addClass('fixed-pre-header');
+    }else {
+      $('.header').removeClass('fixed-header');
+      $('.pre-header').removeClass('fixed-pre-header');
+    }
+  });
+
+
 });
 
