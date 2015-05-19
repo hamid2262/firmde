@@ -96,8 +96,8 @@ Rails.application.configure do
     enable_starttls_auto: true,
     # user_name: ENV['GMAIL_USER_NAME'],
     # password: ENV['GMAIL_PASSWORD']
-    user_name: 'p110180p35',
-    password: 'oPcbugREP'
+    user_name: 'p110180p66',
+    password: 'uyuzaBot,838'
   }
 
   config.middleware.use ExceptionNotification::Rack,
