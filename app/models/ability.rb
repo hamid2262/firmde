@@ -3,6 +3,7 @@ class Ability
 
   def initialize(user)
     user ||= User.new 
+    
     if user.is_superadmin?
       can :manage, :all
 
@@ -14,6 +15,7 @@ class Ability
       can :manage, SubPage
       can :manage, Kunden
       can :manage, Blog
+      can :manage, PageBackup
       can [:index], Contact
 
     elsif user.is_editor?
