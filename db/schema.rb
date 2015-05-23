@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150515075813) do
+ActiveRecord::Schema.define(version: 20150523101134) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -28,18 +28,23 @@ ActiveRecord::Schema.define(version: 20150515075813) do
   add_index "blocks", ["title"], name: "index_blocks_on_title", using: :btree
 
   create_table "blogs", force: :cascade do |t|
-    t.string   "title",              limit: 255
-    t.string   "category",           limit: 255
-    t.string   "slug",               limit: 255
+    t.string   "title",                 limit: 255
+    t.string   "category",              limit: 255
+    t.string   "slug",                  limit: 255
     t.text     "body"
     t.integer  "user_id"
-    t.string   "photo_file_name",    limit: 255
-    t.string   "photo_content_type", limit: 255
+    t.string   "photo_file_name",       limit: 255
+    t.string   "photo_content_type",    limit: 255
     t.integer  "photo_file_size"
     t.datetime "photo_updated_at"
     t.datetime "created_at"
     t.datetime "updated_at"
     t.datetime "my_date"
+    t.string   "thmb_img_file_name"
+    t.string   "thmb_img_content_type"
+    t.integer  "thmb_img_file_size"
+    t.datetime "thmb_img_updated_at"
+    t.text     "brief_txt"
   end
 
   add_index "blogs", ["my_date"], name: "index_blogs_on_my_date", using: :btree

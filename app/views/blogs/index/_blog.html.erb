@@ -1,18 +1,20 @@
 <div class="blog row">
   <div class="col-md-4 col-sm-4">
     <%= link_to blog do %>
-      <%= image_tag blog.photo(:medium), class: "img-responsive"  %>
+      <%= image_tag blog.medium_image, class: "img-responsive"  %>
     <% end %>
   </div>
   <div class="col-md-8 col-sm-8">
     <h2 class="title">
-      <%= link_to (blog.title).html_safe, blog %>
+      <a href="<%= blog_path blog %>">
+        <%= raw blog.title %>
+      </a>
     </h2>
     <ul class="blog-info">
       <li><i class="fa fa-calendar"></i> <%= blog.display_date %></li>
       <li><i class="fa fa-tags"></i> <%= link_to blog.category, blogs_path(category: blog.category) %></li>
     </ul>
-    <p><%= raw truncate_html(blog.body, length: 240, omission: '...') %></p>
+    <p><%= raw brief_text(blog) %></p>
     <%= link_to blog, class: "more" do %>
       Mehr lesen <i class="icon-angle-right"></i>
     <% end %>

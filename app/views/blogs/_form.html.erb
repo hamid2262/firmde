@@ -6,10 +6,12 @@
 
   <div class="form-inputs">
     <%= f.input :title, hint: '® ---> <sup>®</sup>' %>
+    <%= f.input :brief_txt, as: :text, hint: 'Kurztext Maximum  400 char' %>
     <%= f.input :body, label: false, input_html:{class: 'summernote'} %>
     <%= f.input :category, collection: NEWS_CATEGORIES, include_blank: false %>
     <%= f.input :slug %>
-    <%= f.input :photo, as: :file %>
+    <%= f.input :photo, label:"theme Bild" , as: :file %>
+    <%= f.input :thmb_img, label:"Thumbnail Bild", as: :file %>
     <%= f.date_field :my_date %>
 
   </div>
