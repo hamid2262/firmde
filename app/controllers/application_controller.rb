@@ -8,7 +8,8 @@ class ApplicationController < ActionController::Base
     redirect_to root_path, :alert => exception.message
   end
  
-  after_action  :user_activity
+  after_action   :user_activity
+  before_action  :viewer_activity
   before_action  :initialize_contact
   before_action  :set_locale
 
@@ -34,6 +35,22 @@ class ApplicationController < ActionController::Base
 
     def initialize_contact
       @contact = Contact.new      
+    end
+
+    def viewer_activity
+      if current_user.nil?
+        @view_statistic = ViewStatistic.new
+        @view_statistic.viewer_ip = request.ip
+        @view_statistic.page = request.original_url
+        
+        referer = request.referer
+        @view_statistic.referer = referer
+
+        if referer && referer.include?("//www.google.")
+          @view_statistic.save 
+        end
+
+      end
     end
 
 end

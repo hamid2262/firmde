@@ -70,6 +70,14 @@ $(function() {
     }
   });
 
+  // ajax request for viewer statistics
+  $('a').on("click", function(a) {
+    var form = $("#view_statistics_form")
+    if (form.length > 0) {
+      $("#view_statistic_section").val( $(this).attr("href") );
+      $.post('/view_statistics', $('#view_statistics_form').serialize());
+    };
+  })
 
 });
 

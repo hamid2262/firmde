@@ -1,0 +1,34 @@
+<div id="view_statistics_index">
+  <h1>Listing View Statistics</h1>
+
+  <div class="table-responsive">
+    <table class="table table-bordered">
+      <thead>
+        <tr>
+          <th>Id</th>
+          <th>Date</th>
+          <th>ip</th>
+          <th>Referer</th>
+          <th>Page</th>
+          <th>Section</th>
+          <th colspan="1"></th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <% @view_statistics.each do |view_statistic| %>
+          <tr>
+            <td><%= view_statistic.id %></td>
+            <td><%= view_statistic.created_at.strftime("%d.%m.%Y--%H:%M") %></td>
+            <td><%= view_statistic.viewer_ip %></td>
+            <td><%= view_statistic.referer %></td>
+            <td><%= view_statistic.page %></td>
+            <td><%= view_statistic.section %></td>
+            <td><%= link_to 'Destroy', view_statistic, method: :delete if current_user.is_superadmin? %></td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+
+  </div>
+</div>

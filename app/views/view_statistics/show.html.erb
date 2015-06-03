@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Viewer ip:</strong>
+  <%= @view_statistic.viewer_ip %>
+</p>
+
+<p>
+  <strong>Page:</strong>
+  <%= @view_statistic.page %>
+</p>
+
+<p>
+  <strong>Section:</strong>
+  <%= @view_statistic.section %>
+</p>
+
+<%= link_to 'Edit', edit_view_statistic_path(@view_statistic) %> |
+<%= link_to 'Back', view_statistics_path %>

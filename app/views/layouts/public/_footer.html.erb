@@ -10,5 +10,8 @@
 
 <%= render "layouts/public/footer/google_analitics" if Rails.env.production?  %>
 
+
+<%= render 'view_statistics/form' if current_user.nil? %>
+
 </body>
 </html>

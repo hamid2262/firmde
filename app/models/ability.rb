@@ -18,6 +18,7 @@ class Ability
       can :manage, PageBackup
       can :manage, Picture
       can [:index], Contact
+      can [:index], ViewStatistic
 
     elsif user.is_editor?
       can [:new, :create, :edit, :update, :index], Block
@@ -37,5 +38,6 @@ class Ability
     can [:show], Page
     can [:show], SubPage
     can :role, :index, user.has_access?
+    can [:create], ViewStatistic
   end
 end

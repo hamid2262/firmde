@@ -57,6 +57,12 @@ module ApplicationHelper
     p.gsub("&lt;br&gt;", ". ")  if p
   end
 
+
+  def current_path
+    full_path = request.original_fullpath.split "?"
+    full_path.first
+  end
+
   private
     def flash_creator_tag_maker klass, message
       "<div class=\"alert alert-#{klass}\"><button type=\"button\" class=\"pull-right\" data-dismiss=\"alert\"><span aria-hidden=\"true\">&times;</span><span class=\"sr-only\">Close</span></button>#{message}</div>"  

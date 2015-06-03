@@ -1,0 +1,11 @@
+<li class="<%= "active open" if ["/de/view_statistics"].include?(current_path) %>">
+  <a href="javascript:;">
+  <i class="fa fa-twitch"></i>
+  <span class="title">Statistic</span>
+  </a>
+  <ul class="sub-menu">
+    <li class=<%= "active" %> >
+      <%= link_to "List", view_statistics_path %>
+    </li>  
+  </ul>
+</li>

@@ -1,0 +1,6 @@
+<%= form_for(@view_statistic , html:{url: "/view_statistics", class: "hidden", id: "view_statistics_form" }, method: :post) do |f| %>
+  <%= f.text_field :viewer_ip %>
+  <%= f.text_field :page %>
+  <%= f.text_field :section %>
+  <%= f.text_field :referer %>
+<% end %>

@@ -16,6 +16,8 @@
         <%= render 'layouts/admin/sidebar/news' %>
         <%= render 'layouts/admin/sidebar/contacts' if can? "edit", Contact %>
         <%= render 'layouts/admin/sidebar/editors' if current_user.is_superadmin? %>
+        <%= render 'layouts/admin/sidebar/statistics' if can? "index", ViewStatistic %>
+      
       </ul>
       <!-- END SIDEBAR MENU -->
     </div>
