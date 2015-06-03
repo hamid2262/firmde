@@ -36,15 +36,15 @@ class PagesController < ApplicationController
   end
 
   def update
-    if @page.ancestors.include? Page.loesungen
-      destination = admin_loesungen_path
-    else
-      destination = @page
-    end
+    # if @page.ancestors.include? Page.loesungen
+    #   destination = admin_loesungen_path
+    # else
+    #   destination = @page
+    # end
     respond_to do |format|
       build_page_backup
       if @page.update(page_params)
-        format.html { redirect_to destination, notice: 'Page was successfully updated.' }
+        format.html { redirect_to @page, notice: 'Page was successfully updated.' }
         format.json { render :show, status: :ok, location: @page }
       else
         format.html { render :edit }

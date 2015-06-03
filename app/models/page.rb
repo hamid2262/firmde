@@ -7,6 +7,8 @@ class Page < ActiveRecord::Base
   has_many :page_backups
   has_many :sub_pages
   
+  has_many :pictures, as: :imageable
+  
   acts_as_tree #order: "title"
 
   has_attached_file :photo, :styles => { :top_image => "850x230#", :thumb => "100x100>" }, :default_url => "/images/:style/missing.png"

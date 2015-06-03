@@ -17,7 +17,8 @@
       <% end %>
       <% if can? "new", SubPage %>
         <br>
-        <%= link_to 'New Sub page', new_page_sub_page_path(page_id: @page.id) %>
+        <%#= link_to 'New Sub page', new_page_sub_page_path(page_id: @page.id) %>
+        <%= link_to 'Images', page_pictures_path(page_id: @page.id),  class: "btn btn-info" %>
       <% end %>
     </div>
   </div>

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150523101134) do
+ActiveRecord::Schema.define(version: 20150603073731) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -159,6 +159,21 @@ ActiveRecord::Schema.define(version: 20150523101134) do
     t.datetime "pictogram_hover_updated_at"
     t.string   "seo_title",                    limit: 255
   end
+
+  create_table "pictures", force: :cascade do |t|
+    t.string   "title"
+    t.string   "category"
+    t.integer  "imageable_id"
+    t.string   "imageable_type"
+    t.string   "img_file_name"
+    t.string   "img_content_type"
+    t.integer  "img_file_size"
+    t.datetime "img_updated_at"
+    t.datetime "created_at",       null: false
+    t.datetime "updated_at",       null: false
+  end
+
+  add_index "pictures", ["imageable_id"], name: "index_pictures_on_imageable_id", using: :btree
 
   create_table "site_settings", force: :cascade do |t|
     t.string   "site_name",            limit: 255

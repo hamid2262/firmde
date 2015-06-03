@@ -10,7 +10,7 @@ Rails.application.routes.draw do
     # post 'contacts/contact_action_brief'
 
     resources :site_settings
-
+    
     resources :contacts
     
     resources :slideshows do
@@ -30,6 +30,7 @@ Rails.application.routes.draw do
     resources :blocks
     resources :pages do
       resources :sub_pages
+      resources :pictures
       
       resources :page_backups, only: [:show, :index, :destroy] do 
         get 'replace', on: :member

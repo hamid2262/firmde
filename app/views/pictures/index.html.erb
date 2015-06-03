@@ -1,0 +1,20 @@
+<%= link_to "new image", new_page_picture_path,  class: "btn btn-primary" %>
+<%= link_to "Edit page", edit_page_path(@page),  class: "btn btn-success" %>
+<%= link_to "Back to page", page_path(@page),  class: "btn btn-link" %>
+
+<hr>
+<% @pictures.each do |pic| %>
+  <div class="panel panel-primary">
+    <div class="panel-heading">
+      <h3 class="panel-title">Category: <%= pic.category %> ---- Title:<%= pic.title %>
+        
+        <%= link_to "Edit Image", edit_page_picture_path( page_id: @page.id, id: pic.id),  class: "btn btn-success" %>
+        <%= link_to "Delete Image", page_picture_path( page_id: @page.id, id: pic.id), method: :delete, class: "btn btn-danger pull-right" %>
+      </h3>
+    </div>
+    <div class="panel-body">
+      <%= render 'body', pic: pic %>
+    </div>
+  </div>
+<% end %>
+

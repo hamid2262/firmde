@@ -1,0 +1,31 @@
+<p>
+  <h4>thumb: 220x170</h4> 
+  <%= image_tag pic.img.url(:thumb) %> 
+  <br> 
+  <%= img_absolute_url(obj: pic, type: :thumb) %>
+  <hr>     
+</p>
+
+<p>
+  <h4>medium: 440x340</h4> 
+  <%= image_tag pic.img.url(:medium) %> 
+  <br> 
+  <%= img_absolute_url(obj: pic, type: :medium) %>
+  <hr>        
+</p>
+
+<p>
+  <h4>large: 660x510</h4> 
+  <%= image_tag pic.img.url(:large) %> 
+  <br> 
+  <%= img_absolute_url(obj: pic, type: :large) %>
+  <hr>        
+</p>
+
+<p>
+  <h4>original:</h4> 
+  <%= image_tag pic.img.url(:original) %> 
+  <br> 
+  <%= img_absolute_url(obj: pic, type: :original) %>
+  <hr>        
+</p>

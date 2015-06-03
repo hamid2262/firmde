@@ -44,6 +44,7 @@ gem 'unicorn', '4.8.3'
 group :development, :test do
   gem 'sqlite3'
   gem 'guard-livereload'
+  gem 'quiet_assets'
 end
 
 gem 'letter_opener'
