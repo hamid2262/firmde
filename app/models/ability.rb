@@ -16,6 +16,7 @@ class Ability
       can :manage, Kunden
       can :manage, Blog
       can :manage, PageBackup
+      can :manage, Picture
       can [:index], Contact
 
     elsif user.is_editor?
