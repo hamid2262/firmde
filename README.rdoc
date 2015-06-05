@@ -1,5 +1,5 @@
  bundle exec rake assets:precompile
-
+RAILS_ENV=production bin/rails console
 
 * install dalli for cache
 sudo apt-get install memcached

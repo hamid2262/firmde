@@ -18,7 +18,7 @@
           <th>Referer</th>
           <th>Page</th>
           <th>Section</th>
-          <th colspan="1"></th>
+          <th colspan="2"></th>
         </tr>
       </thead>
 
@@ -34,6 +34,7 @@
             <td><%= view_statistic.referer %></td>
             <td><%= view_statistic.page %></td>
             <td><%= view_statistic.section %></td>
+            <td><%= link_to "find loc", find_geocode_view_statistic_path(view_statistic) %></td>
             <td><%= link_to 'Destroy', view_statistic, method: :delete if current_user.is_superadmin? %></td>
           </tr>
         <% end %>

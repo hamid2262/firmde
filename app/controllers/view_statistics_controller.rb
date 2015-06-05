@@ -1,7 +1,7 @@
 require 'csv'
 class ViewStatisticsController < ApplicationController
   
-  before_action :set_view_statistic, only: [:destroy]
+  before_action :set_view_statistic, only: [:destroy, :find_geocode]
   layout "admin_layout"
   authorize_resource
 
@@ -53,6 +53,22 @@ class ViewStatisticsController < ApplicationController
       # format.xls # { send_data @products.to_csv(col_sep: "\t") }
     end
 
+  end
+
+  def find_geocode
+    
+    geocode = Geocoder.search(@view_statistic.viewer_ip)
+    # geocode = Geocoder.search("109.75.95.20")
+    if geocode.last
+      city = geocode.last.city
+      country = geocode.last.country
+      zip = geocode.last.data["zip_code"]
+
+      @view_statistics = ViewStatistic.where(viewer_ip: @view_statistic.viewer_ip)
+      @view_statistics = @view_statistics.update_all(city: city, country: country, zip: zip)
+
+    end
+    redirect_to :back
   end
 
   def create
