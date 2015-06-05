@@ -46,12 +46,12 @@ class ViewStatisticsController < ApplicationController
 
       @google_ads = @google_all - @google_normals
     end
-  respond_to do |format|
-    format.html
-    format.csv { send_data @view_statistics.to_csv }
-    # format.xls # { send_data @products.to_csv(col_sep: "\t") }
-  end
 
+    respond_to do |format|
+      format.html
+      format.csv { send_data @view_statistics.to_csv }
+      # format.xls # { send_data @products.to_csv(col_sep: "\t") }
+    end
 
   end
 
@@ -86,6 +86,6 @@ class ViewStatisticsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def view_statistic_params
-      params.require(:view_statistic).permit(:viewer_ip, :page, :section, :referer)
+      params.require(:view_statistic).permit(:viewer_ip, :page, :section, :referer, :country, :city, :zip)
     end
 end

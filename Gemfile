@@ -30,6 +30,8 @@ gem 'acts_as_tree', '~> 2.1.0'
 gem 'truncate_html', '~> 0.9.3'
 gem 'globalize'
 
+gem 'geocoder'
+
 # Use unicorn as the app server
 gem 'unicorn', '4.8.3'
 

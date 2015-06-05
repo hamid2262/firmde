@@ -108,6 +108,7 @@ GEM
     font-awesome-rails (4.2.0.0)
       railties (>= 3.2, < 5.0)
     formatador (0.2.5)
+    geocoder (1.1.9)
     globalid (0.3.5)
       activesupport (>= 4.1.0)
     globalize (5.0.1)
@@ -297,6 +298,7 @@ DEPENDENCIES
   devise
   exception_notification
   font-awesome-rails (~> 4.2.0.0)
+  geocoder
   globalize
   guard-livereload
   jbuilder

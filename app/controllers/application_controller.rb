@@ -43,6 +43,15 @@ class ApplicationController < ActionController::Base
         @view_statistic.viewer_ip = request.ip
         @view_statistic.page = request.original_url
         
+        geocode = Geocoder.search(@view_statistic.viewer_ip)
+        # geocode = Geocoder.search("109.75.95.20")
+
+        if geocode.last
+          @view_statistic.city = geocode.last.city
+          @view_statistic.country = geocode.last.country
+          @view_statistic.zip = geocode.last.data["zip_code"]
+        end
+
         referer = request.referer
         @view_statistic.referer = referer
         if referer && referer.include?("//www.google.")
