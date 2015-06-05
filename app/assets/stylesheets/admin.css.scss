@@ -1,6 +1,14 @@
 /*
   * require my_theme/global/css/components
 
+  *= require my_theme/global/plugins/datatables/extensions/Scroller/css/dataTables.scroller.min.css
+  *= require my_theme/global/plugins/datatables/extensions/ColReorder/css/dataTables.colReorder.min.css
+  * require dataTables/jquery.dataTables
+  *= require dataTables/bootstrap/3/jquery.dataTables.bootstrap
+  *= require dataTables/extras/dataTables.responsive
+  * require my_theme/global/plugins/datatables/plugins/bootstrap/dataTables.bootstrap.css
+
+
   * require font-awesome
   *= require bootstrap_and_overrides
 

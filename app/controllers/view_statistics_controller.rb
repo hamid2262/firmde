@@ -12,6 +12,8 @@ class ViewStatisticsController < ApplicationController
       @view_statistics = ViewStatistic.where("viewer_ip LIKE ?", "%#{params[:viewer_ip]}%").order(created_at: :desc)
       @viewer_ip = params[:viewer_ip]
     else
+      session[:back_link] = request.original_url
+
       @day = params[:commit] ? params[:commit].to_date : Date.today
 
       @view_statistics = ViewStatistic.where("created_at>? and created_at<?", (@day), (@day + 1.day))
@@ -89,7 +91,7 @@ class ViewStatisticsController < ApplicationController
   def destroy
     @view_statistic.destroy
     respond_to do |format|
-      format.html { redirect_to view_statistics_url, notice: 'View statistic was successfully destroyed.' }
+      format.html { redirect_to :back, notice: 'View statistic was successfully destroyed.' }
       format.json { head :no_content }
     end
   end

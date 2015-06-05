@@ -29,6 +29,7 @@ gem 'acts_as_tree', '~> 2.1.0'
 
 gem 'truncate_html', '~> 0.9.3'
 gem 'globalize'
+gem 'jquery-datatables-rails', '~> 3.2.0'
 
 gem 'geocoder'
 
@@ -45,7 +46,7 @@ gem 'unicorn', '4.8.3'
 
 group :development, :test do
   gem 'sqlite3'
-  gem 'guard-livereload'
+  # gem 'guard-livereload'
   gem 'quiet_assets'
 end
 

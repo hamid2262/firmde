@@ -1,35 +1,50 @@
 <div class="row">
-  <div class="col-md-6">
+  <div class="col-md-5">
+    <table class="table table-bordered">
+      <tr>
+        <td>All:</td>
+        <td><b><%= @all %></b></td>
 
-    All visitors: <%= @all %> <br>
-    All visitors from Google: <%= @google_all %><br>
-    Google Normal search visitors: <%= @google_normals %> <br>
-    Google Ad visitors: <%= @google_ads %> <br>
+        <td>Google Normal search:  &nbsp;&nbsp;</td>
+        <td><b><%= @google_normals %></b></td>
+
+      </tr>
+      <tr>
+        <td>All from Google: </td>
+        <td><b><%= @google_all %></b></td>
+
+        <td>Google Ad: </td>
+        <td><b><%= @google_ads %></b></td>
+      </tr>
+    </table>
   </div>
 
-  <div class="col-md-6">
-    <p>
-      <%= link_to "CSV file", view_statistics_path(format: "csv"), class: "btn btn-primary pull-right" %> 
-    </p>
+  <div class="col-md-6 col-md-offset-1">
 
-    <p>Filter by: </p>
     <%= form_tag "/view_statistics", method: :get do  -%>
       <%= hidden_field_tag "day", @day %>
-      <% [ 'all', 'google all', 'google normal', 'google ad' ].each do |google| %>
-        <%= radio_button_tag 'google', google, @google == google %> 
-        <%= google.humanize %>&nbsp; &nbsp;
-      <% end %>
 
-      <br>
- 
-        <%= submit_tag "#{german_date(@day - 1.day)}" if  @viewer_ip.nil? %>
-        <--------
-        <%= submit_tag "#{german_date(@day)}" if  @viewer_ip.nil?  %>
-        -------->
-        <%= submit_tag "#{german_date(@day + 1.day)}" if  @viewer_ip.nil?  %>
-        >>
+      <table class="table table-bordered">
+        <tr>
+        <% [ 'all', 'google all', 'google normal', 'google ad' ].each do |google| %>
+          <td>
+            <%= radio_button_tag 'google', google, @google == google %> 
+            <%= google.humanize %>&nbsp; &nbsp;
+          </td>
+        <% end %>
+        </tr>
+      </table>
+      <<
+      <%= submit_tag "#{german_date(@day - 1.day)}", class: "btn btn-default" if  @viewer_ip.nil? %>
+      <-----
+      <%= submit_tag "#{german_date(@day)}", class: "btn btn-default" if  @viewer_ip.nil?  %>
+      ----->
+      <%= submit_tag "#{german_date(@day + 1.day)}", class: "btn btn-default" if  @viewer_ip.nil?  %>
+      >>
+      <%= link_to "CSV file", view_statistics_path(format: "csv"), class: "btn btn-primary pull-right" %> 
 
     <% end %>
+
+
   </div>
 </div>
-<hr>
