@@ -18,7 +18,7 @@ class Ability
       can :manage, PageBackup
       can :manage, Picture
       can [:index], Contact
-      can [:index], ViewStatistic
+      can :manage, ViewStatistic
 
     elsif user.is_editor?
       can [:new, :create, :edit, :update, :index], Block

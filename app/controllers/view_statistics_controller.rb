@@ -1,3 +1,4 @@
+require 'csv'
 class ViewStatisticsController < ApplicationController
   
   before_action :set_view_statistic, only: [:destroy]
@@ -40,6 +41,13 @@ class ViewStatisticsController < ApplicationController
     @google_normals = @view_statistics1.size
 
     @google_ads = @google_all - @google_normals
+
+  respond_to do |format|
+    format.html
+    format.csv { send_data @view_statistics.to_csv }
+    # format.xls # { send_data @products.to_csv(col_sep: "\t") }
+  end
+
 
   end
 
