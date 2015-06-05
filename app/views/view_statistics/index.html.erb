@@ -1,4 +1,9 @@
-<%= render 'filters' %>
+<% if @viewer_ip %>
+  <%= link_to "Back", view_statistics_path, class: "btn btn-primary" %>
+<% else %>
+  <%= render 'filters' %>
+<% end %>
+
 <div id="view_statistics_index">
   <h1>Listing View Statistics</h1>
 
@@ -20,8 +25,10 @@
         <% @view_statistics.each_with_index do |view_statistic, index| %>
           <tr>
             <td><%=  @view_statistics.size - index %></td>
-            <td><%= view_statistic.created_at.strftime("%d.%m.%Y--%H:%M") %></td>
-            <td><%= view_statistic.viewer_ip %></td>
+            <td><%= view_statistic.created_at.strftime("%d.%m.%Y--%H:%M:%S") %></td>
+            <td>
+              <%= link_to view_statistic.viewer_ip, view_statistics_path(viewer_ip: view_statistic.viewer_ip) %>
+            </td>
             <td><%= view_statistic.referer %></td>
             <td><%= view_statistic.page %></td>
             <td><%= view_statistic.section %></td>

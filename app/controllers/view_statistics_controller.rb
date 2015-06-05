@@ -8,40 +8,44 @@ class ViewStatisticsController < ApplicationController
   # GET /view_statistics
   # GET /view_statistics.json
   def index
-    @day = params[:commit] ? params[:commit].to_date : Date.today
+    if params[:viewer_ip]
+      @view_statistics = ViewStatistic.where("viewer_ip LIKE ?", "%#{params[:viewer_ip]}%").order(created_at: :desc)
+      @viewer_ip = params[:viewer_ip]
+    else
+      @day = params[:commit] ? params[:commit].to_date : Date.today
 
-    @view_statistics = ViewStatistic.where("created_at>? and created_at<?", (@day), (@day + 1.day))
+      @view_statistics = ViewStatistic.where("created_at>? and created_at<?", (@day), (@day + 1.day))
 
-    if    params[:google] == "google all"
-      @view_statistics = @view_statistics.where("referer LIKE ?", "%google%")
-      @google = "google all"
+      if    params[:google] == "google all"
+        @view_statistics = @view_statistics.where("referer LIKE ?", "%google%")
+        @google = "google all"
 
-    elsif params[:google] == "google normal"
-      @view_statistics = @view_statistics.where("referer LIKE ? and referer NOT LIKE ?", "%google%", "%aclk%")
-      @google = "google normal"
+      elsif params[:google] == "google normal"
+        @view_statistics = @view_statistics.where("referer LIKE ? and referer NOT LIKE ?", "%google%", "%aclk%")
+        @google = "google normal"
 
-    elsif params[:google] == "google ad"
-      @view_statistics = @view_statistics.where("referer LIKE ?", "%aclk%")
-      @google = "google ad"
+      elsif params[:google] == "google ad"
+        @view_statistics = @view_statistics.where("referer LIKE ?", "%aclk%")
+        @google = "google ad"
 
-    elsif params[:google] == "all"
-      @google = "all"
+      elsif params[:google] == "all"
+        @google = "all"
+      end
+      @view_statistics = @view_statistics.order(created_at: :desc)
+
+
+
+      @view_statistics1 = ViewStatistic.where("created_at>? and created_at<?", (@day), (@day + 1.day))
+      @all = @view_statistics1.size
+
+      @view_statistics1 = @view_statistics1.where("referer LIKE ?", "%google%")
+      @google_all = @view_statistics1.size
+
+      @view_statistics1 = @view_statistics1.where("referer NOT LIKE ?", "%aclk%")
+      @google_normals = @view_statistics1.size
+
+      @google_ads = @google_all - @google_normals
     end
-    @view_statistics = @view_statistics.order(created_at: :desc)
-
-
-
-    @view_statistics1 = ViewStatistic.where("created_at>? and created_at<?", (@day), (@day + 1.day))
-    @all = @view_statistics1.size
-
-    @view_statistics1 = @view_statistics1.where("referer LIKE ?", "%google%")
-    @google_all = @view_statistics1.size
-
-    @view_statistics1 = @view_statistics1.where("referer NOT LIKE ?", "%aclk%")
-    @google_normals = @view_statistics1.size
-
-    @google_ads = @google_all - @google_normals
-
   respond_to do |format|
     format.html
     format.csv { send_data @view_statistics.to_csv }

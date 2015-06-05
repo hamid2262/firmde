@@ -21,13 +21,14 @@
       <% end %>
 
       <br>
-      <<
-      <%= submit_tag "#{german_date(@day - 1.day)}" %>
-      <--------
-      <%= submit_tag "#{german_date(@day)}" %>
-      -------->
-      <%= submit_tag "#{german_date(@day + 1.day)}" %>
-      >>
+ 
+        <%= submit_tag "#{german_date(@day - 1.day)}" if  @viewer_ip.nil? %>
+        <--------
+        <%= submit_tag "#{german_date(@day)}" if  @viewer_ip.nil?  %>
+        -------->
+        <%= submit_tag "#{german_date(@day + 1.day)}" if  @viewer_ip.nil?  %>
+        >>
+
     <% end %>
   </div>
 </div>
