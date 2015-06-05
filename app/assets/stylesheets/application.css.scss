@@ -41,4 +41,22 @@
 
  *= require page_content
  
+
+
  */
+
+
+ .my_fancybox_image{
+    display: inline !important;
+ }
+
+.my_fancybox_image_fa{
+  font-size: 20px !important;
+  position: absolute;
+  right: 45%;
+  top: 30%;   
+}
+
+.fancybox-inner .my_fancybox_image_fa {
+  display: none !important;
+}

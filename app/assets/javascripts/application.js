@@ -48,12 +48,19 @@ $(function() {
   // ContactUs.init();
 
 
-  $(".my_fancybox_image").on( "mouseenter", function() {
-    attrSrc = $(this).attr( "src" )
-    $(this).after("<div class='gallery-item'><a data-rel='fancybox-button' title='' href="+attrSrc+" class='fancybox-button'>"+"<img alt='x' src="+attrSrc+" class='img-responsive'>"+"<div class='zoomix'><i class='fa fa-search'></i></div></a></div>");
-    $(this).remove()
-  } )
-  $(".fancybox-button").fancybox();
+  $(".my_fancybox_image").on({
+    mouseenter: function () {
+      $(this).after("<i class='fa fa-search my_fancybox_image_fa'></i>");
+    },
+    mouseleave: function () {
+      window.aa = $(this)
+      $(this).parent().find(".my_fancybox_image_fa").remove();
+    }
+  });
+
+
+  // $(".fancybox-button").fancybox();
+  $(".my_fancybox_image").fancybox();
 
   $("img").tooltip({
     placement: 'top',
