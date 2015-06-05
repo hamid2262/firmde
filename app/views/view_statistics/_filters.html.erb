@@ -1,0 +1,28 @@
+<div class="row">
+  <div class="col-md-6">
+    All visitors: <%= @all %> <br>
+    All visitors from Google: <%= @google_all %><br>
+    Google Normal search visitors: <%= @google_normals %> <br>
+    Google Ad visitors: <%= @google_ads %> <br>
+  </div>
+
+  <div class="col-md-6">
+    <%= form_tag "/view_statistics", method: :get do  -%>
+      <%= hidden_field_tag "day", @day %>
+      <% [ 'all', 'google all', 'google normal', 'google ad' ].each do |google| %>
+        <%= radio_button_tag 'google', google, @google == google %> 
+        <%= google.humanize %>&nbsp; &nbsp;
+      <% end %>
+
+      <br>
+      <<
+      <%= submit_tag "#{german_date(@day - 1.day)}" %>
+      < --------
+      <%= submit_tag "#{german_date(@day)}" %>
+      -------- >
+      <%= submit_tag "#{german_date(@day + 1.day)}" %>
+      >>
+    <% end %>
+  </div>
+</div>
+<hr>

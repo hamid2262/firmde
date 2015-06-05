@@ -37,4 +37,4 @@ These commands will:
 backup and restart database can be done by running following commands:
   backup:  pg_dump -F c -v -U postgres -h localhost opc_production -f /home/deployer/apps/backups/backup8.psql
 
-  restore: g_restore --verbose --clean --no-acl --no-owner -h localhost -U deployer -d opc_production /home/vr10123/apps/backups/backupi.psql
+  restore: pg_restore --verbose --clean --no-acl --no-owner -h localhost -U deployer -d opc_production /home/vr10123/apps/backups/backupi.psql

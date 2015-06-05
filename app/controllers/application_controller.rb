@@ -45,7 +45,6 @@ class ApplicationController < ActionController::Base
         
         referer = request.referer
         @view_statistic.referer = referer
-
         if referer && referer.include?("//www.google.")
           @view_statistic.save 
         end

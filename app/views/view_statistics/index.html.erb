@@ -1,3 +1,4 @@
+<%= render 'filters' %>
 <div id="view_statistics_index">
   <h1>Listing View Statistics</h1>
 
@@ -16,9 +17,9 @@
       </thead>
 
       <tbody>
-        <% @view_statistics.each do |view_statistic| %>
+        <% @view_statistics.each_with_index do |view_statistic, index| %>
           <tr>
-            <td><%= view_statistic.id %></td>
+            <td><%=  @view_statistics.size - index %></td>
             <td><%= view_statistic.created_at.strftime("%d.%m.%Y--%H:%M") %></td>
             <td><%= view_statistic.viewer_ip %></td>
             <td><%= view_statistic.referer %></td>
