@@ -50,11 +50,11 @@ class ApplicationController < ActionController::Base
 
         referer = request.referer
         @view_statistic.referer = referer
-        
         if referer.nil? or referer.include?("google")
           view_statistic = @view_statistic
           if referer.nil?
             view_statistic.section = "{direct}" 
+            view_statistic.head    = request.env["HTTP_USER_AGENT"]
 
           elsif referer.include?("aclk")
             view_statistic.section = "{google adwords}" 
