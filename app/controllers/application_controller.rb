@@ -43,19 +43,27 @@ class ApplicationController < ActionController::Base
         @view_statistic.viewer_ip = request.ip
         @view_statistic.page = request.original_url
       
-        @view_statistic.city    = request.location.city 
-        @view_statistic.country = request.location.country 
-        @view_statistic.zip     = request.location.data["zipcode"]
+        location = request.location
+        @view_statistic.city    = location.city 
+        @view_statistic.country = location.country 
+        @view_statistic.zip     = location.data["zipcode"]
 
         referer = request.referer
         @view_statistic.referer = referer
         
-        if referer && referer.include?("//www.google.")
-          # @view_statistic.city    = request.location.city 
-          # @view_statistic.country = request.location.country 
-          # @view_statistic.zip     = request.location.data["zipcode"]
+        if referer.nil? or referer.include?("google")
+          view_statistic = @view_statistic
+          if referer.nil?
+            view_statistic.section = "{direct}" 
 
-          @view_statistic.save 
+          elsif referer.include?("aclk")
+            view_statistic.section = "{google adwords}" 
+
+          else
+            view_statistic.section = "{google normal search}" 
+
+          end
+          view_statistic.save 
         end
 
       end

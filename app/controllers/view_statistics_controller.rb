@@ -19,15 +19,15 @@ class ViewStatisticsController < ApplicationController
       @view_statistics = ViewStatistic.where("created_at>? and created_at<?", (@day), (@day + 1.day))
 
       if    params[:google] == "google all"
-        @view_statistics = @view_statistics.where("referer LIKE ?", "%google%")
+        @view_statistics = @view_statistics.where("section LIKE ?", "%{google%")
         @google = "google all"
 
       elsif params[:google] == "google normal"
-        @view_statistics = @view_statistics.where("referer LIKE ? and referer NOT LIKE ?", "%google%", "%aclk%")
+        @view_statistics = @view_statistics.where(section: "{google normal search}")
         @google = "google normal"
 
       elsif params[:google] == "google ad"
-        @view_statistics = @view_statistics.where("referer LIKE ?", "%aclk%")
+        @view_statistics = @view_statistics.where(section: "{google adwords}")
         @google = "google ad"
 
       elsif params[:google] == "all"
