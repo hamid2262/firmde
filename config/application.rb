@@ -22,7 +22,7 @@ module Opc
     config.i18n.load_path += Dir[Rails.root.join('config', 'locales', '**', '*.{rb,yml}')]
     # config.i18n.fallbacks = true
     config.i18n.default_locale = :de
-
+    config.time_zone = "Berlin"
 
     config.assets.initialize_on_precompile = false
     config.action_view.sanitized_allowed_tags = 'br', 'table'

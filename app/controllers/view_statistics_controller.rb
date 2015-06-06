@@ -14,7 +14,7 @@ class ViewStatisticsController < ApplicationController
     else
       session[:back_link] = request.original_url
 
-      @day = params[:commit] ? params[:commit].to_date : Date.today
+      @day = params[:commit] ? params[:commit].to_datetime : DateTime.now.in_time_zone(Time.zone).beginning_of_day
 
       @view_statistics = ViewStatistic.where("created_at>? and created_at<?", (@day), (@day + 1.day))
 
