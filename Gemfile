@@ -51,8 +51,8 @@ group :development, :test do
   gem 'quiet_assets'
 end
 
-gem 'letter_opener'
 group :development do
+  gem 'letter_opener'
   # gem 'rack-mini-profiler'
   gem 'better_errors'
   gem 'binding_of_caller'

@@ -46,10 +46,11 @@ class ApplicationController < ActionController::Base
             vs = @view_statistic
             is_crawler?(vs.viewer_ip)
 
-            if ref.nil? && ( is_crawler?(vs.viewer_ip) == false )
-                vs.section = "{direct}"
-                vs.save
-            elsif ref && ref.include?("google")
+            # if ref.nil? && ( is_crawler?(vs.viewer_ip) == false )
+            #     vs.section = "{direct}"
+            #     vs.save
+            # els
+            if ref && ref.include?("google")
                 if ref.include?("aclk")
                   vs.section = "{google adwords}" 
                 else
@@ -86,9 +87,9 @@ class ApplicationController < ActionController::Base
         page:      request.original_url,
         referer:   request.referer,
         head:      request.env["HTTP_USER_AGENT"],
-        city:      location.city,
-        country:   location.country,
-        zip:       location.data["zipcode"]
+        city:      location.try(:city),
+        country:   location.try(:country),
+        zip:       location.try(:data["zipcode"])
       }
     end
 end
