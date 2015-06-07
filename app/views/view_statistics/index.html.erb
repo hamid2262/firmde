@@ -43,7 +43,10 @@
             <td><%= view_statistic.section %></td>
             <td><%= view_statistic.head %></td>
             <!-- <td><%#= link_to "find loc", find_geocode_view_statistic_path(view_statistic) %></td> -->
-            <td><%= link_to 'Destroy', view_statistic, method: :delete if current_user.is_superadmin? %></td>
+            <td>
+              <%= link_to 'Destroy', view_statistic, method: :delete if current_user.is_superadmin? %> <br>
+              <%= link_to 'Crawler', add_to_list_crawlers_path(view_statistic_id: view_statistic.id) if current_user.is_superadmin? %>
+            </td>
           </tr>
         <% end %>
       </tbody>

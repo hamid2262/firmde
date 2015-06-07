@@ -32,6 +32,7 @@ gem 'globalize'
 gem 'jquery-datatables-rails', '~> 3.2.0'
 
 gem 'geocoder'
+gem 'dalli'
 
 # Use unicorn as the app server
 gem 'unicorn', '4.8.3'

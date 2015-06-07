@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150606110234) do
+ActiveRecord::Schema.define(version: 20150607112042) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -60,6 +60,16 @@ ActiveRecord::Schema.define(version: 20150606110234) do
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+  create_table "crawlers", force: :cascade do |t|
+    t.string   "ip"
+    t.string   "head"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_index "crawlers", ["head"], name: "index_crawlers_on_head", using: :btree
+  add_index "crawlers", ["ip"], name: "index_crawlers_on_ip", using: :btree
 
   create_table "elements", force: :cascade do |t|
     t.string   "tag",                limit: 255

@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Ip:</strong>
+  <%= @crawler.ip %>
+</p>
+
+<p>
+  <strong>Head:</strong>
+  <%= @crawler.head %>
+</p>
+
+<%= link_to 'Edit', edit_crawler_path(@crawler) %> |
+<%= link_to 'Back', crawlers_path %>

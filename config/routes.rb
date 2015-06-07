@@ -1,10 +1,14 @@
 Rails.application.routes.draw do
 
 
+
   scope "(:locale)", locale: /en|de/ do
   # scope ":locale", locale: /#{I18n.available_locales.join("|")}/ do
     resources :view_statistics do
       get 'find_geocode', on: :member
+    end
+    resources :crawlers do 
+      get 'add_to_list', on: :collection
     end
 
     get 'static_pages/google_search'

@@ -16,7 +16,7 @@ class ViewStatisticsController < ApplicationController
 
       @day = params[:commit] ? params[:commit].to_datetime : DateTime.now.in_time_zone(Time.zone).beginning_of_day
 
-      @view_statistics = ViewStatistic.where("created_at>? and created_at<?", (@day), (@day + 1.day))
+      @view_statistics = ViewStatistic.for_one_day(@day)
 
       if    params[:google] == "google all"
         @view_statistics = @view_statistics.where("section LIKE ?", "%{google%")
@@ -37,7 +37,7 @@ class ViewStatisticsController < ApplicationController
 
 
 
-      @view_statistics1 = ViewStatistic.where("created_at>? and created_at<?", (@day), (@day + 1.day))
+      @view_statistics1 = ViewStatistic.for_one_day(@day)
       @all = @view_statistics1.size
 
       @view_statistics1 = @view_statistics1.where("referer LIKE ?", "%google%")
@@ -104,6 +104,6 @@ class ViewStatisticsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def view_statistic_params
-      params.require(:view_statistic).permit(:viewer_ip, :page, :section, :referer, :country, :city, :zip)
+      params.require(:view_statistic).permit(:viewer_ip, :page, :section, :referer, :country, :city, :zip, :head)
     end
 end

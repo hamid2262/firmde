@@ -34,39 +34,61 @@ class ApplicationController < ActionController::Base
     end
 
     def initialize_contact
-      @contact = Contact.new      
+      @contact = Contact.new
     end
 
     def viewer_activity
-      if current_user.nil?
-        @view_statistic = ViewStatistic.new
-        @view_statistic.viewer_ip = request.ip
-        @view_statistic.page = request.original_url
-      
-        location = request.location
-        @view_statistic.city    = location.city 
-        @view_statistic.country = location.country 
-        @view_statistic.zip     = location.data["zipcode"]
 
-        referer = request.referer
-        @view_statistic.referer = referer
-        if referer.nil? or referer.include?("google")
-          view_statistic = @view_statistic
-          if referer.nil?
-            view_statistic.section = "{direct}" 
-            view_statistic.head    = request.env["HTTP_USER_AGENT"]
+        if current_user.nil?
+            @view_statistic = ViewStatistic.new(view_statistic_params)
 
-          elsif referer.include?("aclk")
-            view_statistic.section = "{google adwords}" 
+            ref = request.referer
+            vs = @view_statistic
+            is_crawler?(vs.viewer_ip)
 
-          else
-            view_statistic.section = "{google normal search}" 
+            if ref.nil? && ( is_crawler?(vs.viewer_ip) == false )
+                vs.section = "{direct}"
+                vs.save
+            elsif ref && ref.include?("google")
+                if ref.include?("aclk")
+                  vs.section = "{google adwords}" 
+                else
+                  vs.section = "{google normal search}" 
+                end
+                vs.save 
+            end
 
-          end
-          view_statistic.save 
         end
-
-      end
     end
 
+  private
+
+    def is_crawler?(request_ip)
+      request_head = request.env["HTTP_USER_AGENT"]
+
+      ips = all_crawlers.map{|c| c.ip} 
+      heads = all_crawlers.map{|c| c.head}
+      heads.delete nil
+      ( ips.include?(request_ip) || heads.include?(request_head) ) ? true : false
+
+    end
+
+    def all_crawlers
+      Rails.cache.fetch([:crawlers, :all], expires_in: 1.day) do 
+        Crawler.all
+      end  
+    end
+
+    def view_statistic_params
+      location = request.location
+      {
+        viewer_ip: request.ip,
+        page:      request.original_url,
+        referer:   request.referer,
+        head:      request.env["HTTP_USER_AGENT"],
+        city:      location.city,
+        country:   location.country,
+        zip:       location.data["zipcode"]
+      }
+    end
 end
