@@ -51,7 +51,7 @@ class ApplicationController < ActionController::Base
             #     vs.save
             # els
             if ref && ref.include?("google")
-                if ref.include?("aclk")
+                if ref.include?("aclk") || ref.include?("googleads")
                   vs.section = "{google adwords}" 
                 else
                   vs.section = "{google normal search}" 
@@ -82,6 +82,8 @@ class ApplicationController < ActionController::Base
 
     def view_statistic_params
       location = request.location
+      zip = location.data["aipcode"] if location and location.data
+
       {
         viewer_ip: request.ip,
         page:      request.original_url,
@@ -89,7 +91,7 @@ class ApplicationController < ActionController::Base
         head:      request.env["HTTP_USER_AGENT"],
         city:      location.try(:city),
         country:   location.try(:country),
-        zip:       location.try(:data["zipcode"])
+        zip:       zip
       }
     end
 end

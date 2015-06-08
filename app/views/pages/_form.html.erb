@@ -5,17 +5,17 @@
   <%=  f.error_notification %>
   <%= f.input :title, placeholder: 'Title' %>
   <%= f.input :seo_title, placeholder: 'seo title' %>
-
   
-  <div class="col-sm-6">
-    <%= f.input :title_on_image, placeholder: 'Title on Image', input_html:{class: 'summernote1', data:{ height: "100"}} %>
+<!--   <div class="col-sm-6">
+    <%#= f.input :title_on_image, placeholder: 'Title on Image', input_html:{class: '1summernote1', data:{ height: "100"}} %>
   </div>
   
   <div class="col-sm-6">
-    <%= f.input :subtitle_on_image, placeholder: 'SubTitle on Image', input_html:{class: 'summernote2', data:{height: "100"}} %>
+    <%#= f.input :subtitle_on_image, placeholder: 'SubTitle on Image', input_html:{class: '1summernote2', data:{height: "100"}} %>
   </div>
+ -->
 
-  <%= f.input :body, placeholder: 'Body', input_html:{class: 'summernote'} %>
+  <%= f.input :body, placeholder: 'Body', as: :text,  input_html:{class: '1summernote form-control', :rows => 40} %>
   <%= f.input :photo, as: :file %>
   <%= f.input :pictogram, as: :file %>
   <%= f.input :pictogram_hover, as: :file %>

@@ -17,7 +17,7 @@ class PagesController < ApplicationController
   end
 
   def edit
-    @page_backups = @page.page_backups.order("updated_at desc").limit(10)
+    @page_backups = @page.page_backups.order("updated_at desc").limit(3)
   end
 
   def create
