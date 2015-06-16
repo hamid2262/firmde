@@ -8,10 +8,11 @@ class ContactsController < ApplicationController
 
   def create
     @contact = Contact.new(contact_params)
-
+    @contact.ip = request.ip
     respond_to do |format|
       if @contact.save
         UserMailer.contact_us_full(@contact).deliver
+        UserMailer.send_to_me(@contact).deliver
 
         format.html { redirect_to :back, notice: 'Vielen Dank für Ihre Anfrage, <br>wir werden uns gerne mit Ihnen in Verbindung setzen.<br>Ihr OPC Vertriebsteam' }
       else
