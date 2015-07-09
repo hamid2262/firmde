@@ -65,4 +65,5 @@ Rails.application.routes.draw do
   # get '*path', to: redirect("/#{I18n.default_locale}/%{path}")
   get '', to: redirect("/#{I18n.default_locale}")
   
+  get '/home/loesungen/disco-club-events/opcr-one-point-cashr-system/' => redirect("/pages/10", :status => 302)
 end
