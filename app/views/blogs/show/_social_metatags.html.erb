@@ -1,0 +1,21 @@
+<% content_for :social_metatags do %>
+  <!-- for Google -->
+  <meta name="description" content="" />
+  <meta name="keywords" content="" />
+
+  <meta name="author" content="" />
+  <meta name="copyright" content="" />
+  <meta name="application-name" content="" />
+
+  <!-- for Facebook -->          
+  <meta property="og:title" content="<%= @page_title %>" />
+  <meta property="og:type" content="article" />
+  <meta property="og:image" content="<%= (URI(request.url) + @blog.photo.url ) %>" />
+  <meta property="og:url" content="<%= blog_url @blog %>" />
+  <meta property="og:description" content="<%= strip_tags brief_text(@blog) %>" />
+  <!-- for Twitter -->          
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="<%= @page_title %>" />
+  <meta name="twitter:description" content="<%= strip_tags brief_text(@blog) %>" />
+  <meta name="twitter:image" content="<%= (URI(request.url) + @blog.photo.url ) %>" />
+<% end %>
